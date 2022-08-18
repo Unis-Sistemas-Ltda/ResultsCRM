@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSNegociacao" targetNamespace="http://tempuri.org/DSNegociacao.xsd" xmlns:mstns="http://tempuri.org/DSNegociacao.xsd" xmlns="http://tempuri.org/DSNegociacao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelNegociacaoResumidoTableAdapter" GeneratorDataComponentClassName="RelNegociacaoResumidoTableAdapter" Name="RelNegociacaoResumido" UserDataComponentName="RelNegociacaoResumidoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+                      SELECT nc.cod_negociacao_cliente,
+                      ee.cod_emitente,
+                      ee.nome,
+                      ee.estado_sigla,
+                      ee.cidade_nome,
+                      ee.telefone1||if trim(isnull(co.ramal,'')) = '' then '' else '/' + co.ramal endif as telefone1,
+                      co.cod_contato,
+                      co.nome AS nome_contato,
+                      nc.data_recontato,
+                      nc.cod_etapa,
+                      etp.descricao nome_etapa,
+                      nc.cod_agente_venda,
+                      ag.nome_usuario,
+                      nc.total_mercadoria,
+                      (SELECT        MAX(f.data_follow_up)
+                      FROM            follow_up_emitente f
+                      WHERE        f.tipo = 2 AND f.empresa = nc.empresa AND f.estabelecimento = nc.estabelecimento AND f.cod_negociacao_cliente = nc.cod_negociacao_cliente) AS data_ultimo_follow_up,
+                      ee.nome || ' (' || ee.cod_emitente || ')' AS cf_cliente,
+                      ? as f_empresa,
+                      ? as f_etapa1,
+                      ? as f_etapa2,
+                      f_converte_string_em_numeric( convert(date, ?, 103)) f_cadastramento1,
+                      f_converte_string_em_numeric( convert(date, ?, 103)) f_cadastramento2,
+                      ? as f_cod_status,
+                      ? as f_cod_agente_venda,
+                      ? as f_cod_representante,
+                      ? as f_cod_canal_venda,
+                      ? as f_cod_item
+                      FROM results.v_emitente_endereco ee,
+                      results.etapa_negociacao etp,
+                      results.sysusuario ag,
+                      results.negociacao_cliente nc,
+                      results.contatos co
+                      WHERE nc.cod_emitente = ee.cod_emitente
+                      AND nc.cnpj         = ee.cnpj
+                      AND etp.empresa     = nc.empresa
+                      AND etp.cod_etapa   = nc.cod_etapa
+                      AND ag.cod_usuario  = nc.cod_agente_venda
+                      AND co.cod_emitente = nc.cod_emitente
+                      AND nc.cod_contato = co.cod_contato
+                      AND nc.empresa      = f_empresa
+                      AND nc.cod_etapa between f_etapa1 and f_etapa2
+                      AND nc.data_cadastramento between f_cadastramento1 and f_cadastramento2
+                      AND (f_cod_status = 0 or nc.cod_status = f_cod_status)
+                      AND (f_cod_agente_venda = 0 or nc.cod_agente_venda = f_cod_agente_venda)
+                      AND (f_cod_representante = 0 or nc.cod_representante = f_cod_representante)
+                      AND (f_cod_canal_venda = 0 or nc.cod_canal_venda = f_cod_canal_venda)
+                      AND (f_cod_item = '' or exists(select 1 from negociacao_cliente_item nci where nci.empresa = nc.empresa and nci.estabelecimento = nc.estabelecimento and nci.cod_negociacao_cliente = nc.cod_negociacao_cliente and nci.cod_item = f_cod_item) )</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param1" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param2" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param3" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param4" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param5" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param6" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param6" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param7" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param7" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param8" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param9" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param9" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param10" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param10" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cod_negociacao_cliente" DataSetColumn="cod_negociacao_cliente" />
+              <Mapping SourceColumn="cod_emitente" DataSetColumn="cod_emitente" />
+              <Mapping SourceColumn="nome" DataSetColumn="nome" />
+              <Mapping SourceColumn="estado_sigla" DataSetColumn="estado_sigla" />
+              <Mapping SourceColumn="cidade_nome" DataSetColumn="cidade_nome" />
+              <Mapping SourceColumn="telefone1" DataSetColumn="telefone1" />
+              <Mapping SourceColumn="cod_contato" DataSetColumn="cod_contato" />
+              <Mapping SourceColumn="nome_contato" DataSetColumn="nome_contato" />
+              <Mapping SourceColumn="data_recontato" DataSetColumn="data_recontato" />
+              <Mapping SourceColumn="cod_etapa" DataSetColumn="cod_etapa" />
+              <Mapping SourceColumn="nome_etapa" DataSetColumn="nome_etapa" />
+              <Mapping SourceColumn="cod_agente_venda" DataSetColumn="cod_agente_venda" />
+              <Mapping SourceColumn="nome_usuario" DataSetColumn="nome_usuario" />
+              <Mapping SourceColumn="total_mercadoria" DataSetColumn="total_mercadoria" />
+              <Mapping SourceColumn="data_ultimo_follow_up" DataSetColumn="data_ultimo_follow_up" />
+              <Mapping SourceColumn="cf_cliente" DataSetColumn="cf_cliente" />
+              <Mapping SourceColumn="f_empresa" DataSetColumn="f_empresa" />
+              <Mapping SourceColumn="f_etapa1" DataSetColumn="f_etapa1" />
+              <Mapping SourceColumn="f_etapa2" DataSetColumn="f_etapa2" />
+              <Mapping SourceColumn="f_cadastramento1" DataSetColumn="f_cadastramento1" />
+              <Mapping SourceColumn="f_cadastramento2" DataSetColumn="f_cadastramento2" />
+              <Mapping SourceColumn="f_cod_status" DataSetColumn="f_cod_status" />
+              <Mapping SourceColumn="f_cod_agente_venda" DataSetColumn="f_cod_agente_venda" />
+              <Mapping SourceColumn="f_cod_representante" DataSetColumn="f_cod_representante" />
+              <Mapping SourceColumn="f_cod_canal_venda" DataSetColumn="f_cod_canal_venda" />
+              <Mapping SourceColumn="f_cod_item" DataSetColumn="f_cod_item" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelAtividadeTableAdapter" GeneratorDataComponentClassName="RelAtividadeTableAdapter" Name="RelAtividade" UserDataComponentName="RelAtividadeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>call sp_rel_atividades( ?, ?, ?, ?, ?, ?, ?, ? )</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param1" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param2" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param3" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param4" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param5" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param6" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param6" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param7" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param7" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="Param8" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="estado_sigla" DataSetColumn="estado_sigla" />
+              <Mapping SourceColumn="cidade_nome" DataSetColumn="cidade_nome" />
+              <Mapping SourceColumn="data_recontato" DataSetColumn="data_recontato" />
+              <Mapping SourceColumn="nome_usuario" DataSetColumn="nome_usuario" />
+              <Mapping SourceColumn="empresa" DataSetColumn="empresa" />
+              <Mapping SourceColumn="tipo_info" DataSetColumn="tipo_info" />
+              <Mapping SourceColumn="seq_follow_up" DataSetColumn="seq_follow_up" />
+              <Mapping SourceColumn="data_follow_up" DataSetColumn="data_follow_up" />
+              <Mapping SourceColumn="hora_follow_up" DataSetColumn="hora_follow_up" />
+              <Mapping SourceColumn="cod_negociacao_cliente" DataSetColumn="cod_negociacao_cliente" />
+              <Mapping SourceColumn="nome_representante" DataSetColumn="nome_representante" />
+              <Mapping SourceColumn="cod_representante" DataSetColumn="cod_representante" />
+              <Mapping SourceColumn="nome_cliente" DataSetColumn="nome_cliente" />
+              <Mapping SourceColumn="cod_emitente" DataSetColumn="cod_emitente" />
+              <Mapping SourceColumn="cnpj" DataSetColumn="cnpj" />
+              <Mapping SourceColumn="desc_mercado" DataSetColumn="desc_mercado" />
+              <Mapping SourceColumn="itens" DataSetColumn="itens" />
+              <Mapping SourceColumn="desc_acao" DataSetColumn="desc_acao" />
+              <Mapping SourceColumn="desc_fonte_origem" DataSetColumn="desc_fonte_origem" />
+              <Mapping SourceColumn="desc_funil" DataSetColumn="desc_funil" />
+              <Mapping SourceColumn="desc_etapa" DataSetColumn="desc_etapa" />
+              <Mapping SourceColumn="desc_situacao" DataSetColumn="desc_situacao" />
+              <Mapping SourceColumn="total_pedido" DataSetColumn="total_pedido" />
+              <Mapping SourceColumn="cod_usuario" DataSetColumn="cod_usuario" />
+              <Mapping SourceColumn="desc_follow_up" DataSetColumn="desc_follow_up" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSNegociacao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSNegociacao" msprop:Generator_UserDSName="DSNegociacao">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RelNegociacaoResumido" msprop:Generator_TableClassName="RelNegociacaoResumidoDataTable" msprop:Generator_TableVarName="tableRelNegociacaoResumido" msprop:Generator_TablePropName="RelNegociacaoResumido" msprop:Generator_RowDeletingName="RelNegociacaoResumidoRowDeleting" msprop:Generator_RowChangingName="RelNegociacaoResumidoRowChanging" msprop:Generator_RowEvHandlerName="RelNegociacaoResumidoRowChangeEventHandler" msprop:Generator_RowDeletedName="RelNegociacaoResumidoRowDeleted" msprop:Generator_UserTableName="RelNegociacaoResumido" msprop:Generator_RowChangedName="RelNegociacaoResumidoRowChanged" msprop:Generator_RowEvArgName="RelNegociacaoResumidoRowChangeEvent" msprop:Generator_RowClassName="RelNegociacaoResumidoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_negociacao_cliente" msprop:Generator_ColumnVarNameInTable="columncod_negociacao_cliente" msprop:Generator_ColumnPropNameInRow="cod_negociacao_cliente" msprop:Generator_ColumnPropNameInTable="cod_negociacao_clienteColumn" msprop:Generator_UserColumnName="cod_negociacao_cliente" type="xs:long" />
+              <xs:element name="cod_emitente" msprop:Generator_ColumnVarNameInTable="columncod_emitente" msprop:Generator_ColumnPropNameInRow="cod_emitente" msprop:Generator_ColumnPropNameInTable="cod_emitenteColumn" msprop:Generator_UserColumnName="cod_emitente" type="xs:long" />
+              <xs:element name="nome" msprop:Generator_ColumnVarNameInTable="columnnome" msprop:Generator_ColumnPropNameInRow="nome" msprop:Generator_ColumnPropNameInTable="nomeColumn" msprop:Generator_UserColumnName="nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado_sigla" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnestado_sigla" msprop:Generator_ColumnPropNameInRow="estado_sigla" msprop:Generator_ColumnPropNameInTable="estado_siglaColumn" msprop:Generator_UserColumnName="estado_sigla" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cidade_nome" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncidade_nome" msprop:Generator_ColumnPropNameInRow="cidade_nome" msprop:Generator_ColumnPropNameInTable="cidade_nomeColumn" msprop:Generator_UserColumnName="cidade_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefone1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntelefone1" msprop:Generator_ColumnPropNameInRow="telefone1" msprop:Generator_ColumnPropNameInTable="telefone1Column" msprop:Generator_UserColumnName="telefone1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_contato" msprop:Generator_ColumnVarNameInTable="columncod_contato" msprop:Generator_ColumnPropNameInRow="cod_contato" msprop:Generator_ColumnPropNameInTable="cod_contatoColumn" msprop:Generator_UserColumnName="cod_contato" type="xs:long" />
+              <xs:element name="nome_contato" msprop:Generator_ColumnVarNameInTable="columnnome_contato" msprop:Generator_ColumnPropNameInRow="nome_contato" msprop:Generator_ColumnPropNameInTable="nome_contatoColumn" msprop:Generator_UserColumnName="nome_contato" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_recontato" msprop:Generator_ColumnVarNameInTable="columndata_recontato" msprop:Generator_ColumnPropNameInRow="data_recontato" msprop:Generator_ColumnPropNameInTable="data_recontatoColumn" msprop:Generator_UserColumnName="data_recontato" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cod_etapa" msprop:Generator_ColumnVarNameInTable="columncod_etapa" msprop:Generator_ColumnPropNameInRow="cod_etapa" msprop:Generator_ColumnPropNameInTable="cod_etapaColumn" msprop:Generator_UserColumnName="cod_etapa" type="xs:int" />
+              <xs:element name="nome_etapa" msprop:Generator_ColumnVarNameInTable="columnnome_etapa" msprop:Generator_ColumnPropNameInRow="nome_etapa" msprop:Generator_ColumnPropNameInTable="nome_etapaColumn" msprop:Generator_UserColumnName="nome_etapa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_agente_venda" msprop:Generator_ColumnVarNameInTable="columncod_agente_venda" msprop:Generator_ColumnPropNameInRow="cod_agente_venda" msprop:Generator_ColumnPropNameInTable="cod_agente_vendaColumn" msprop:Generator_UserColumnName="cod_agente_venda" type="xs:int" minOccurs="0" />
+              <xs:element name="nome_usuario" msprop:Generator_ColumnVarNameInTable="columnnome_usuario" msprop:Generator_ColumnPropNameInRow="nome_usuario" msprop:Generator_ColumnPropNameInTable="nome_usuarioColumn" msprop:Generator_UserColumnName="nome_usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_mercadoria" msprop:Generator_ColumnVarNameInTable="columntotal_mercadoria" msprop:Generator_ColumnPropNameInRow="total_mercadoria" msprop:Generator_ColumnPropNameInTable="total_mercadoriaColumn" msprop:Generator_UserColumnName="total_mercadoria" type="xs:decimal" />
+              <xs:element name="data_ultimo_follow_up" msprop:Generator_ColumnVarNameInTable="columndata_data_ultimo_follow_up" msprop:Generator_ColumnPropNameInRow="data_ultimo_follow_up" msprop:Generator_ColumnPropNameInTable="data_data_ultimo_follow_up" msprop:Generator_UserColumnName="data_ultimo_follow_up" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cf_cliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncf_cliente" msprop:Generator_ColumnPropNameInRow="cf_cliente" msprop:Generator_ColumnPropNameInTable="cf_clienteColumn" msprop:Generator_UserColumnName="cf_cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="f_empresa" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_empresa" msprop:Generator_ColumnPropNameInRow="f_empresa" msprop:Generator_ColumnPropNameInTable="f_empresaColumn" msprop:Generator_UserColumnName="f_empresa" type="xs:long" minOccurs="0" />
+              <xs:element name="f_etapa1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_etapa1" msprop:Generator_ColumnPropNameInRow="f_etapa1" msprop:Generator_ColumnPropNameInTable="f_etapa1Column" msprop:Generator_UserColumnName="f_etapa1" type="xs:long" minOccurs="0" />
+              <xs:element name="f_etapa2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_etapa2" msprop:Generator_ColumnPropNameInRow="f_etapa2" msprop:Generator_ColumnPropNameInTable="f_etapa2Column" msprop:Generator_UserColumnName="f_etapa2" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cadastramento1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cadastramento1" msprop:Generator_ColumnPropNameInRow="f_cadastramento1" msprop:Generator_ColumnPropNameInTable="f_cadastramento1Column" msprop:Generator_UserColumnName="f_cadastramento1" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cadastramento2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cadastramento2" msprop:Generator_ColumnPropNameInRow="f_cadastramento2" msprop:Generator_ColumnPropNameInTable="f_cadastramento2Column" msprop:Generator_UserColumnName="f_cadastramento2" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cod_status" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cod_status" msprop:Generator_ColumnPropNameInRow="f_cod_status" msprop:Generator_ColumnPropNameInTable="f_cod_statusColumn" msprop:Generator_UserColumnName="f_cod_status" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cod_agente_venda" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cod_agente_venda" msprop:Generator_ColumnPropNameInRow="f_cod_agente_venda" msprop:Generator_ColumnPropNameInTable="f_cod_agente_vendaColumn" msprop:Generator_UserColumnName="f_cod_agente_venda" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cod_representante" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cod_representante" msprop:Generator_ColumnPropNameInRow="f_cod_representante" msprop:Generator_ColumnPropNameInTable="f_cod_representanteColumn" msprop:Generator_UserColumnName="f_cod_representante" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cod_canal_venda" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cod_canal_venda" msprop:Generator_ColumnPropNameInRow="f_cod_canal_venda" msprop:Generator_ColumnPropNameInTable="f_cod_canal_vendaColumn" msprop:Generator_UserColumnName="f_cod_canal_venda" type="xs:long" minOccurs="0" />
+              <xs:element name="f_cod_item" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnf_cod_item" msprop:Generator_ColumnPropNameInRow="f_cod_item" msprop:Generator_ColumnPropNameInTable="f_cod_itemColumn" msprop:Generator_UserColumnName="f_cod_item" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RelAtividade" msprop:Generator_TableClassName="RelAtividadeDataTable" msprop:Generator_TableVarName="tableRelAtividade" msprop:Generator_RowChangedName="RelAtividadeRowChanged" msprop:Generator_TablePropName="RelAtividade" msprop:Generator_RowDeletingName="RelAtividadeRowDeleting" msprop:Generator_RowChangingName="RelAtividadeRowChanging" msprop:Generator_RowEvHandlerName="RelAtividadeRowChangeEventHandler" msprop:Generator_RowDeletedName="RelAtividadeRowDeleted" msprop:Generator_RowClassName="RelAtividadeRow" msprop:Generator_UserTableName="RelAtividade" msprop:Generator_RowEvArgName="RelAtividadeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="estado_sigla" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnestado_sigla" msprop:Generator_ColumnPropNameInRow="estado_sigla" msprop:Generator_ColumnPropNameInTable="estado_siglaColumn" msprop:Generator_UserColumnName="estado_sigla" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cidade_nome" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncidade_nome" msprop:Generator_ColumnPropNameInRow="cidade_nome" msprop:Generator_ColumnPropNameInTable="cidade_nomeColumn" msprop:Generator_UserColumnName="cidade_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_recontato" msprop:Generator_ColumnVarNameInTable="columndata_recontato" msprop:Generator_ColumnPropNameInRow="data_recontato" msprop:Generator_ColumnPropNameInTable="data_recontatoColumn" msprop:Generator_UserColumnName="data_recontato" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nome_usuario" msprop:Generator_ColumnVarNameInTable="columnnome_usuario" msprop:Generator_ColumnPropNameInRow="nome_usuario" msprop:Generator_ColumnPropNameInTable="nome_usuarioColumn" msprop:Generator_UserColumnName="nome_usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="empresa" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnempresa" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_UserColumnName="empresa" type="xs:int" minOccurs="0" />
+              <xs:element name="tipo_info" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntipo_info" msprop:Generator_ColumnPropNameInRow="tipo_info" msprop:Generator_ColumnPropNameInTable="tipo_infoColumn" msprop:Generator_UserColumnName="tipo_info" type="xs:int" minOccurs="0" />
+              <xs:element name="seq_follow_up" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnseq_follow_up" msprop:Generator_ColumnPropNameInRow="seq_follow_up" msprop:Generator_ColumnPropNameInTable="seq_follow_upColumn" msprop:Generator_UserColumnName="seq_follow_up" type="xs:int" minOccurs="0" />
+              <xs:element name="data_follow_up" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndata_follow_up" msprop:Generator_ColumnPropNameInRow="data_follow_up" msprop:Generator_ColumnPropNameInTable="data_follow_upColumn" msprop:Generator_UserColumnName="data_follow_up" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hora_follow_up" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnhora_follow_up" msprop:Generator_ColumnPropNameInRow="hora_follow_up" msprop:Generator_ColumnPropNameInTable="hora_follow_upColumn" msprop:Generator_UserColumnName="hora_follow_up" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_negociacao_cliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncod_negociacao_cliente" msprop:Generator_ColumnPropNameInRow="cod_negociacao_cliente" msprop:Generator_ColumnPropNameInTable="cod_negociacao_clienteColumn" msprop:Generator_UserColumnName="cod_negociacao_cliente" type="xs:int" minOccurs="0" />
+              <xs:element name="nome_representante" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnome_representante" msprop:Generator_ColumnPropNameInRow="nome_representante" msprop:Generator_ColumnPropNameInTable="nome_representanteColumn" msprop:Generator_UserColumnName="nome_representante" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_representante" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncod_representante" msprop:Generator_ColumnPropNameInRow="cod_representante" msprop:Generator_ColumnPropNameInTable="cod_representanteColumn" msprop:Generator_UserColumnName="cod_representante" type="xs:int" minOccurs="0" />
+              <xs:element name="nome_cliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnome_cliente" msprop:Generator_ColumnPropNameInRow="nome_cliente" msprop:Generator_ColumnPropNameInTable="nome_clienteColumn" msprop:Generator_UserColumnName="nome_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_emitente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncod_emitente" msprop:Generator_ColumnPropNameInRow="cod_emitente" msprop:Generator_ColumnPropNameInTable="cod_emitenteColumn" msprop:Generator_UserColumnName="cod_emitente" type="xs:int" minOccurs="0" />
+              <xs:element name="cnpj" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncnpj" msprop:Generator_ColumnPropNameInRow="cnpj" msprop:Generator_ColumnPropNameInTable="cnpjColumn" msprop:Generator_UserColumnName="cnpj" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_mercado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_mercado" msprop:Generator_ColumnPropNameInRow="desc_mercado" msprop:Generator_ColumnPropNameInTable="desc_mercadoColumn" msprop:Generator_UserColumnName="desc_mercado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000000000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="itens" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnitens" msprop:Generator_ColumnPropNameInRow="itens" msprop:Generator_ColumnPropNameInTable="itensColumn" msprop:Generator_UserColumnName="itens" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000000000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_acao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_acao" msprop:Generator_ColumnPropNameInRow="desc_acao" msprop:Generator_ColumnPropNameInTable="desc_acaoColumn" msprop:Generator_UserColumnName="desc_acao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_fonte_origem" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_fonte_origem" msprop:Generator_ColumnPropNameInRow="desc_fonte_origem" msprop:Generator_ColumnPropNameInTable="desc_fonte_origemColumn" msprop:Generator_UserColumnName="desc_fonte_origem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_funil" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_funil" msprop:Generator_ColumnPropNameInRow="desc_funil" msprop:Generator_ColumnPropNameInTable="desc_funilColumn" msprop:Generator_UserColumnName="desc_funil" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_etapa" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_etapa" msprop:Generator_ColumnPropNameInRow="desc_etapa" msprop:Generator_ColumnPropNameInTable="desc_etapaColumn" msprop:Generator_UserColumnName="desc_etapa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_situacao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_situacao" msprop:Generator_ColumnPropNameInRow="desc_situacao" msprop:Generator_ColumnPropNameInTable="desc_situacaoColumn" msprop:Generator_UserColumnName="desc_situacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_pedido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_pedido" msprop:Generator_ColumnPropNameInRow="total_pedido" msprop:Generator_ColumnPropNameInTable="total_pedidoColumn" msprop:Generator_UserColumnName="total_pedido" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cod_usuario" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncod_usuario" msprop:Generator_ColumnPropNameInRow="cod_usuario" msprop:Generator_ColumnPropNameInTable="cod_usuarioColumn" msprop:Generator_UserColumnName="cod_usuario" type="xs:int" minOccurs="0" />
+              <xs:element name="desc_follow_up" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_follow_up" msprop:Generator_ColumnPropNameInRow="desc_follow_up" msprop:Generator_ColumnPropNameInTable="desc_follow_upColumn" msprop:Generator_UserColumnName="desc_follow_up" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000000000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint3" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RelNegociacaoResumido" />
+      <xs:field xpath="mstns:cod_negociacao_cliente" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
