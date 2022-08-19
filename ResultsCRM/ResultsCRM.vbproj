@@ -181,17 +181,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\AjaxControlToolkit.dll" />
-    <Content Include="bin\AjaxControlToolkit.pdb" />
     <Content Include="bin\AntiXSSLibrary.dll" />
-    <Content Include="bin\AntiXSSLibrary.xml" />
     <Content Include="bin\DataWindow.dll" />
     <Content Include="bin\DataWindowInterop.dll" />
     <Content Include="bin\HtmlSanitizationLibrary.dll" />
-    <Content Include="bin\HtmlSanitizationLibrary.xml" />
-    <Content Include="bin\SanitizerProviders.dll" />
-    <Content Include="bin\Sybase.DataWindow.Db.dll" />
-    <Content Include="bin\Sybase.DataWindow.WebService.Runtime.dll" />
-    <Content Include="bin\Sybase.DataWindow.WebService.RuntimeRemoteLoader.dll" />
     <Content Include="bin\WebDataWindow.dll" />
     <Content Include="Forms\WFClienteDados.aspx" />
     <Content Include="Forms\WFNegociacaoCabecalhoAnfarmag.aspx" />
@@ -493,8 +486,10 @@
     <Content Include="Imagens\clip.png" />
     <Content Include="Imagens\DetalheAcao.png" />
     <Content Include="Imagens\DetalheCadastroPaises.png" />
+    <Content Include="Imagens\DetalheFichaDesenvolvimento.png" />
     <Content Include="Imagens\DetalheFunilVendas.png" />
     <Content Include="Imagens\DetalheItemNegociacao.png" />
+    <Content Include="Imagens\DetalheItemNegociacao2.png" />
     <Content Include="Imagens\DetalheMotivoFechamento.png" />
     <Content Include="Imagens\DetalheNegociacao.png" />
     <Content Include="Imagens\DetalheStatusNegociacao.png" />
@@ -4345,11 +4340,7 @@
     <EmbeddedResource Include="reports\RelVisitacaoComFollowUp.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\atl71.dll" />
     <Content Include="bin\itextsharp.dll" />
-    <Content Include="bin\msvcp71.dll" />
-    <Content Include="bin\msvcr71.dll" />
-    <Content Include="bin\PBDWN110.DLL" />
     <Content Include="bin\PdfMetamorphosis.dll" />
     <Content Include="ContatoSite\Default.aspx" />
     <Content Include="Forms\WFAgenteTecnico.aspx" />
@@ -4482,7 +4473,6 @@
     <Content Include="UserControls\WUCNegociacaoItem_Plastico.ascx" />
     <Content Include="UserControls\WUCNegociacaoOutrasInformacoes.ascx" />
     <Content Include="UserControls\WUCTipoPontoAtendimento.ascx" />
-    <None Include="bin\DW25.lic" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

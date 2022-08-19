@@ -30,7 +30,7 @@
                 <tr>
                     <td colspan="6" align="left">
                         <img alt="Detalhe do Item da Negociação"
-                            src="../Imagens/DetalheItemNegociacao.png" style="width: 420px; height: 18px" /></td>
+                            src="../Imagens/DetalheItemNegociacao2.png" style="width: 420px; height: 18px" /></td>
                 </tr>
                 <tr>
                     <td style="width: 95px; text-align: right;">Seq. Item:</td>
@@ -221,17 +221,23 @@
                             BorderColor="#CCFFFF" BorderStyle="Solid" BorderWidth="1px"
                             ForeColor="#535353" Height="16px">0,00</asp:Label>
                     </td>
-                    <td colspan="2">
+                    <td colspan="2" style="text-align: left">
                         <asp:Button ID="BtnGravar" runat="server" CssClass="Botao" Text="Gravar"
                             Width="60px" />
-                        &nbsp;<asp:Button ID="Button1" runat="server" CssClass="Botao" Text="Voltar" />
+                        <asp:Button ID="Button1" runat="server" CssClass="Botao" Text="Voltar" />
                     </td>
                 </tr>
             </table>
         </td>
-        <td style="vertical-align:top;padding-top:50px;">
-            <table>
-
+        <td >
+            <table class="TextoCadastro_BGBranco"
+                style="border: thin groove #CCCCCC; width: 495px;">
+                <tr><td ></td><td ><asp:Label ID="Labelespacamento" runat="server" Visible="False"></asp:Label></td></tr>
+                <tr>
+                    <td colspan="6" align="left">
+                        <img alt="Detalhes da Ficha de desenvolvimento do Produto"
+                            src="../Imagens/DetalheFichaDesenvolvimento.png" style="width: 420px; height: 18px" /></td>
+                </tr>
                 <tr>
                     <td class="CelulaCampoCadastro" style="text-align: right">
                         <asp:Label ID="Label4" runat="server" Text="Coloração:"></asp:Label></td>
@@ -285,7 +291,7 @@
 
                     <td>
                         <asp:TextBox ID="TxtFdAcaoDesejadaProduto" runat="server" CssClass="CampoCadastro"
-                            Height="40px" TextMode="MultiLine" Width="379px"></asp:TextBox></td>
+                            Height="43px" TextMode="MultiLine" Width="379px"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td style="vertical-align: top; text-align: right;">
@@ -312,8 +318,13 @@
 
                     <td>
                         <asp:TextBox ID="TxtFdDescricaoProduto" runat="server" CssClass="CampoCadastro"
-                            Height="40px" TextMode="MultiLine" Width="379px"></asp:TextBox></td>
+                            Height="43px" TextMode="MultiLine" Width="379px"></asp:TextBox></td>
                 </tr>
+                <tr><td></td><td></td></tr>
+                <tr><td></td><td></td></tr>
+                <tr><td></td><td></td></tr>
+                <tr><td></td><td></td></tr>
+                <tr><td style="text-align: left">&nbsp;</td><td>&nbsp;</td></tr>
             </table>
         </td>
     </tr>

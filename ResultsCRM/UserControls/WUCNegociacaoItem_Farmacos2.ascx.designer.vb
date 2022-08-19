@@ -446,6 +446,15 @@ Partial Public Class WUCNegociacaoItem_Farmacos2
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Labelespacamento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Labelespacamento As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label4 control.
     '''</summary>
     '''<remarks>
