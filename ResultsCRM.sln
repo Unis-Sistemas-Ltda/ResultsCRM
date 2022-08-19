@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ResultsCRM", "ResultsCRM\ResultsCRM.vbproj", "{1E21A9FD-1277-44AD-90B8-CAA08C11B8DB}"
 EndProject
@@ -19,11 +19,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 2
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = ResultsCRM\\ResultsCRM.vbproj
-		SccLocalPath1 = .
-		SccProjectFilePathRelativizedFromConnection1 = ResultsCRM\\
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83DA51D8-689C-462A-8C2D-D5903609AFC9}
 	EndGlobalSection
 EndGlobal

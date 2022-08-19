@@ -51,6 +51,14 @@
     Private _Aux10Label As String
     Private _Aux11Label As String
     Private _Aux12Label As String
+    Private _FdNomeProduto As String
+    Private _FdAcaoDesejadaFuncao As String
+    Private _FdColoracao As String
+    Private _FdCorReferencia As String
+    Private _FdOdor As String
+    Private _FdOdorDirecionamento As String
+    Private _FdOdorReferencia As String
+    Private _FdDescricaoProduto As String
     Private objAcessoDados As UCLAcessoDados
     Public Property PercAcrescimoUnitario As String
     Public Property PercDescontoUnitario1 As String
@@ -530,6 +538,70 @@
         End Set
     End Property
 
+     Public Property FdAcaoDesejadaFuncao() As String
+        Get
+            Return _FdAcaoDesejadaFuncao
+        End Get
+        Set(ByVal value As String)
+            _FdAcaoDesejadaFuncao = value
+        End Set
+    End Property
+    Public Property FdColoracao() As String
+        Get
+            Return _FdColoracao
+        End Get
+        Set(ByVal value As String)
+            _FdColoracao = value
+        End Set
+    End Property
+    Public Property FdCorReferencia() As String
+        Get
+            Return _FdCorReferencia
+        End Get
+        Set(ByVal value As String)
+            _FdCorReferencia = value
+        End Set
+    End Property
+    Public Property FdDescricaoProduto() As String
+        Get
+            Return _FdDescricaoProduto
+        End Get
+        Set(ByVal value As String)
+            _FdDescricaoProduto = value
+        End Set
+    End Property
+    Public Property FdNomeProduto() As String
+        Get
+            Return _FdNomeProduto
+        End Get
+        Set(ByVal value As String)
+            _FdNomeProduto = value
+        End Set
+    End Property
+    Public Property FdOdor() As String
+        Get
+            Return _FdOdor
+        End Get
+        Set(ByVal value As String)
+            _FdOdor = value
+        End Set
+    End Property
+    Public Property FdOdorDirecionamento() As String
+        Get
+            Return _FdOdorDirecionamento
+        End Get
+        Set(ByVal value As String)
+            _FdOdorDirecionamento = value
+        End Set
+    End Property
+    Public Property FdOdorReferencia() As String
+        Get
+            Return _FdOdorReferencia
+        End Get
+        Set(ByVal value As String)
+            _FdOdorReferencia = value
+        End Set
+    End Property
 
     Public Sub New(ByVal StrConn As String)
         objAcessoDados = New UCLAcessoDados(StrConn)
@@ -575,6 +647,14 @@
             strSql += "        ni.aux10, "
             strSql += "        ni.aux11, "
             strSql += "        ni.aux12, "
+            strSql += "        ni.fd_nome_produto, "
+            strSql += "        ni.fd_acao_desejada_funcao, "
+            strSql += "        ni.fd_coloracao, "
+            strSql += "        ni.fd_cor_referencia, "
+            strSql += "        ni.fd_odor, "
+            strSql += "        ni.fd_odor_direcionamento, "
+            strSql += "        ni.fd_odor_referencia, "
+            strSql += "        ni.fd_descricao_produto, "
             strSql += "        par.aux_ng_item1, "
             strSql += "        par.aux_ng_item2, "
             strSql += "        par.aux_ng_item3, "
@@ -649,6 +729,14 @@
                 Aux10 = dt.Rows.Item(0).Item("aux10").ToString
                 Aux11 = dt.Rows.Item(0).Item("aux11").ToString
                 Aux12 = dt.Rows.Item(0).Item("aux12").ToString
+                FdAcaoDesejadaFuncao = dt.Rows.Item(0).Item("fd_acao_desejada_funcao").ToString
+                FdColoracao = dt.Rows.Item(0).Item("fd_coloracao").ToString
+                FdCorReferencia = dt.Rows.Item(0).Item("fd_cor_referencia").ToString
+                FdDescricaoProduto = dt.Rows.Item(0).Item("fd_descricao_produto").ToString
+                FdNomeProduto = dt.Rows.Item(0).Item("fd_nome_produto").ToString
+                FdOdor = dt.Rows.Item(0).Item("fd_odor").ToString
+                FdOdorDirecionamento = dt.Rows.Item(0).Item("fd_odor_direcionamento").ToString
+                FdOdorReferencia = dt.Rows.Item(0).Item("fd_odor_referencia").ToString
                 PercDescontoUnitario1 = dt.Rows.Item(0).Item("perc_desconto_unitario1").ToString
                 PercDescontoUnitario2 = dt.Rows.Item(0).Item("perc_desconto_unitario2").ToString
                 PercDescontoUnitario3 = dt.Rows.Item(0).Item("perc_desconto_unitario3").ToString
@@ -801,7 +889,15 @@
             strSql += "        aux9 = '" + Aux9 + "', "
             strSql += "        aux10 = '" + Aux10 + "',"
             strSql += "        aux11 = '" + Aux11 + "', "
-            strSql += "        aux12 = '" + Aux12 + "'"
+            strSql += "        aux12 = '" + Aux12 + "',"
+            strSql += "        fd_acao_desejada_funcao = '" + FdAcaoDesejadaFuncao + "', "
+            strSql += "        fd_coloracao = " + FdColoracao + ", "
+            strSql += "        fd_cor_referencia = '" + FdCorReferencia + "', "
+            strSql += "        fd_descricao_produto = '" + FdDescricaoProduto + "', "
+            strSql += "        fd_nome_produto = '" + FdNomeProduto + "', "
+            strSql += "        fd_odor = '" + FdOdor + "', "
+            strSql += "        fd_odor_direcionamento = '" + FdOdorDirecionamento + "', "
+            strSql += "        fd_odor_referencia = '" + FdOdorReferencia + "' "
             strSql += "  where empresa = " + Empresa
             strSql += "    and estabelecimento = " + Estabelecimento
             strSql += "    and cod_negociacao_cliente = " + CodNegociacao
@@ -871,6 +967,14 @@
             strSql += "    aux10, "
             strSql += "    aux11, "
             strSql += "    aux12, "
+            strSql += "    fd_nome_produto, "
+            strSql += "    fd_acao_desejada_funcao, "
+            strSql += "    fd_coloracao, "
+            strSql += "    fd_cor_referencia, "
+            strSql += "    fd_odor, "
+            strSql += "    fd_odor_direcionamento, "
+            strSql += "    fd_odor_referencia, "
+            strSql += "    fd_descricao_produto, "
             strSql += "    altura, "
             strSql += "    largura, "
             strSql += "    espessura, "
@@ -937,6 +1041,14 @@
             strSql += "'" + Aux10 + "', "
             strSql += "'" + Aux11 + "', "
             strSql += "'" + Aux12 + "', "
+            strSql += "'" + FdNomeProduto + "', "
+            strSql += "'" + FdAcaoDesejadaFuncao + "', "
+            strSql += FdColoracao + " , "
+            strSql += "'" + FdCorReferencia + "', "
+            strSql += FdOdor + ", "
+            strSql += FdOdorDirecionamento + ", "
+            strSql += "'" + FdOdorReferencia + "', "
+            strSql += "'" + FdDescricaoProduto + "', "
             strSql += ValorNumericoBanco(Altura, 2) + ", "
             strSql += ValorNumericoBanco(Largura, 2) + ", "
             strSql += ValorNumericoBanco(Espessura, 2) + ", "

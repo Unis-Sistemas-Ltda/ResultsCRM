@@ -280,7 +280,20 @@
         objNegociacaoItem.PercDescontoUnitario5 = TxtDescCom5.Text
         objNegociacaoItem.Recurso = LblRecurso.Text
         objNegociacaoItem.PrecoUnitarioTabela = TxtPrecoUnitarioTabela.Text
-
+        objNegociacaoItem.FdAcaoDesejadaFuncao = TxtFdAcaoDesejadaProduto.Text
+        If DdlFdColoracao.SelectedValue > 0 Then
+            objNegociacaoItem.FdColoracao = DdlFdColoracao.SelectedValue
+        End If
+        If DdlFdOdor.SelectedValue > 0 Then
+            objNegociacaoItem.FdOdor = DdlFdOdor.SelectedValue
+        End If
+        If DdlFdOdorDirecionamento.SelectedValue > 0 Then
+            objNegociacaoItem.FdOdorDirecionamento = DdlFdOdorDirecionamento.SelectedValue
+        End If
+        objNegociacaoItem.FdCorReferencia = TxtFdCorReferencia.Text
+        objNegociacaoItem.FdDescricaoProduto = TxtFdDescricaoProduto.Text
+        objNegociacaoItem.FdNomeProduto = TxtFdNomeProduto.Text
+        objNegociacaoItem.FdOdorReferencia = TxtFdOdorReferencia.Text
         Return objNegociacaoItem
     End Function
 
@@ -391,6 +404,14 @@
         objItem.Buscar()
         CodUD = objItem.CodUd
         LblDescricaoUD.Text = objItem.GetDescricaoUnidadeDespacho(CodUD)
+        DdlFdColoracao.SelectedValue = objNegociacaoItem.FdColoracao
+        DdlFdOdor.SelectedValue = objNegociacaoItem.FdOdor
+        DdlFdOdorDirecionamento.SelectedValue = objNegociacaoItem.FdOdorDirecionamento
+        TxtFdAcaoDesejadaProduto.Text = objNegociacaoItem.FdAcaoDesejadaFuncao
+        TxtFdCorReferencia.Text = objNegociacaoItem.FdCorReferencia
+        TxtFdDescricaoProduto.Text = objNegociacaoItem.FdDescricaoProduto
+        TxtFdNomeProduto.Text = objNegociacaoItem.FdNomeProduto
+        TxtFdOdorReferencia.Text = objNegociacaoItem.FdOdorReferencia
 
         If Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Representante Then
             LblRecurso.Visible = False
