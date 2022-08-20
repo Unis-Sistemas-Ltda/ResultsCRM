@@ -21,7 +21,7 @@
             <tr>
                 <td colspan="3">
                     <div style="width: 30mm; position: relative; top: 0px; left: 0px">                        
-                        <asp:Image ID="LogoEmpresa" runat="server" Height="50" Width="50"/>
+                        <asp:Image ID="LogoEmpresa" runat="server" Height="100" Width="115"/>
                     </div>
                     <div style="position: absolute; top: 17px; left: 35mm; width: 470px;">
                         <span style="font-size: 12pt">
