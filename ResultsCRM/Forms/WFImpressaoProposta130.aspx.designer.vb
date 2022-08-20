@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WFImpressaoProposta130
-    
+
     '''<summary>
     '''form1 control.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-    
+
+    '''<summary>
+    '''LogoEmpresa control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LogoEmpresa As Global.System.Web.UI.WebControls.Image
+
     '''<summary>
     '''LblRazaoSocialEmpresa control.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblRazaoSocialEmpresa As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCNPJEmpresa control.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCNPJEmpresa As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblEnderecoEmpresa control.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblEnderecoEmpresa As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCidadeEmpresa control.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCidadeEmpresa As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTelefoneEmpresa control.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTelefoneEmpresa As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblFpVd control.
     '''</summary>
@@ -75,7 +84,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFpVd As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCodNegociacaoCliente control.
     '''</summary>
@@ -84,7 +93,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCodNegociacaoCliente As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDataNegociacao control.
     '''</summary>
@@ -93,7 +102,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDataNegociacao As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblValidade control.
     '''</summary>
@@ -102,7 +111,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblValidade As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblRazaoSocial control.
     '''</summary>
@@ -111,7 +120,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblRazaoSocial As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCNPJ control.
     '''</summary>
@@ -120,7 +129,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCNPJ As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblEndereco control.
     '''</summary>
@@ -129,7 +138,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblEndereco As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCidade control.
     '''</summary>
@@ -138,7 +147,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCidade As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblInscricaoEstadual control.
     '''</summary>
@@ -147,7 +156,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblInscricaoEstadual As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTelefone control.
     '''</summary>
@@ -156,7 +165,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTelefone As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblFAX control.
     '''</summary>
@@ -165,7 +174,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFAX As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblContato control.
     '''</summary>
@@ -174,7 +183,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblContato As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblContatoEmail control.
     '''</summary>
@@ -183,7 +192,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblContatoEmail As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LlbRepresentante control.
     '''</summary>
@@ -192,7 +201,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LlbRepresentante As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTransportador control.
     '''</summary>
@@ -201,7 +210,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTransportador As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCabecalho control.
     '''</summary>
@@ -210,7 +219,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCabecalho As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -219,7 +228,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-    
+
     '''<summary>
     '''SqlDataSource2 control.
     '''</summary>
@@ -228,7 +237,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SqlDataSource2 As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''Label4 control.
     '''</summary>
@@ -237,7 +246,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTotalMateriais control.
     '''</summary>
@@ -246,7 +255,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTotalMateriais As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''GridView2 control.
     '''</summary>
@@ -255,7 +264,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView2 As Global.System.Web.UI.WebControls.GridView
-    
+
     '''<summary>
     '''SqlDataSourceDespesas control.
     '''</summary>
@@ -264,7 +273,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SqlDataSourceDespesas As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -273,7 +282,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTotalDespesas control.
     '''</summary>
@@ -282,7 +291,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTotalDespesas As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label5 control.
     '''</summary>
@@ -291,7 +300,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTotal control.
     '''</summary>
@@ -300,7 +309,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTotal As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''GridView3 control.
     '''</summary>
@@ -309,7 +318,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView3 As Global.System.Web.UI.WebControls.GridView
-    
+
     '''<summary>
     '''SqlDataSourceTitulos control.
     '''</summary>
@@ -318,7 +327,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents SqlDataSourceTitulos As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''LblTxtFormulacoes control.
     '''</summary>
@@ -327,7 +336,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtFormulacoes As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDetalhesFormulacoes control.
     '''</summary>
@@ -336,7 +345,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDetalhesFormulacoes As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtEmbalagens control.
     '''</summary>
@@ -345,7 +354,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtEmbalagens As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDetalhesEmbalagem control.
     '''</summary>
@@ -354,7 +363,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDetalhesEmbalagem As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtRotulos control.
     '''</summary>
@@ -363,7 +372,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtRotulos As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDetalhesRotulos control.
     '''</summary>
@@ -372,7 +381,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDetalhesRotulos As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtFrete control.
     '''</summary>
@@ -381,7 +390,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtFrete As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lblFrete control.
     '''</summary>
@@ -390,7 +399,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblFrete As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtPrazoEntrega control.
     '''</summary>
@@ -399,7 +408,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtPrazoEntrega As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDetalhesPrazoEntrega control.
     '''</summary>
@@ -408,7 +417,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDetalhesPrazoEntrega As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtDetalhesPagamento control.
     '''</summary>
@@ -417,7 +426,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtDetalhesPagamento As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDetalhesPagamento control.
     '''</summary>
@@ -426,7 +435,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDetalhesPagamento As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblFormaPagamento control.
     '''</summary>
@@ -435,7 +444,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFormaPagamento As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCondicaoPagamento control.
     '''</summary>
@@ -444,7 +453,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCondicaoPagamento As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTotalIPI control.
     '''</summary>
@@ -453,7 +462,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTotalIPI As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTotalST control.
     '''</summary>
@@ -462,7 +471,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTotalST As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''lblTxtObervacao control.
     '''</summary>
@@ -471,7 +480,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblTxtObervacao As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblObservacao control.
     '''</summary>
@@ -480,7 +489,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblObservacao As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblRodape control.
     '''</summary>
@@ -489,7 +498,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblRodape As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label3 control.
     '''</summary>
@@ -498,7 +507,7 @@ Partial Public Class WFImpressaoProposta130
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblNomeAgenteVendas control.
     '''</summary>

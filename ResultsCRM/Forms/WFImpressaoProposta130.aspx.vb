@@ -19,6 +19,12 @@
         End Get
     End Property
 
+    Public ReadOnly Property Src()
+        Get
+            Return Session("logo_cliente")
+        End Get
+    End Property
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         SqlDataSource2.Select(DataSourceSelectArguments.Empty)
         SqlDataSource2.DataBind()
@@ -42,6 +48,7 @@
         Dim ValorTotal As Double = 0
         Dim TotalDespesas As Double = 0
         Dim TipoFrete As String = ""
+
 
         objNegociacao.Empresa = Empresa
         objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
@@ -79,6 +86,7 @@
             LblTransportador.Text = dt.Rows.Item(0).Item("nome_transportadora").ToString + "(" + dt.Rows.Item(0).Item("cod_transportadora").ToString + ")"
             TotalDespesas = CDbl(dt.Rows.Item(0).Item("total_despesas"))
             LblTotalDespesas.Text = TotalDespesas.ToString("N2")
+            LogoEmpresa.ImageUrl = Src
 
             If String.IsNullOrEmpty(dt.Rows.Item(0).Item("observacao").ToString) Then
                 lblTxtObervacao.Visible = False

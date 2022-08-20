@@ -42,13 +42,13 @@ Partial Public Class WFImpressaoPropostaPDF
 
     Private ReadOnly Property Empresa() As String
         Get
-            Return Request.QueryString.Item("eid")
+            Return Session("GlEmpresa")
         End Get
     End Property
 
     Private ReadOnly Property Estabelecimento() As String
         Get
-            Return Request.QueryString.Item("sid")
+            Return Session("SEstabelecimentoNegociacao")
         End Get
     End Property
 
@@ -78,6 +78,12 @@ Partial Public Class WFImpressaoPropostaPDF
                 Case 1, 45, 93, 130, 175, 407
                     Return "WFImpressaoProposta" + CodClienteUnis + ".aspx?eid=" + Empresa + "&sid=" + Estabelecimento + "&nid=" + CodNegociacao + "&li=" + ImagemLogo
                 Case Else
+                    If Empresa = 1 And Estabelecimento = 3 Then
+                        Session("logo_cliente") = "../Imagens/logo_proposta_2.jpg"
+                    Else
+                        Session("logo_cliente") = "../Imagens/logo_proposta.jpg"
+                    End If
+
                     Return "WFImpressaoProposta130.aspx?eid=" + Empresa + "&sid=" + Estabelecimento + "&nid=" + CodNegociacao + "&li=" + ImagemLogo
             End Select
         End Get

@@ -20,9 +20,8 @@
         <table style="width: 800px; font-family: Arial; font-size: 9pt; border-collapse: collapse;">
             <tr>
                 <td colspan="3">
-                    <div style="width: 30mm; position: relative; top: 0px; left: 0px">
-                        <img alt="Proposta Comercial" src="../Imagens/logo_proposta.jpg"
-                            style="width: 31mm;" />
+                    <div style="width: 30mm; position: relative; top: 0px; left: 0px">                        
+                        <asp:Image ID="LogoEmpresa" runat="server" Height="50" Width="50"/>
                     </div>
                     <div style="position: absolute; top: 17px; left: 35mm; width: 470px;">
                         <span style="font-size: 12pt">

@@ -500,6 +500,7 @@
     <Content Include="Imagens\ItensNegociacao.png" />
     <Content Include="Imagens\listelo.png" />
     <Content Include="Imagens\ListeloInferior.png" />
+    <Content Include="Imagens\logo_proposta_2.jpg" />
     <Content Include="Imagens\MnCadastros.png" />
     <Content Include="Imagens\MnConsultas.png" />
     <Content Include="Imagens\MnMovimentos.png" />
