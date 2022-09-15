@@ -70,6 +70,16 @@
         End Set
     End Property
 
+    Private _CodFunil As Integer
+    Public Property CodFunil() As Integer
+        Get
+            Return _CodFunil
+        End Get
+        Set(ByVal value As Integer)
+            _CodFunil = value
+        End Set
+    End Property
+
     Public Sub New()
         objAcessoDados = New UCLAcessoDados(StrConexao)
     End Sub
@@ -78,7 +88,7 @@
         Dim StrSql As String = ""
         Dim dt As DataTable
 
-        StrSql += " select a.cod_agente_venda, u.nome_usuario nome, a.cod_tp_agente_venda, a.email, a.senha "
+        StrSql += " select a.cod_agente_venda, u.nome_usuario nome, a.cod_tp_agente_venda, a.email, a.senha, a.cod_funil "
         StrSql += "   from agente_venda a inner join sysusuario u on a.cod_agente_venda = u.cod_usuario"
         StrSql += "  where cod_agente_venda = " + Codigo
         dt = objAcessoDados.BuscarDados(StrSql)
@@ -88,6 +98,7 @@
             Tipo = dt.Rows.Item(0).Item("cod_tp_agente_venda").ToString
             Email = dt.Rows.Item(0).Item("email").ToString
             Senha = dt.Rows.Item(0).Item("senha").ToString
+            CodFunil = dt.Rows.Item(0).Item("cod_funil")
             Return True
         Else
             Return False
@@ -152,8 +163,8 @@
         Dim strSql As String = ""
 
         Try
-            strSql += " insert into agente_venda (cod_agente_venda, cod_tp_agente_venda, alocacao_cenario, email, senha)"
-            strSql += " values ( " + Codigo + ", " + Tipo + ", 3, '" + Email + "','" + Senha + "')"
+            strSql += " insert into agente_venda (cod_agente_venda, cod_tp_agente_venda, alocacao_cenario, email, senha, cod_funil)"
+            strSql += " values ( " + Codigo + ", " + Tipo + ", 3, '" + Email + "','" + Senha + "'," + CodFunil.ToString + ")"
             objAcessoDados.ExecutarSql(strSql)
         Catch ex As Exception
             Throw ex
@@ -165,8 +176,10 @@
 
         Try
             strSql += " update agente_venda set cod_tp_agente_venda = " + Tipo + ","
-            strSql += "                         email = '" + Email + "',"
-            strSql += "                         senha = '" + Senha + "'"
+            'Descomentar o trecho abaixo quando acrescentar os campos email e senha na tela de agente de venda 
+            'strSql += "                         email = '" + Email + "',"
+            'strSql += "                         senha = '" + Senha + "',"
+            strSql += "                         cod_funil = " + CodFunil.ToString
             strSql += "  where cod_agente_venda = " + Codigo
             objAcessoDados.ExecutarSql(strSql)
         Catch ex As Exception

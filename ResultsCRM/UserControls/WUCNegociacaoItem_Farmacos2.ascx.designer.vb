@@ -455,6 +455,42 @@ Partial Public Class WUCNegociacaoItem_Farmacos2
     Protected WithEvents Labelespacamento As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Label19 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtFdNomeProduto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtFdNomeProduto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label18 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtFdAcaoDesejadaProduto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtFdAcaoDesejadaProduto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Label4 control.
     '''</summary>
     '''<remarks>
@@ -471,6 +507,24 @@ Partial Public Class WUCNegociacaoItem_Farmacos2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlFdColoracao As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Label20 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtFdCorReferencia control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtFdCorReferencia As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Label6 control.
@@ -509,60 +563,6 @@ Partial Public Class WUCNegociacaoItem_Farmacos2
     Protected WithEvents DdlFdOdorDirecionamento As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Label19 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label19 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TxtFdNomeProduto control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TxtFdNomeProduto As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Label18 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label18 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TxtFdAcaoDesejadaProduto control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TxtFdAcaoDesejadaProduto As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Label20 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''TxtFdCorReferencia control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TxtFdCorReferencia As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Label21 control.
     '''</summary>
     '''<remarks>
@@ -597,6 +597,123 @@ Partial Public Class WUCNegociacaoItem_Farmacos2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtFdDescricaoProduto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtFdProdutoReferencia control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtFdProdutoReferencia As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label12 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtFdVolumeEmbalagem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtFdVolumeEmbalagem As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label14 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlFdCorEmbalagem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlFdCorEmbalagem As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Label16 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label16 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label23 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label23 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlFdMpEmbalagem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlFdMpEmbalagem As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Label24 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label24 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlFdTipoEmbalagem control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlFdTipoEmbalagem As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Label25 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label25 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlFdQtdProduzir control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlFdQtdProduzir As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''ModalPopupExtender2 control.

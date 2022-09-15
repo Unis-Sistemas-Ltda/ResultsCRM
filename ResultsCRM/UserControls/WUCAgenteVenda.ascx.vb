@@ -26,6 +26,7 @@
         Dim alterouCodUsuario As Long
         Dim CodUsuarioPesquisado As String = Session("SCodUsuarioPesquisado")
 
+
         If Not String.IsNullOrEmpty(Session("SAlterouCodUsuario")) Then
             alterouCodUsuario = Session("SAlterouCodUsuario")
         Else
@@ -43,6 +44,7 @@
 
         If Not IsPostBack Then
             Call CarregaTipos()
+            Call CarregaDropDownFunil()
             If Acao = "ALTERAR" Then
                 Call CarregaFormulario()
             End If
@@ -75,6 +77,7 @@
         objAgente.Buscar()
 
         DdlTipoAgente.SelectedValue = objAgente.Tipo
+        ddlFunil.SelectedValue = objAgente.CodFunil
     End Sub
 
     Private Sub MostraNomeUsuario()
@@ -92,10 +95,14 @@
             If IsDigitacaoOk() Then
                 If Acao = "ALTERAR" Then
                     objAgente.Codigo = TxtCodUsuario.Text
+                    objAgente.Tipo = DdlTipoAgente.SelectedValue
+                    objAgente.CodFunil = ddlFunil.SelectedValue
                     objAgente = CarregaObjeto(objAgente)
                     objAgente.Alterar()
                 ElseIf Acao = "INCLUIR" Then
                     objAgente.Codigo = TxtCodUsuario.Text
+                    objAgente.Tipo = DdlTipoAgente.SelectedValue
+                    objAgente.CodFunil = ddlFunil.SelectedValue
                     objAgente = CarregaObjeto(objAgente)
                     objAgente.Incluir()
                 End If
@@ -136,6 +143,12 @@
     Private Sub CarregaTipos()
         Dim objTipoAgente As New UCLTipoAgenteVenda
         objTipoAgente.FillDropDown(DdlTipoAgente, False, "")
+
+
+    End Sub
+    Private Sub CarregaDropDownFunil()
+        Dim objFunil As New UCLFunilVenda
+        objFunil.FillDropDownCompleta(ddlFunil, True, "(Todos)", Session("GlEmpresa"))
     End Sub
 
     Protected Sub BtnVoltar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnVoltar.Click

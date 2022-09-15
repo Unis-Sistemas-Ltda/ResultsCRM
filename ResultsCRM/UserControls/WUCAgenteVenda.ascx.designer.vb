@@ -77,6 +77,24 @@ Partial Public Class WUCAgenteVenda
     Protected WithEvents CbxFunis As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
+    '''UpdatePanel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''ddlFunil control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlFunil As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''BtnGravar control.
     '''</summary>
     '''<remarks>

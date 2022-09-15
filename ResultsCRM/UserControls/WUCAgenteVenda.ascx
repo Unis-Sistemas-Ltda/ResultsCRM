@@ -37,8 +37,19 @@
         </td>
     </tr>
     <tr>
-        <td colspan="2">
-            &nbsp;</td>
+        <td style="text-align: right; vertical-align: top; line-height: 21px">
+            Funil de Vendas Padrão:
+        </td>
+        <td>
+             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList ID="ddlFunil" runat="server" AutoPostBack="True" 
+                                ClientIDMode="Static" CssClass="CampoCadastro"  Width="300px">
+                            </asp:DropDownList>
+                            <br />                           
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+            </td>
     </tr>
     <tr>
         <td colspan="2" style="text-align: center">

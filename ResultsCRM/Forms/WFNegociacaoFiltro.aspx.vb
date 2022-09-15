@@ -49,6 +49,11 @@
 
                 objStatus.FillDropDown(DdlStatusNegociacao, True, "(Todos)")
 
+                objAgente.Codigo = Session("GlCodUsuario")
+                objAgente.Buscar()
+
+                Session("S_PNG_ddlFunil") = objAgente.CodFunil
+
                 Call AplicaFiltro(False)
                 Call AplicaFiltro(True)
             End If
@@ -101,7 +106,7 @@
                     End If
                     ddlFunil.SelectedValue = Session("S_PNG_ddlFunil")
                     DdlEtapa.SelectedValue = Session("S_PNG_DdlEtapa")
-                    DdlTop.SelectedValue = 50
+                    DdlTop.SelectedValue = 200
                 Next
                 Call CarregaFrame(WUCFrameNegociacao, MnuTipoVisualizacao.SelectedValue + "?t=" + Now().ToString("yyyyMMddHHmmssfff"))
             End If

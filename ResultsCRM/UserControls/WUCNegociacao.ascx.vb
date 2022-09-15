@@ -22,44 +22,17 @@
         End Set
     End Property
 
-    Private Sub CarregaEquipamentoCliente(ByVal numeroSerieSelecionado As String)
-        Try
-            Dim objEquipamentoCliente As New UCLEquipamentoCliente(StrConexaoUsuario(Session("GlUsuario")))
-            Dim objNegociacao As New UCLNegociacao(StrConexaoUsuario(Session("GlUsuario")))
-            Dim objChamado As New UCLAtendimento(StrConexaoUsuario(Session("GlUsuario")))
+    Private _EstabelecimentoNegociacao As Integer
+    Public Property EstabelecimentoNegociacao() As Integer
+        Get
+            Return _EstabelecimentoNegociacao
+        End Get
+        Set(ByVal value As Integer)
+            _EstabelecimentoNegociacao = value
+        End Set
+    End Property
 
-            objNegociacao.Empresa = Session("GlEmpresa")
-            objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
-            objNegociacao.CodNegociacao = CodNegociacao
-            objNegociacao.Buscar()
 
-            If Not String.IsNullOrEmpty(objNegociacao.CodChamado) Then
-                objChamado.Empresa = objNegociacao.Empresa
-                objChamado.CodChamado = objNegociacao.CodChamado
-                objChamado.Buscar()
-                objEquipamentoCliente.Empresa = objChamado.Empresa
-                If Not String.IsNullOrEmpty(objChamado.CodEmitenteAtendimento) And Not String.IsNullOrEmpty(objChamado.NumeroPontoAtendimento) Then
-                    objEquipamentoCliente.CodCliente = objChamado.CodEmitenteAtendimento
-                    objEquipamentoCliente.NumeroPontoAtendimento = objChamado.NumeroPontoAtendimento
-                    Session("SPAEquipamento") = objChamado.NumeroPontoAtendimento
-                    Session("SCliEquipamento") = objChamado.CodEmitenteAtendimento
-                Else
-                    objEquipamentoCliente.CodCliente = objChamado.CodEmitente
-                    objEquipamentoCliente.NumeroPontoAtendimento = ""
-                    Session("SPAEquipamento") = ""
-                    Session("SCliEquipamento") = objChamado.CodEmitente
-                End If
-
-                If Session("GlTipoFaturamento").ToString = "G" Then
-                    objEquipamentoCliente.FillDropDown(DdlEquipamento, True, "", "-1", UCLEquipamentoCliente.TipoDescricaoEquipamento.DescricaoItem, numeroSerieSelecionado)
-                Else
-                    objEquipamentoCliente.FillDropDown(DdlEquipamento, True, "", "-1", UCLEquipamentoCliente.TipoDescricaoEquipamento.Observacao, numeroSerieSelecionado)
-                End If
-            End If
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
@@ -205,7 +178,44 @@
         End Try
     End Sub
 
+    Private Sub CarregaEquipamentoCliente(ByVal numeroSerieSelecionado As String)
+        Try
+            Dim objEquipamentoCliente As New UCLEquipamentoCliente(StrConexaoUsuario(Session("GlUsuario")))
+            Dim objNegociacao As New UCLNegociacao(StrConexaoUsuario(Session("GlUsuario")))
+            Dim objChamado As New UCLAtendimento(StrConexaoUsuario(Session("GlUsuario")))
 
+            objNegociacao.Empresa = Session("GlEmpresa")
+            objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
+            objNegociacao.CodNegociacao = CodNegociacao
+            objNegociacao.Buscar()
+
+            If Not String.IsNullOrEmpty(objNegociacao.CodChamado) Then
+                objChamado.Empresa = objNegociacao.Empresa
+                objChamado.CodChamado = objNegociacao.CodChamado
+                objChamado.Buscar()
+                objEquipamentoCliente.Empresa = objChamado.Empresa
+                If Not String.IsNullOrEmpty(objChamado.CodEmitenteAtendimento) And Not String.IsNullOrEmpty(objChamado.NumeroPontoAtendimento) Then
+                    objEquipamentoCliente.CodCliente = objChamado.CodEmitenteAtendimento
+                    objEquipamentoCliente.NumeroPontoAtendimento = objChamado.NumeroPontoAtendimento
+                    Session("SPAEquipamento") = objChamado.NumeroPontoAtendimento
+                    Session("SCliEquipamento") = objChamado.CodEmitenteAtendimento
+                Else
+                    objEquipamentoCliente.CodCliente = objChamado.CodEmitente
+                    objEquipamentoCliente.NumeroPontoAtendimento = ""
+                    Session("SPAEquipamento") = ""
+                    Session("SCliEquipamento") = objChamado.CodEmitente
+                End If
+
+                If Session("GlTipoFaturamento").ToString = "G" Then
+                    objEquipamentoCliente.FillDropDown(DdlEquipamento, True, "", "-1", UCLEquipamentoCliente.TipoDescricaoEquipamento.DescricaoItem, numeroSerieSelecionado)
+                Else
+                    objEquipamentoCliente.FillDropDown(DdlEquipamento, True, "", "-1", UCLEquipamentoCliente.TipoDescricaoEquipamento.Observacao, numeroSerieSelecionado)
+                End If
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
     Protected Sub MostraNrPedido(ByVal pSetaEtapa As Boolean)
         Try

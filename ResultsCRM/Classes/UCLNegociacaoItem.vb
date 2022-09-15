@@ -538,7 +538,16 @@
         End Set
     End Property
 
-     Public Property FdAcaoDesejadaFuncao() As String
+    Public Property FdNomeProduto() As String
+        Get
+            Return _FdNomeProduto
+        End Get
+        Set(ByVal value As String)
+            _FdNomeProduto = value
+        End Set
+    End Property
+
+    Public Property FdAcaoDesejadaFuncao() As String
         Get
             Return _FdAcaoDesejadaFuncao
         End Get
@@ -562,22 +571,7 @@
             _FdCorReferencia = value
         End Set
     End Property
-    Public Property FdDescricaoProduto() As String
-        Get
-            Return _FdDescricaoProduto
-        End Get
-        Set(ByVal value As String)
-            _FdDescricaoProduto = value
-        End Set
-    End Property
-    Public Property FdNomeProduto() As String
-        Get
-            Return _FdNomeProduto
-        End Get
-        Set(ByVal value As String)
-            _FdNomeProduto = value
-        End Set
-    End Property
+
     Public Property FdOdor() As String
         Get
             Return _FdOdor
@@ -602,6 +596,115 @@
             _FdOdorReferencia = value
         End Set
     End Property
+    Public Property FdDescricaoProduto() As String
+        Get
+            Return _FdDescricaoProduto
+        End Get
+        Set(ByVal value As String)
+            _FdDescricaoProduto = value
+        End Set
+    End Property
+
+    Private _FdProdutoReferencia As String
+    Public Property FdProdutoReferencia() As String
+        Get
+            Return _FdProdutoReferencia
+        End Get
+        Set(ByVal value As String)
+            _FdProdutoReferencia = value
+        End Set
+    End Property
+
+    Private _FdFormaFarmaceutica As String
+    Public Property FdFormaFarmaceutica() As String
+        Get
+            Return _FdFormaFarmaceutica
+        End Get
+        Set(ByVal value As String)
+            _FdFormaFarmaceutica = value
+        End Set
+    End Property
+
+    Private _FdFormaFarmaceuticaDescricaoOutros As String
+    Public Property FdFormaFarmaceuticaDescricaoOutros() As String
+        Get
+            Return _FdFormaFarmaceuticaDescricaoOutros
+        End Get
+        Set(ByVal value As String)
+            _FdFormaFarmaceuticaDescricaoOutros = value
+        End Set
+    End Property
+
+    Private _FdMpEmbalagem As String
+    Public Property FdMpEmbalagem() As String
+        Get
+            Return _FdMpEmbalagem
+        End Get
+        Set(ByVal value As String)
+            _FdMpEmbalagem = value
+        End Set
+    End Property
+
+    Private _FdTipoEmbalagem As String
+    Public Property FdTipoEmbalagem() As String
+        Get
+            Return _FdTipoEmbalagem
+        End Get
+        Set(ByVal value As String)
+            _FdTipoEmbalagem = value
+        End Set
+    End Property
+
+    Private _FdTipoEmbalagemDescricaoOutros As String
+    Public Property FdTipoEmbalagemDescricaoOutros() As String
+        Get
+            Return _FdTipoEmbalagemDescricaoOutros
+        End Get
+        Set(ByVal value As String)
+            _FdTipoEmbalagemDescricaoOutros = value
+        End Set
+    End Property
+
+    Private _FdCorEmbalagem As String
+    Public Property FdCorEmbalagem() As String
+        Get
+            Return _FdCorEmbalagem
+        End Get
+        Set(ByVal value As String)
+            _FdCorEmbalagem = value
+        End Set
+    End Property
+
+    Private _FdVolumeEmbalagem As String
+    Public Property FdVolumeEmbalagem() As String
+        Get
+            Return _FdVolumeEmbalagem
+        End Get
+        Set(ByVal value As String)
+            _FdVolumeEmbalagem = value
+        End Set
+    End Property
+
+    Private _FdQtdProduzir As String
+    Public Property FdQtdProduzir() As String
+        Get
+            Return _FdQtdProduzir
+        End Get
+        Set(ByVal value As String)
+            _FdQtdProduzir = value
+        End Set
+    End Property
+
+    Private _FdFormulacaoPropria As String
+    Public Property FdFormulacaoPropria() As String
+        Get
+            Return _FdFormulacaoPropria
+        End Get
+        Set(ByVal value As String)
+            _FdFormulacaoPropria = value
+        End Set
+    End Property
+
 
     Public Sub New(ByVal StrConn As String)
         objAcessoDados = New UCLAcessoDados(StrConn)
@@ -655,6 +758,15 @@
             strSql += "        ni.fd_odor_direcionamento, "
             strSql += "        ni.fd_odor_referencia, "
             strSql += "        ni.fd_descricao_produto, "
+
+            strSql += "        ni.fd_produto_referencia, "
+            strSql += "        ni.fd_volume_embalagem, "
+            strSql += "        ni.fd_cor_embalagem, "
+            strSql += "        ni.fd_mp_embalagem, "
+            strSql += "        ni.fd_tipo_embalagem, "
+            strSql += "        ni.fd_qtd_produzir, "
+
+
             strSql += "        par.aux_ng_item1, "
             strSql += "        par.aux_ng_item2, "
             strSql += "        par.aux_ng_item3, "
@@ -729,14 +841,46 @@
                 Aux10 = dt.Rows.Item(0).Item("aux10").ToString
                 Aux11 = dt.Rows.Item(0).Item("aux11").ToString
                 Aux12 = dt.Rows.Item(0).Item("aux12").ToString
+
+                '---
+
+                FdNomeProduto = dt.Rows.Item(0).Item("fd_nome_produto").ToString
                 FdAcaoDesejadaFuncao = dt.Rows.Item(0).Item("fd_acao_desejada_funcao").ToString
                 FdColoracao = dt.Rows.Item(0).Item("fd_coloracao").ToString
                 FdCorReferencia = dt.Rows.Item(0).Item("fd_cor_referencia").ToString
-                FdDescricaoProduto = dt.Rows.Item(0).Item("fd_descricao_produto").ToString
-                FdNomeProduto = dt.Rows.Item(0).Item("fd_nome_produto").ToString
                 FdOdor = dt.Rows.Item(0).Item("fd_odor").ToString
                 FdOdorDirecionamento = dt.Rows.Item(0).Item("fd_odor_direcionamento").ToString
-                FdOdorReferencia = dt.Rows.Item(0).Item("fd_odor_referencia").ToString
+                If String.IsNullOrWhiteSpace(dt.Rows.Item(0).Item("fd_odor_referencia").ToString) Then
+                    FdOdorReferencia = "Pode ser uma fragrância Natural ou Comercial"
+                Else
+                    FdOdorReferencia = dt.Rows.Item(0).Item("fd_odor_referencia").ToString
+                End If
+                If String.IsNullOrWhiteSpace(dt.Rows.Item(0).Item("fd_descricao_produto").ToString) Then
+                    FdDescricaoProduto = "QUEREMOS CONHECER MAIS SOBRE O PRODUTO QUE IREMOS CRIAR PARA VOCÊ , DESCREVA AQUI AS PRINCIPAIS CARACTERÍSTICAS QUE O PRODUTO DEVE TER"
+                Else
+                    FdDescricaoProduto = dt.Rows.Item(0).Item("fd_descricao_produto").ToString
+                End If
+
+                '------
+                If String.IsNullOrWhiteSpace(dt.Rows.Item(0).Item("fd_produto_referencia").ToString) Then
+                    FdProdutoReferencia = "Informe aqui o produto referencia para formulação"
+                Else
+                    FdProdutoReferencia = dt.Rows.Item(0).Item("fd_produto_referencia").ToString
+                End If
+
+                If String.IsNullOrWhiteSpace(dt.Rows.Item(0).Item("fd_volume_embalagem").ToString) Then
+                    FdVolumeEmbalagem = "Qual o volume do seu Produto? Obs:Shampoo/Líquidos/Loções ML (mililitros) ou L (Litros) /Gel, Cremes e Pastosos usamos G (gramas) ou KG(Kilogramas)."
+                Else
+                    FdVolumeEmbalagem = dt.Rows.Item(0).Item("fd_volume_embalagem").ToString
+                End If
+
+                FdCorEmbalagem = dt.Rows.Item(0).Item("fd_cor_embalagem").ToString
+                FdMpEmbalagem = dt.Rows.Item(0).Item("fd_mp_embalagem").ToString
+                FdTipoEmbalagem = dt.Rows.Item(0).Item("fd_tipo_embalagem").ToString
+                FdQtdProduzir = dt.Rows.Item(0).Item("fd_qtd_produzir").ToString
+
+                '-----
+
                 PercDescontoUnitario1 = dt.Rows.Item(0).Item("perc_desconto_unitario1").ToString
                 PercDescontoUnitario2 = dt.Rows.Item(0).Item("perc_desconto_unitario2").ToString
                 PercDescontoUnitario3 = dt.Rows.Item(0).Item("perc_desconto_unitario3").ToString
@@ -836,6 +980,66 @@
             If String.IsNullOrWhiteSpace(TpPrazoEntrega) Then
                 TpPrazoEntrega = "null"
             End If
+
+            '-------
+
+            If FdNomeProduto Is Nothing Then
+                FdNomeProduto = ""
+            End If
+
+            If FdAcaoDesejadaFuncao Is Nothing Then
+                FdAcaoDesejadaFuncao = ""
+            End If
+
+            If FdColoracao Is Nothing Or String.IsNullOrWhiteSpace(FdColoracao) Or FdColoracao = 0 Then
+                FdColoracao = "null"
+            End If
+
+            If FdCorReferencia Is Nothing Then
+                FdCorReferencia = ""
+            End If
+
+            If FdOdor Is Nothing Or String.IsNullOrWhiteSpace(FdOdor) Or FdOdor = 0 Then
+                FdOdor = "null"
+            End If
+
+            If FdOdorDirecionamento Is Nothing Or String.IsNullOrWhiteSpace(FdOdorDirecionamento) Or FdOdorDirecionamento = 0 Then
+                FdOdorDirecionamento = "null"
+            End If
+
+            If FdOdorReferencia Is Nothing Then
+                FdOdorReferencia = ""
+            End If
+
+            If FdDescricaoProduto Is Nothing Then
+                FdDescricaoProduto = ""
+            End If
+
+
+            '----------
+            If FdProdutoReferencia Is Nothing Or String.IsNullOrWhiteSpace(FdProdutoReferencia) Then
+                FdProdutoReferencia = ""
+            End If
+
+            If FdVolumeEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdProdutoReferencia) Then
+                FdVolumeEmbalagem = ""
+            End If
+            If FdCorEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdCorEmbalagem) Or FdCorEmbalagem = 0 Then
+                FdCorEmbalagem = "null"
+            End If
+            If FdMpEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdMpEmbalagem) Or FdMpEmbalagem = 0 Then
+                FdMpEmbalagem = "null"
+            End If
+            If FdTipoEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdTipoEmbalagem) Or FdTipoEmbalagem = 0 Then
+                FdTipoEmbalagem = "null"
+            End If
+            If FdQtdProduzir Is Nothing Or String.IsNullOrWhiteSpace(FdQtdProduzir) Or FdQtdProduzir = 0 Then
+                FdQtdProduzir = "null"
+            End If
+
+            '----------
+
+
             strSql += " update negociacao_cliente_item "
             strSql += "    set cod_item = '" + CodItem + "', "
             strSql += "        referencia = '" + Referencia.Trim + "', "
@@ -895,9 +1099,19 @@
             strSql += "        fd_cor_referencia = '" + FdCorReferencia + "', "
             strSql += "        fd_descricao_produto = '" + FdDescricaoProduto + "', "
             strSql += "        fd_nome_produto = '" + FdNomeProduto + "', "
-            strSql += "        fd_odor = '" + FdOdor + "', "
-            strSql += "        fd_odor_direcionamento = '" + FdOdorDirecionamento + "', "
-            strSql += "        fd_odor_referencia = '" + FdOdorReferencia + "' "
+            strSql += "        fd_odor = " + FdOdor + ", "
+            strSql += "        fd_odor_direcionamento = " + FdOdorDirecionamento + ", "
+            strSql += "        fd_odor_referencia = '" + FdOdorReferencia + "', "
+
+            strSql += "        fd_produto_referencia = '" + FdProdutoReferencia + "', "
+            strSql += "        fd_volume_embalagem = '" + FdVolumeEmbalagem + "', "
+
+            strSql += "        fd_cor_embalagem = " + FdCorEmbalagem + ", "
+            strSql += "        fd_mp_embalagem = " + FdMpEmbalagem + ", "
+            strSql += "        fd_tipo_embalagem = " + FdTipoEmbalagem + ", "
+            strSql += "        fd_qtd_produzir = " + FdQtdProduzir + " "
+
+
             strSql += "  where empresa = " + Empresa
             strSql += "    and estabelecimento = " + Estabelecimento
             strSql += "    and cod_negociacao_cliente = " + CodNegociacao
@@ -922,6 +1136,66 @@
             If String.IsNullOrWhiteSpace(TpPrazoEntrega) Then
                 TpPrazoEntrega = "null"
             End If
+
+            '-------
+
+            If FdNomeProduto Is Nothing Then
+                FdNomeProduto = ""
+            End If
+
+            If FdAcaoDesejadaFuncao Is Nothing Then
+                FdAcaoDesejadaFuncao = ""
+            End If
+
+            If FdColoracao Is Nothing Or String.IsNullOrWhiteSpace(FdColoracao) Then
+                FdColoracao = "null"
+            End If
+
+            If FdCorReferencia Is Nothing Then
+                FdCorReferencia = ""
+            End If
+
+            If FdOdor Is Nothing Or String.IsNullOrWhiteSpace(FdOdor) Then
+                FdOdor = "null"
+            End If
+
+            If FdOdorDirecionamento Is Nothing Or String.IsNullOrWhiteSpace(FdOdorDirecionamento) Then
+                FdOdorDirecionamento = "null"
+            End If
+
+            If FdOdorReferencia Is Nothing Then
+                FdOdorReferencia = ""
+            End If
+
+            If FdDescricaoProduto Is Nothing Then
+                FdDescricaoProduto = ""
+            End If
+
+            '----------
+
+            If FdProdutoReferencia Is Nothing Or String.IsNullOrWhiteSpace(FdProdutoReferencia) Then
+                FdProdutoReferencia = ""
+            End If
+
+            If FdVolumeEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdProdutoReferencia) Then
+                FdVolumeEmbalagem = ""
+            End If
+            If FdCorEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdCorEmbalagem) Then
+                FdCorEmbalagem = "null"
+            End If
+            If FdMpEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdMpEmbalagem) Then
+                FdMpEmbalagem = "null"
+            End If
+            If FdTipoEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdTipoEmbalagem) Then
+                FdTipoEmbalagem = "null"
+            End If
+            If FdQtdProduzir Is Nothing Or String.IsNullOrWhiteSpace(FdQtdProduzir) Then
+                FdQtdProduzir = "null"
+            End If
+
+            '----------
+
+
             strSql += " insert into negociacao_cliente_item( "
             strSql += "    empresa, "
             strSql += "    estabelecimento, "
@@ -975,6 +1249,14 @@
             strSql += "    fd_odor_direcionamento, "
             strSql += "    fd_odor_referencia, "
             strSql += "    fd_descricao_produto, "
+
+            strSql += "    fd_produto_referencia, "
+            strSql += "    fd_volume_embalagem, "
+            strSql += "    fd_cor_embalagem, "
+            strSql += "    fd_mp_embalagem, "
+            strSql += "    fd_tipo_embalagem, "
+            strSql += "    fd_qtd_produzir, "
+
             strSql += "    altura, "
             strSql += "    largura, "
             strSql += "    espessura, "
@@ -1049,6 +1331,14 @@
             strSql += FdOdorDirecionamento + ", "
             strSql += "'" + FdOdorReferencia + "', "
             strSql += "'" + FdDescricaoProduto + "', "
+
+            strSql += "'" + FdProdutoReferencia + "', "
+            strSql += "'" + FdVolumeEmbalagem + "', "
+            strSql += FdCorEmbalagem + ", "
+            strSql += FdMpEmbalagem + ", "
+            strSql += FdTipoEmbalagem + ", "
+            strSql += FdQtdProduzir + ", "
+
             strSql += ValorNumericoBanco(Altura, 2) + ", "
             strSql += ValorNumericoBanco(Largura, 2) + ", "
             strSql += ValorNumericoBanco(Espessura, 2) + ", "

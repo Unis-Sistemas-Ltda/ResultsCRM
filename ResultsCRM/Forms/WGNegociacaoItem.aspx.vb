@@ -26,6 +26,10 @@
             Session("SSeqItemNegociacao") = e.CommandArgument
             Session("SAcaoItem") = "ALTERAR"
             Response.Redirect("WFNegociacaoItem.aspx")
+        ElseIf e.CommandName = "ALTERARFICHA" Then
+            Session("SSeqItemNegociacao") = e.CommandArgument
+            Session("SAcaoItem") = "ALTERAR"
+            Response.Redirect("WFNegociacaoItem_Farmacos2FD.aspx")
         ElseIf e.CommandName = "EXCLUIR" Then
             objNegociacaoItem.Empresa = Session("GlEmpresa")
             objNegociacaoItem.Estabelecimento = Session("SEstabelecimentoNegociacao")
@@ -51,5 +55,9 @@
         SqlDataSource1.Select(DataSourceSelectArguments.Empty)
         SqlDataSource1.DataBind()
         GridView1.DataBind()
+    End Sub
+
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
+
     End Sub
 End Class

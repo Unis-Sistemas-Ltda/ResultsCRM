@@ -41,7 +41,10 @@
 
     Private Sub GridView1_RowCommand(sender As Object, e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
         If e.CommandName = "ALTERAR" Then
-            Session("SCodNegociacao") = e.CommandArgument
+            Dim chave As String()
+            chave = e.CommandArgument.ToString.Split(";")
+            Session("SEstabelecimentoNegociacao") = chave(0)
+            Session("SCodNegociacao") = chave(1)
             Session("SAcaoNegociacao") = "ALTERAR"
             Session("SRedir") = "WFNegociacaoDetalhes.aspx?b=WFNegociacaoFiltro.aspx"
             Page.ClientScript.RegisterStartupScript(Me.GetType, "cmd", "b = parent.document.getElementById('BtnRedirect'); b.click()", True)

@@ -188,6 +188,8 @@
     <Content Include="bin\WebDataWindow.dll" />
     <Content Include="Forms\WFClienteDados.aspx" />
     <Content Include="Forms\WFNegociacaoCabecalhoAnfarmag.aspx" />
+    <Content Include="Forms\WFNegociacaoItem_Farmacos2.aspx" />
+    <Content Include="Forms\WFNegociacaoItem_Farmacos2FD.aspx" />
     <Content Include="Forms\WFNegociacaoItem_pedras.aspx" />
     <Content Include="Forms\WFOS.aspx" />
     <Content Include="Forms\WFOSCabecalho.aspx" />
@@ -298,7 +300,6 @@
     <Content Include="Forms\WFNegociacaoFollowUp.aspx" />
     <Content Include="Forms\WFNegociacaoItem.aspx" />
     <Content Include="Forms\WFNegociacaoItemPlanilha.aspx" />
-    <Content Include="Forms\WFNegociacaoItem_Farmacos2.aspx" />
     <Content Include="Forms\WFNegociacaoMotivoFechamento.aspx" />
     <Content Include="Forms\WFNegociacaoTarefa.aspx" />
     <Content Include="Forms\WFOrigemNegociacao.aspx" />
@@ -602,6 +603,7 @@
     <Content Include="UserControls\WUCNegociacaoItem.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Dist.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Farmacos2.ascx" />
+    <Content Include="UserControls\WUCNegociacaoItem_Farmacos2FD.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Grade.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Pedras.ascx" />
     <Content Include="UserControls\WUCNegociacaoMotivoFechamento.ascx" />
@@ -866,6 +868,20 @@
     </Compile>
     <Compile Include="Forms\WFNegociacaoCabecalhoAnfarmag.aspx.vb">
       <DependentUpon>WFNegociacaoCabecalhoAnfarmag.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\WFNegociacaoItem_Farmacos2.aspx.designer.vb">
+      <DependentUpon>WFNegociacaoItem_Farmacos2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WFNegociacaoItem_Farmacos2.aspx.vb">
+      <DependentUpon>WFNegociacaoItem_Farmacos2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\WFNegociacaoItem_Farmacos2FD.aspx.designer.vb">
+      <DependentUpon>WFNegociacaoItem_Farmacos2FD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WFNegociacaoItem_Farmacos2FD.aspx.vb">
+      <DependentUpon>WFNegociacaoItem_Farmacos2FD.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WFNegociacaoItem_pedras.aspx.designer.vb">
@@ -1874,13 +1890,6 @@
     </Compile>
     <Compile Include="Forms\WFNegociacaoItemPlanilha.aspx.vb">
       <DependentUpon>WFNegociacaoItemPlanilha.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Forms\WFNegociacaoItem_Farmacos2.aspx.designer.vb">
-      <DependentUpon>WFNegociacaoItem_Farmacos2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WFNegociacaoItem_Farmacos2.aspx.vb">
-      <DependentUpon>WFNegociacaoItem_Farmacos2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WFNegociacaoItem_Plastico.aspx.designer.vb">
@@ -4065,6 +4074,13 @@
     </Compile>
     <Compile Include="UserControls\WUCNegociacaoItem_Farmacos2.ascx.vb">
       <DependentUpon>WUCNegociacaoItem_Farmacos2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCNegociacaoItem_Farmacos2FD.ascx.designer.vb">
+      <DependentUpon>WUCNegociacaoItem_Farmacos2FD.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WUCNegociacaoItem_Farmacos2FD.ascx.vb">
+      <DependentUpon>WUCNegociacaoItem_Farmacos2FD.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\WUCNegociacaoItem_Grade.ascx.designer.vb">

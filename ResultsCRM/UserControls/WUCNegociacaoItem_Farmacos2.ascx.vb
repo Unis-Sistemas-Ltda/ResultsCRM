@@ -294,6 +294,16 @@
         objNegociacaoItem.FdDescricaoProduto = TxtFdDescricaoProduto.Text
         objNegociacaoItem.FdNomeProduto = TxtFdNomeProduto.Text
         objNegociacaoItem.FdOdorReferencia = TxtFdOdorReferencia.Text
+
+        '------
+        objNegociacaoItem.FdProdutoReferencia = TxtFdProdutoReferencia.Text
+        objNegociacaoItem.FdVolumeEmbalagem = TxtFdVolumeEmbalagem.Text
+        objNegociacaoItem.FdCorEmbalagem = DdlFdCorEmbalagem.SelectedValue
+        objNegociacaoItem.FdMpEmbalagem = DdlFdMpEmbalagem.SelectedValue
+        objNegociacaoItem.FdTipoEmbalagem = DdlFdTipoEmbalagem.SelectedValue
+        objNegociacaoItem.FdQtdProduzir = DdlFdQtdProduzir.SelectedValue
+        '------
+
         Return objNegociacaoItem
     End Function
 
@@ -412,6 +422,13 @@
         TxtFdDescricaoProduto.Text = objNegociacaoItem.FdDescricaoProduto
         TxtFdNomeProduto.Text = objNegociacaoItem.FdNomeProduto
         TxtFdOdorReferencia.Text = objNegociacaoItem.FdOdorReferencia
+
+        TxtFdProdutoReferencia.Text = objNegociacaoItem.FdProdutoReferencia
+        TxtFdVolumeEmbalagem.Text = objNegociacaoItem.FdVolumeEmbalagem
+        DdlFdCorEmbalagem.SelectedValue = objNegociacaoItem.FdCorEmbalagem
+        DdlFdMpEmbalagem.SelectedValue = objNegociacaoItem.FdMpEmbalagem
+        DdlFdTipoEmbalagem.SelectedValue = objNegociacaoItem.FdTipoEmbalagem
+        DdlFdQtdProduzir.SelectedValue = objNegociacaoItem.FdQtdProduzir
 
         If Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Representante Then
             LblRecurso.Visible = False

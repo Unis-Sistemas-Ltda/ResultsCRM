@@ -27,7 +27,7 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <asp:LinkButton ID="LinkButton1" runat="server" 
-                        CommandArgument='<%# Eval("cod_negociacao") %>' CommandName="ALTERAR" 
+                        CommandArgument='<%# Eval("chave") %>' CommandName="ALTERAR" 
                         CssClass="CampoCadastro" Font-Underline="False" 
                         Text='<%# Eval("nome_emitente") & " -<i>" & Eval("data_cadastramento", "{0:dd/MM/yy}") & "</i>" & Iif(not isdbnull(Eval("data_recontato")),"<br/><i>Recontato: " & Eval("data_recontato","{0:dd/MM/yy}") & "</i>","") & "<br/>" & Eval("total_pedido", "{0:N2}") & "<br/>Follow-up: " & Eval("data_followup","{0:dd/MM/yy}") %>' 
                         Width="100%"></asp:LinkButton>

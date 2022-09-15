@@ -1,4 +1,6 @@
-﻿Partial Public Class WGNegociacao
+﻿Imports Microsoft.Reporting
+
+Partial Public Class WGNegociacao
     Inherits System.Web.UI.Page
     Dim valor As Decimal
 
@@ -61,7 +63,10 @@
             Page.ClientScript.RegisterStartupScript(Me.GetType, "cmd", "b = parent.document.getElementById('BtnRedirect'); b.click()", True)
             'Response.Redirect("WFNegociacaoDetalhes.aspx")
         ElseIf e.CommandName = "COPIAR" Then
-            Session("SCodNegociacao") = e.CommandArgument
+            Dim chave As String()
+            chave = e.CommandArgument.ToString.Split(";")
+            Session("SEstabelecimentoNegociacao") = chave(0)
+            Session("SCodNegociacao") = chave(1)
             Session("SAcaoNegociacao") = "COPIAR"
             Session("SRedir") = "WFCopiaNegociacao.aspx?b=WFNegociacaoFiltro.aspx"
             Page.ClientScript.RegisterStartupScript(Me.GetType, "cmd", "b = parent.document.getElementById('BtnRedirect'); b.click()", True)

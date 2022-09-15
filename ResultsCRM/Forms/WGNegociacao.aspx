@@ -82,7 +82,7 @@
                             </asp:BoundField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="ImageButton2" runat="server" CommandArgument='<%# Eval("cod_negociacao") %>'
+                                    <asp:ImageButton ID="ImageButton2" runat="server" CommandArgument='<%# Eval("chave") %>'
                                         CommandName="COPIAR" ImageUrl="~/Imagens/copiar.png" ToolTip="Copiar negociação" />
                                 </ItemTemplate>
                             </asp:TemplateField>
@@ -94,7 +94,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="BtnImprimir" runat="server" CommandArgument='<%# Eval("cod_negociacao") %>'
+                                    <asp:ImageButton ID="BtnImprimir" runat="server" CommandArgument='<%# Eval("chave") %>'
                                         CommandName="IMPRIMIR" ImageUrl="~/Imagens/BtnImprimir.gif" Width="17px" />
                                 </ItemTemplate>
                             </asp:TemplateField>

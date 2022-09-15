@@ -72,7 +72,12 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:ImageButton ID="ImageButton2" runat="server" 
+                        <asp:ImageButton ID="ImageButton2" runat="server" CommandArgument='<%# Eval("seq_item") %>' CommandName="ALTERARFICHA" ImageUrl="~/Imagens/BtnEditar.png" ToolTip="Ficha de Desenvolvimento" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:ImageButton ID="ImageButton3" runat="server" 
                             CommandArgument='<%# Eval("seq_item") %>' CommandName="EXCLUIR" 
                             ImageUrl="~/Imagens/BtnExcluir.png" 
                             onclientclick="return confirm('Deseja realmente excluir o item selecionado?');" 
@@ -97,7 +102,7 @@
  where cod_negociacao_cliente = :codNegociacao
    and empresa = :empresa
    and estabelecimento = :estabelecimento
-order by ni.seq_item desc">
+order by ni.seq_item ">
             <SelectParameters>
                 <asp:SessionParameter Name=":codNegociacao" SessionField="SCodNegociacao" />
                 <asp:SessionParameter Name=":empresa" SessionField="GlEmpresa" />
