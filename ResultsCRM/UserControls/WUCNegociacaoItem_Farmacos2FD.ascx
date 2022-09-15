@@ -26,11 +26,7 @@
 <table>
     <tr>
         <td>
-            <table class="TextoCadastro_BGBranco" style="border: thin groove #CCCCCC; width: 495px;">
-                <tr>
-                    <td colspan="6">
-                        &nbsp;</td>
-                </tr>
+            <table class="TextoCadastro_BGBranco" style="border: thin groove #CCCCCC; width: 800px;">               
                 <tr>
                     <td colspan="6" align="left">
                         <img alt="Detalhes da Ficha de desenvolvimento do Produto"
@@ -67,7 +63,7 @@
 
                     <td colspan="5">
                         <asp:TextBox ID="TxtFdNomeProduto" runat="server" CssClass="CampoCadastro"
-                            Width="379px"></asp:TextBox></td>
+                            Width="600px"></asp:TextBox></td>
                 </tr>
                  <tr>
                     <td style="vertical-align: top; text-align: right;">
@@ -76,14 +72,14 @@
 
                     <td colspan="5">
                         <asp:TextBox ID="TxtFdAcaoDesejadaProduto" runat="server" CssClass="CampoCadastro"
-                            Height="43px" TextMode="MultiLine" Width="379px"></asp:TextBox></td>
+                            Height="25px" TextMode="MultiLine" Width="600px"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="CelulaCampoCadastro" style="text-align: right">
                         <asp:Label ID="Label4" runat="server" Text="Coloração do Produto:"></asp:Label></td>
                     <td colspan="5">
                         <asp:DropDownList ID="DdlFdColoracao" runat="server"
-                            CssClass="CampoCadastro" Width="383px">
+                            CssClass="CampoCadastro" Width="606px" Height="16px">
                             <asp:ListItem Value="-1">-- Selecione --</asp:ListItem>
                             <asp:ListItem Value="1">Incolor</asp:ListItem>
                             <asp:ListItem Value="2">Com Pigmento</asp:ListItem>
@@ -96,7 +92,7 @@
 
                     <td colspan="5">
                         <asp:TextBox ID="TxtFdCorReferencia" runat="server" CssClass="CampoCadastro"
-                            Width="379px"></asp:TextBox></td>
+                            Width="600px"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td class="CelulaCampoCadastro" style="text-align: right">
@@ -131,7 +127,7 @@
 
                     <td colspan="5">
                         <asp:TextBox ID="TxtFdOdorReferencia" runat="server" CssClass="CampoCadastro"
-                            Width="379px"></asp:TextBox></td>
+                            Width="600px"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td style="vertical-align: top; text-align: right;">
@@ -140,7 +136,7 @@
 
                     <td colspan="5">
                         <asp:TextBox ID="TxtFdDescricaoProduto" runat="server" CssClass="CampoCadastro"
-                            Height="43px" TextMode="MultiLine" Width="379px"></asp:TextBox>
+                            Height="25px" TextMode="MultiLine" Width="600px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -149,7 +145,7 @@
                     </td>
 
                     <td colspan="5">
-                        <asp:TextBox ID="TxtFdProdutoReferencia" runat="server" CssClass="CampoCadastro"  Width="379px"></asp:TextBox>
+                        <asp:TextBox ID="TxtFdProdutoReferencia" runat="server" CssClass="CampoCadastro"  Width="600px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -157,7 +153,7 @@
                         <asp:Label ID="Label12" runat="server" Text="Volume da Embalagem:"></asp:Label>
                     </td>
                     <td colspan="5">
-                        <asp:TextBox ID="TxtFdVolumeEmbalagem" runat="server" Height="43px" TextMode="MultiLine" CssClass="CampoCadastro"  Width="379px"></asp:TextBox>
+                        <asp:TextBox ID="TxtFdVolumeEmbalagem" runat="server" Height="25px" TextMode="MultiLine" CssClass="CampoCadastro"  Width="600px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -188,7 +184,7 @@
                     </td>
                     <td colspan="5">
                         <asp:DropDownList ID="DdlFdMpEmbalagem" runat="server"
-                            CssClass="CampoCadastro" Width="383px">
+                            CssClass="CampoCadastro" Width="600px">
                             <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
                             <asp:ListItem Value="1">Vidro</asp:ListItem>
                             <asp:ListItem Value="2">Plástico</asp:ListItem>                          
@@ -202,7 +198,7 @@
                     </td>
                     <td colspan="5">
                         <asp:DropDownList ID="DdlFdTipoEmbalagem" runat="server"
-                            CssClass="CampoCadastro" Width="383px">
+                            CssClass="CampoCadastro" Width="600px">
                             <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
                             <asp:ListItem Value="1">Bisnaga</asp:ListItem>
                             <asp:ListItem Value="2">Pote</asp:ListItem>                          
@@ -218,7 +214,7 @@
                     </td>
                     <td colspan="5">
                         <asp:DropDownList ID="DdlFdQtdProduzir" runat="server"
-                            CssClass="CampoCadastro" Width="383px">
+                            CssClass="CampoCadastro" Width="600px">
                             <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
                             <asp:ListItem Value="1">100 Un</asp:ListItem>
                             <asp:ListItem Value="2">500 Un</asp:ListItem>                          

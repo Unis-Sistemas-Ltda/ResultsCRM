@@ -991,7 +991,7 @@
                 FdAcaoDesejadaFuncao = ""
             End If
 
-            If FdColoracao Is Nothing Or String.IsNullOrWhiteSpace(FdColoracao) Or FdColoracao = 0 Then
+            If FdColoracao Is Nothing Or String.IsNullOrWhiteSpace(FdColoracao) Or FdColoracao = "0" Then
                 FdColoracao = "null"
             End If
 
@@ -999,11 +999,11 @@
                 FdCorReferencia = ""
             End If
 
-            If FdOdor Is Nothing Or String.IsNullOrWhiteSpace(FdOdor) Or FdOdor = 0 Then
+            If FdOdor Is Nothing Or String.IsNullOrWhiteSpace(FdOdor) Or FdOdor = "0" Then
                 FdOdor = "null"
             End If
 
-            If FdOdorDirecionamento Is Nothing Or String.IsNullOrWhiteSpace(FdOdorDirecionamento) Or FdOdorDirecionamento = 0 Then
+            If FdOdorDirecionamento Is Nothing Or String.IsNullOrWhiteSpace(FdOdorDirecionamento) Or FdOdorDirecionamento = "0" Then
                 FdOdorDirecionamento = "null"
             End If
 
@@ -1024,16 +1024,16 @@
             If FdVolumeEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdProdutoReferencia) Then
                 FdVolumeEmbalagem = ""
             End If
-            If FdCorEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdCorEmbalagem) Or FdCorEmbalagem = 0 Then
+            If FdCorEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdCorEmbalagem) Or FdCorEmbalagem = "0" Then
                 FdCorEmbalagem = "null"
             End If
-            If FdMpEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdMpEmbalagem) Or FdMpEmbalagem = 0 Then
+            If FdMpEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdMpEmbalagem) Or FdMpEmbalagem = "0" Then
                 FdMpEmbalagem = "null"
             End If
-            If FdTipoEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdTipoEmbalagem) Or FdTipoEmbalagem = 0 Then
+            If FdTipoEmbalagem Is Nothing Or String.IsNullOrWhiteSpace(FdTipoEmbalagem) Or FdTipoEmbalagem = "0" Then
                 FdTipoEmbalagem = "null"
             End If
-            If FdQtdProduzir Is Nothing Or String.IsNullOrWhiteSpace(FdQtdProduzir) Or FdQtdProduzir = 0 Then
+            If FdQtdProduzir Is Nothing Or String.IsNullOrWhiteSpace(FdQtdProduzir) Or FdQtdProduzir = "0" Then
                 FdQtdProduzir = "null"
             End If
 
