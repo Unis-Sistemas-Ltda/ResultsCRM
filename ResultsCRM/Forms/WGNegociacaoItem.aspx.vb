@@ -44,7 +44,7 @@
         End If
     End Sub
 
-    Protected Sub BtnNovoRegistro_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnNovoRegistro.Click
+    Protected Sub BtnNovoRegistro_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNovoRegistro.Click
         If Session("SCodNegociacao") <> -1 Then
             Session("SSeqItemNegociacao") = -1
             Session("SAcaoItem") = "INCLUIR"

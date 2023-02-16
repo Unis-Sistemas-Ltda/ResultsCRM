@@ -12,11 +12,8 @@
 <body id="body01" runat="server">
     <form id="form1" runat="server">
     <div class="SubTituloMovimento">Itens</div>
-    <div>
-        <br />
-        <asp:ImageButton ID="BtnNovoRegistro" runat="server" 
-            AlternateText="Novo Registro" 
-                ImageUrl="~/Imagens/BtnNovoRegistro.png" />&nbsp;
+    <div>        
+        <asp:Button ID="BtnNovoRegistro" runat="server" CssClass="Botao"  Text="Novo Registro" Width="102px" />&nbsp;
                 <asp:LinkButton ID="BtnListarItens" runat="server"
              Height="17px" CssClass="CampoCadastro" Font-Bold="True" 
             onclientclick="window.open('WFNegociacaoItemPlanilha.aspx')">Lista Padrão</asp:LinkButton>

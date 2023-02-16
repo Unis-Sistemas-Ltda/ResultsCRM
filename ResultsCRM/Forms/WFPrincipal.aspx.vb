@@ -26,7 +26,8 @@
                     BtnCliente.Visible = True
                     BtnTarefas.Visible = True
                     If Not IsPostBack Then
-                        body1.Attributes.Add("onLoad", "window.open('WGTarefas.aspx?tid=1'); ") 'resizeIframe();")
+                        'Comentado em 16/02/2023 para não carregar o popup de tarefas
+                        'body1.Attributes.Add("onLoad", "window.open('WGTarefas.aspx?tid=1'); ") 'resizeIframe();")
                     Else
                         body1.Attributes.Remove("onLoad")
                         'body1.Attributes.Add("onLoad", "resizeIframe();")

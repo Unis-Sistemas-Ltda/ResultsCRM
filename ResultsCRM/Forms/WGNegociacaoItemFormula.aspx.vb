@@ -37,7 +37,7 @@
         End If
     End Sub
 
-    Protected Sub BtnNovoRegistro_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles BtnNovoRegistro.Click
+    Protected Sub BtnNovoRegistro_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnNovoRegistro.Click
         If Session("SCodNegociacao") <> -1 Then
             Session("SSeqFormula") = -1
             Session("SAcaoItem") = "INCLUIR"
@@ -50,5 +50,9 @@
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
 
+    End Sub
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Response.Redirect("WGNegociacaoItem.aspx")
     End Sub
 End Class

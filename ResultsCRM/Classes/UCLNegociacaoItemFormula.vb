@@ -181,7 +181,7 @@
             '----------
 
             strSql += " insert into negociacao_cliente_item_formula(empresa,estabelecimento,cod_negociacao_cliente,seq_item,seq_formula,descricao_componente,percentual,qsp) "
-            strSql += " values (" + Empresa + ", " + Estabelecimento + ", " + CodNegociacao + ", " + SeqItem + ", " + SeqFormula + ", '" + DescricaoComponente + "', " + Percentual + ", '" + Qsp + "')"
+            strSql += " values (" + Empresa + ", " + Estabelecimento + ", " + CodNegociacao + ", " + SeqItem + ", " + SeqFormula + ", '" + DescricaoComponente + "', " + Percentual.Replace(",", ".") + ", '" + Qsp + "')"
 
             objAcessoDados.ExecutarSql(strSql)
 

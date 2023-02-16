@@ -87,8 +87,8 @@
             LblErro.Text += "Preencha o campo Componente/Matéria Prima.<br/>"
         End If
 
-        If String.IsNullOrEmpty(TxtPercentual.Text) Then
-            LblErro.Text += "Preencha o campo Componente/Matéria Prima.<br/>"
+        If String.IsNullOrEmpty(TxtPercentual.Text) And ChkQsp.Checked = False Then
+            LblErro.Text += "Preencha o campo Percentual.<br/>"
         End If
 
         Return LblErro.Text = ""

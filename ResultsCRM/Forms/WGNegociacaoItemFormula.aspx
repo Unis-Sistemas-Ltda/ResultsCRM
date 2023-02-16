@@ -11,9 +11,8 @@
     <form id="form1" runat="server">
          <div class="SubTituloMovimento">Fórmula</div>
     <div>
-        <asp:ImageButton ID="BtnNovoRegistro" runat="server" 
-            AlternateText="Novo Registro" 
-                ImageUrl="~/Imagens/BtnNovoRegistro.png" />&nbsp;
+        <asp:Button ID="BtnNovoRegistro" runat="server" CssClass="Botao"  Text="Novo Registro" Width="102px" /> 
+            &nbsp;<asp:Button ID="Button1" runat="server" CssClass="Botao" Text="Voltar" />
                             
     </div>
      <div>
