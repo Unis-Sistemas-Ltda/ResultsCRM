@@ -76,6 +76,21 @@
         End Try
     End Sub
 
+    Private Sub CarregaNovaPK()
+        Dim objNegociacao As New UCLNegociacao(StrConexaoUsuario(Session("GlUsuario")))
+        Dim objNegociacaoItem As New UCLNegociacaoItem(StrConexaoUsuario(Session("GlUsuario")))
+        objNegociacaoItem.Empresa = Session("GlEmpresa")
+        objNegociacaoItem.Estabelecimento = Session("SEstabelecimentoNegociacao")
+        objNegociacaoItem.CodNegociacao = CodNegociacao
+        LblSeqItem.Text = objNegociacaoItem.GetProximoCodigo
+
+        objNegociacao.Empresa = Session("GlEmpresa")
+        objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
+        objNegociacao.CodNegociacao = CodNegociacao
+        objNegociacao.Buscar()
+    End Sub
+
+
     Private Sub CodItemMudou()
         Try
             Dim objItem As New UCLItem
@@ -224,19 +239,7 @@
 
     End Sub
 
-    Private Sub CarregaNovaPK()
-        Dim objNegociacao As New UCLNegociacao(StrConexaoUsuario(Session("GlUsuario")))
-        Dim objNegociacaoItem As New UCLNegociacaoItem(StrConexaoUsuario(Session("GlUsuario")))
-        objNegociacaoItem.Empresa = Session("GlEmpresa")
-        objNegociacaoItem.Estabelecimento = Session("SEstabelecimentoNegociacao")
-        objNegociacaoItem.CodNegociacao = CodNegociacao
-        LblSeqItem.Text = objNegociacaoItem.GetProximoCodigo
 
-        objNegociacao.Empresa = Session("GlEmpresa")
-        objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
-        objNegociacao.CodNegociacao = CodNegociacao
-        objNegociacao.Buscar()
-    End Sub
 
 
 

@@ -940,7 +940,7 @@
             Else
                 StrSql += "        cod_modelo = " + CodModelo + ", "
             End If
-            If CodNaturOper = "null" Or String.IsNullOrEmpty(CodNaturOper) Then
+            If CodNaturOper = "null" Or CodNaturOper = "0" Or String.IsNullOrEmpty(CodNaturOper) Then
                 StrSql += "        cod_natur_oper = null, "
             Else
                 StrSql += "        cod_natur_oper = '" + CodNaturOper + "', "

@@ -19,14 +19,24 @@
         If e.CommandName = "ALTERAR" Then
             Session("SCodNegociacao") = e.CommandArgument
             Session("SAcaoNegociacao") = "ALTERAR"
+            Dim chave As String()
+            chave = e.CommandArgument.ToString.Split(";")
+            Session("SEstabelecimentoNegociacao") = chave(0)
+            Session("SCodNegociacao") = chave(1)
+
             Response.Redirect("WFNegociacaoDetalhes.aspx?b=WGAtendimentoNegociacao.aspx")
         Else
             If e.CommandName = "EXCLUIR" Then
                 Try
                     Dim objNegociacao As New UCLNegociacao(StrConexaoUsuario(Session("GlUsuario")))
+                    Dim chave As String()
+                    chave = e.CommandArgument.ToString.Split(";")
+                    Session("SEstabelecimentoNegociacao") = chave(0)
+                    Session("SCodNegociacao") = chave(1)
+
                     objNegociacao.Empresa = Session("GlEmpresa")
-                    objNegociacao.Estabelecimento = Session("GlEstabelecimento")
-                    objNegociacao.CodNegociacao = e.CommandArgument
+                    objNegociacao.Estabelecimento = chave(0)
+                    objNegociacao.CodNegociacao = chave(1)
                     objNegociacao.Excluir()
 
                     LblErro.Text = "Negociação excluída com sucesso."

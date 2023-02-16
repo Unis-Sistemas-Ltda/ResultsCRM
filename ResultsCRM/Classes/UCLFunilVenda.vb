@@ -173,4 +173,14 @@
         Return ret
     End Function
 
+    Public Function BuscaEtapaInicial() As Integer
+        Dim ret As Integer
+        Dim strSql = "Select first cod_etapa from funil_venda_etapa_negociacao where empresa = " + Empresa + "And cod_funil = " + Codigo + "And seq_pipeline = 1"
+        Dim dt As DataTable = objAcessoDados.BuscarDados(strSql)
+        If dt.Rows.Count > 0 Then
+            ret = dt.Rows.Item(0).Item("cod_etapa").ToString
+        End If
+        Return ret
+    End Function
+
 End Class

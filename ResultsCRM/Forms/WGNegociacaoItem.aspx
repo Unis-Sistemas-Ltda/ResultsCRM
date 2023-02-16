@@ -75,6 +75,11 @@
                         <asp:ImageButton ID="ImageButton2" runat="server" CommandArgument='<%# Eval("seq_item") %>' CommandName="ALTERARFICHA" ImageUrl="~/Imagens/BtnEditar.png" ToolTip="Ficha de Desenvolvimento" />
                     </ItemTemplate>
                 </asp:TemplateField>
+                 <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:ImageButton ID="ImageButton4" runat="server" CommandArgument='<%# Eval("seq_item") %>' CommandName="ALTERARFORMULA" ImageUrl="~/Imagens/BtnEditar.png" ToolTip="Fórmula do Item" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:ImageButton ID="ImageButton3" runat="server" 
@@ -95,7 +100,7 @@
         </asp:GridView>
     
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
             ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="select ni.seq_item, ni.cod_item, i.descricao || ' ' || ni.narrativa item_descricao, ni.lote, ni.qtd_pedida, ni.preco_unitario, ni.valor_mercadoria, ni.icms_substituicao, ni.valor_ipi, ni.valor_total_mercadoria
   from negociacao_cliente_item ni inner join item i on ni.cod_item = i.cod_item

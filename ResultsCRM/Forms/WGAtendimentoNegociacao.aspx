@@ -88,21 +88,21 @@ input[type=button], input[type=submit], .Botao
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:ImageButton ID="ImageButton1" runat="server" 
-                                        CommandArgument='<%# Eval("cod_negociacao_cliente") %>' CommandName="ALTERAR" 
+                                        CommandArgument='<%# Eval("chave") %>' CommandName="ALTERAR" 
                                         ImageUrl="~/Imagens/BtnEditar.png" ToolTip="Detalhes do registro" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:ImageButton ID="BtnImprimir" runat="server" 
-                                        CommandArgument='<%# Eval("cod_negociacao_cliente") %>' CommandName="IMPRIMIR" 
+                                        CommandArgument='<%# Eval("chave") %>' CommandName="IMPRIMIR" 
                                         ImageUrl="~/Imagens/BtnImprimir.gif" Width="17px" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:ImageButton ID="ImageButton5" runat="server" 
-                                    CommandArgument='<%# Eval("cod_negociacao_cliente") %>' CommandName="EXCLUIR" 
+                                    CommandArgument='<%# Eval("chave") %>' CommandName="EXCLUIR" 
                                     ImageUrl="~/Imagens/BtnExcluir.png" 
                                     onclientclick="return confirm('ATENÇÃO: Procedimento irreversível! &nbsp;&nbsp;Deseja realmente excluir esta Negociação?');" 
                                     ToolTip="Excluir Negociação" />
@@ -125,7 +125,7 @@ input[type=button], input[type=submit], .Botao
                         ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" 
                         
                         
-                        SelectCommand="select nc.cod_negociacao_cliente, nc.data_cadastramento, nc.cod_etapa, en.descricao descricao_etapa, nc.cod_agente_venda, ag.nome_usuario, nc.total_mercadoria
+                        SelectCommand="select nc.cod_negociacao_cliente, nc.data_cadastramento, nc.cod_etapa, en.descricao descricao_etapa, nc.cod_agente_venda, ag.nome_usuario, nc.total_mercadoria,  nc.estabelecimento||';'||nc.cod_negociacao_cliente as chave
   from negociacao_cliente nc inner join etapa_negociacao en on en.empresa = nc.empresa and en.cod_etapa = nc.cod_etapa
                              left outer join sysusuario ag on ag.cod_usuario = nc.cod_agente_venda
  where nc.empresa     = :empresa
@@ -144,3 +144,4 @@ input[type=button], input[type=submit], .Botao
     </form>
 </body>
 </html>
+

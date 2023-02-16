@@ -107,6 +107,10 @@
                     ddlFunil.SelectedValue = Session("S_PNG_ddlFunil")
                     DdlEtapa.SelectedValue = Session("S_PNG_DdlEtapa")
                     DdlTop.SelectedValue = 200
+                    If Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Vendas Or Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Total Then
+                        ddlAgente.SelectedValue = Session("GlCodUsuario")
+                    End If
+
                 Next
                 Call CarregaFrame(WUCFrameNegociacao, MnuTipoVisualizacao.SelectedValue + "?t=" + Now().ToString("yyyyMMddHHmmssfff"))
             End If

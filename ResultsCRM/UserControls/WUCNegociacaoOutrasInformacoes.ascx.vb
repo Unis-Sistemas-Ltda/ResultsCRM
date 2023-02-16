@@ -83,10 +83,10 @@
         TxtDataEmissaoContrato.Text = objNegociacao.DataEmissaoContrato
         TxtDataVencimentoContrato.Text = objNegociacao.DataVencimentoContrato
         TxtDiaVencimentoContrato.Text = objNegociacao.DiaVencimentoContrato
-        TxtDetalhesFormulacao.Text = objNegociacao.DetalhesFormulacao
-        TxtDetalhesEmbalagem.Text = objNegociacao.DetalhesEmbalagem
-        TxtDetalhesRotulos.Text = objNegociacao.DetalhesRotulos
-        TxtDetalhesPrazoEntrega.Text = objNegociacao.DetalhesPrazoEntrega
+        DdlDefinicoesFormulacao.SelectedValue = objNegociacao.DetalhesFormulacao
+        DdlDefinicoesEmbalagem.SelectedValue = objNegociacao.DetalhesEmbalagem
+        DdlDefinicoesRotulo.SelectedValue = objNegociacao.DetalhesRotulos
+        DdlPrazoEntrega.SelectedValue = objNegociacao.DetalhesPrazoEntrega
         TxtDetalhesPagamento.Text = objNegociacao.DetalhesPagamento
     End Sub
 
@@ -127,7 +127,7 @@
             End If
 
             If Not String.IsNullOrEmpty(TxtDiaVencimentoContrato.Text) Then
-                If Not IsNumeric(TxtDiaVencimentoContrato.Text) OrElse CDbl(TxtDiaVencimentoContrato.Text) > 31 OrElse CDbl(TxtDiaVencimentoContrato.Text) < 1 Then
+                If Not IsNumeric(TxtDiaVencimentoContrato.Text) OrElse CDbl(TxtDiaVencimentoContrato.Text) > 31 OrElse CDbl(TxtDiaVencimentoContrato.Text) < 0 Then
                     Throw New Exception("Informe corretamente o dia do vencimento (cobrança) do contrato ou deixe o campo em branco.")
                 End If
             End If
@@ -140,10 +140,10 @@
             objNegociacao.DataEmissaoContrato = TxtDataEmissaoContrato.Text
             objNegociacao.DataVencimentoContrato = TxtDataVencimentoContrato.Text
             objNegociacao.DiaVencimentoContrato = TxtDiaVencimentoContrato.Text
-            objNegociacao.DetalhesFormulacao = TxtDetalhesFormulacao.Text
-            objNegociacao.DetalhesEmbalagem = TxtDetalhesEmbalagem.Text
-            objNegociacao.DetalhesRotulos = TxtDetalhesRotulos.Text
-            objNegociacao.DetalhesPrazoEntrega = TxtDetalhesPrazoEntrega.Text
+            objNegociacao.DetalhesFormulacao = DdlDefinicoesFormulacao.SelectedValue
+            objNegociacao.DetalhesEmbalagem = DdlDefinicoesEmbalagem.SelectedValue
+            objNegociacao.DetalhesRotulos = DdlDefinicoesRotulo.SelectedValue
+            objNegociacao.DetalhesPrazoEntrega = DdlPrazoEntrega.SelectedValue
             objNegociacao.DetalhesPagamento = TxtDetalhesPagamento.Text
             objNegociacao.Alterar()
         Catch ex As Exception

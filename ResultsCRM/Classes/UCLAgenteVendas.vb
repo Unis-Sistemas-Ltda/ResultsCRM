@@ -88,7 +88,7 @@
         Dim StrSql As String = ""
         Dim dt As DataTable
 
-        StrSql += " select a.cod_agente_venda, u.nome_usuario nome, a.cod_tp_agente_venda, a.email, a.senha, a.cod_funil "
+        StrSql += " select a.cod_agente_venda, u.nome_usuario nome, a.cod_tp_agente_venda, a.email, a.senha, isnull(a.cod_funil,0) as cod_funil"
         StrSql += "   from agente_venda a inner join sysusuario u on a.cod_agente_venda = u.cod_usuario"
         StrSql += "  where cod_agente_venda = " + Codigo
         dt = objAcessoDados.BuscarDados(StrSql)

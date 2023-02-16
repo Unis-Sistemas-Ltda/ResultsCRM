@@ -61,38 +61,59 @@
     </tr>
      <tr>
         <td style="text-align: right; vertical-align: top;">
-            <asp:Label ID="Label2" runat="server" Text="Detalhes Formulação:"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Definições da Formulação:"></asp:Label>
         </td>
         <td style="text-align: left">
-            <asp:TextBox ID="TxtDetalhesFormulacao" runat="server" CssClass="CampoCadastro" Height="40px" 
-                TextMode="MultiLine" Width="400px"></asp:TextBox>
+            <asp:DropDownList ID="DdlDefinicoesFormulacao" runat="server"
+                CssClass="CampoCadastro" Width="405
+                px" Height="16px">
+                <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
+                <asp:ListItem Value="Fornecida Pela Terceirizadora">Fornecida Pela Terceirizadora</asp:ListItem>
+                <asp:ListItem Value="Fornecida Pelo Cliente">Fornecida Pelo Cliente</asp:ListItem>
+            </asp:DropDownList>
         </td>
     </tr>
      <tr>
         <td style="text-align: right; vertical-align: top;">
-            <asp:Label ID="Label3" runat="server" Text="Detalhes Embalagem:"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Definições da Embalagem:"></asp:Label>
         </td>
         <td style="text-align: left">
-            <asp:TextBox ID="TxtDetalhesEmbalagem" runat="server" CssClass="CampoCadastro" Height="40px" 
-                TextMode="MultiLine" Width="400px"></asp:TextBox>
+            <asp:DropDownList ID="DdlDefinicoesEmbalagem" runat="server"
+                CssClass="CampoCadastro" Width="405
+                px" Height="16px">
+                <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
+                <asp:ListItem Value="Fornecida Pela Terceirizadora">Fornecida Pela Terceirizadora</asp:ListItem>
+                <asp:ListItem Value="Fornecida Pelo Cliente">Fornecida Pelo Cliente</asp:ListItem>
+            </asp:DropDownList>
         </td>
     </tr>
      <tr>
         <td style="text-align: right; vertical-align: top;">
-            <asp:Label ID="Label4" runat="server" Text="Detalhes Rótulos:"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Text="Definições do Rótulos:"></asp:Label>
         </td>
         <td style="text-align: left">
-            <asp:TextBox ID="TxtDetalhesRotulos" runat="server" CssClass="CampoCadastro" Height="40px" 
-                TextMode="MultiLine" Width="400px"></asp:TextBox>
+            <asp:DropDownList ID="DdlDefinicoesRotulo" runat="server"
+                CssClass="CampoCadastro" Width="405
+                px" Height="16px">
+                <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
+                <asp:ListItem Value="Fornecida Pela Terceirizadora">Fornecida Pela Terceirizadora</asp:ListItem>
+                <asp:ListItem Value="Fornecida Pelo Cliente">Fornecida Pelo Cliente</asp:ListItem>
+            </asp:DropDownList>
         </td>
     </tr>
      <tr>
         <td style="text-align: right; vertical-align: top;">
-            <asp:Label ID="Label5" runat="server" Text="Detalhes Prazo Entrega:"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="Definições do Prazo Entrega:"></asp:Label>
         </td>
         <td style="text-align: left">
-            <asp:TextBox ID="TxtDetalhesPrazoEntrega" runat="server" CssClass="CampoCadastro" Height="40px" 
-                TextMode="MultiLine" Width="400px"></asp:TextBox>
+            <asp:DropDownList ID="DdlPrazoEntrega" runat="server"
+                CssClass="CampoCadastro" Width="405
+                px" Height="16px">
+                <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
+                <asp:ListItem Value="30 dias úteis (a partir da entrega de embalagens e rótulos)">30 dias úteis (a partir da entrega de embalagens e rótulos)</asp:ListItem>
+                <asp:ListItem Value="40 dias úteis (a partir da entrega de embalagens e rótulos)">40 dias úteis (a partir da entrega de embalagens e rótulos)</asp:ListItem>
+                <asp:ListItem Value="50 dias úteis (a partir da entrega de embalagens e rótulos)">50 dias úteis (a partir da entrega de embalagens e rótulos)</asp:ListItem>
+            </asp:DropDownList>
         </td>
     </tr>
      <tr>

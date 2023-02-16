@@ -30,6 +30,10 @@
             Session("SSeqItemNegociacao") = e.CommandArgument
             Session("SAcaoItem") = "ALTERAR"
             Response.Redirect("WFNegociacaoItem_Farmacos2FD.aspx")
+        ElseIf e.CommandName = "ALTERARFORMULA" Then
+            Session("SSeqItemNegociacao") = e.CommandArgument
+            Session("SAcaoItem") = "ALTERAR"
+            Response.Redirect("WGNegociacaoItemFormula.aspx")
         ElseIf e.CommandName = "EXCLUIR" Then
             objNegociacaoItem.Empresa = Session("GlEmpresa")
             objNegociacaoItem.Estabelecimento = Session("SEstabelecimentoNegociacao")

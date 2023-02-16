@@ -49,8 +49,8 @@
                 <asp:MenuItem Text="Follow-ups"                      
                     Value="WGAtendimentoFollowUp.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="E-mails"                         
-                    Value=" WFAtendimentoEmailDetalhes.aspx"></asp:MenuItem>
-                <asp:MenuItem Text="Histórico"                      Value=" WGAtendimentoHistorico.aspx"></asp:MenuItem>
+                    Value="WFAtendimentoEmailDetalhes.aspx"></asp:MenuItem>
+                <asp:MenuItem Text="Histórico"                      Value="WGAtendimentoHistorico.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Ordens de Serviço"               
                     Value="WGAtendimentoPedido.aspx"></asp:MenuItem>
                 <asp:MenuItem Text="Negociações" Value="WGAtendimentoNegociacao.aspx">

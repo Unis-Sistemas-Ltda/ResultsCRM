@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WUCNegociacaoOutrasInformacoes
-    
+
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-    
+
     '''<summary>
     '''LblErro control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblErro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtCodTransportadora control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtCodTransportadora As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''BtnFiltrarCliente control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnFiltrarCliente As Global.System.Web.UI.WebControls.ImageButton
-    
+
     '''<summary>
     '''LblNomeTransportadora control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblNomeTransportadora As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblAuxLabel1 control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblAuxLabel1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtAux1 control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtAux1 As Global.ResultsCRM.TextBoxData
-    
+
     '''<summary>
     '''LblAux2Label control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblAux2Label As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtAux2 control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtAux2 As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -102,16 +102,16 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
-    '''TxtDetalhesFormulacao control.
+    '''DdlDefinicoesFormulacao control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TxtDetalhesFormulacao As Global.System.Web.UI.WebControls.TextBox
-    
+    Protected WithEvents DdlDefinicoesFormulacao As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''Label3 control.
     '''</summary>
@@ -120,16 +120,16 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
-    '''TxtDetalhesEmbalagem control.
+    '''DdlDefinicoesEmbalagem control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TxtDetalhesEmbalagem As Global.System.Web.UI.WebControls.TextBox
-    
+    Protected WithEvents DdlDefinicoesEmbalagem As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''Label4 control.
     '''</summary>
@@ -138,16 +138,16 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
-    '''TxtDetalhesRotulos control.
+    '''DdlDefinicoesRotulo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TxtDetalhesRotulos As Global.System.Web.UI.WebControls.TextBox
-    
+    Protected WithEvents DdlDefinicoesRotulo As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''Label5 control.
     '''</summary>
@@ -156,16 +156,16 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
-    '''TxtDetalhesPrazoEntrega control.
+    '''DdlPrazoEntrega control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TxtDetalhesPrazoEntrega As Global.System.Web.UI.WebControls.TextBox
-    
+    Protected WithEvents DdlPrazoEntrega As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''Label6 control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtDetalhesPagamento control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtDetalhesPagamento As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''LblAux3Label control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblAux3Label As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlAux3 control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlAux3 As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtObservacao control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtObservacao As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''TxtDataEmissaoContrato control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtDataEmissaoContrato As Global.ResultsCRM.TextBoxData
-    
+
     '''<summary>
     '''TxtDataVencimentoContrato control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtDataVencimentoContrato As Global.ResultsCRM.TextBoxData
-    
+
     '''<summary>
     '''TxtDiaVencimentoContrato control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtDiaVencimentoContrato As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''BtnGravar control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class WUCNegociacaoOutrasInformacoes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnGravar As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''ModalPopupExtender1 control.
     '''</summary>

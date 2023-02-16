@@ -188,6 +188,7 @@
     <Content Include="bin\WebDataWindow.dll" />
     <Content Include="Forms\WFClienteDados.aspx" />
     <Content Include="Forms\WFNegociacaoCabecalhoAnfarmag.aspx" />
+    <Content Include="Forms\WFNegociacaoItemFormula.aspx" />
     <Content Include="Forms\WFNegociacaoItem_Farmacos2.aspx" />
     <Content Include="Forms\WFNegociacaoItem_Farmacos2FD.aspx" />
     <Content Include="Forms\WFNegociacaoItem_pedras.aspx" />
@@ -201,6 +202,7 @@
     <Content Include="Forms\WFImpressaoOSAtivaSipe.aspx" />
     <Content Include="Forms\WGAssessoriaPainel.aspx" />
     <Content Include="Forms\WGClientesNaoAtendidos.aspx" />
+    <Content Include="Forms\WGNegociacaoItemFormula.aspx" />
     <Content Include="Forms\WGOrdemServico.aspx" />
     <Content Include="Forms\WGPedidoVenda.aspx" />
     <Content Include="Forms\WGPosVendaPJVinculados.aspx" />
@@ -601,6 +603,7 @@
     <Content Include="UserControls\WUCNegociacaoDespesa.ascx" />
     <Content Include="UserControls\WUCNegociacaoFollowUp.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem.ascx" />
+    <Content Include="UserControls\WUCNegociacaoItemFormulaInclusao.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Dist.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Farmacos2.ascx" />
     <Content Include="UserControls\WUCNegociacaoItem_Farmacos2FD.ascx" />
@@ -789,6 +792,7 @@
     <Compile Include="Classes\UCLNegociacaoEmail.vb" />
     <Compile Include="Classes\UCLFollowUpEmitente.vb" />
     <Compile Include="Classes\UCLNegociacaoItem.vb" />
+    <Compile Include="Classes\UCLNegociacaoItemFormula.vb" />
     <Compile Include="Classes\UCLNegociacaoMotivoFechamento.vb" />
     <Compile Include="Classes\UCLNegociacaoTarefa.vb">
       <SubType>ASPXCodeBehind</SubType>
@@ -868,6 +872,13 @@
     </Compile>
     <Compile Include="Forms\WFNegociacaoCabecalhoAnfarmag.aspx.vb">
       <DependentUpon>WFNegociacaoCabecalhoAnfarmag.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\WFNegociacaoItemFormula.aspx.designer.vb">
+      <DependentUpon>WFNegociacaoItemFormula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WFNegociacaoItemFormula.aspx.vb">
+      <DependentUpon>WFNegociacaoItemFormula.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WFNegociacaoItem_Farmacos2.aspx.designer.vb">
@@ -960,6 +971,13 @@
     <Compile Include="Forms\WGClientesNaoAtendidos.aspx.vb">
       <DependentUpon>WGClientesNaoAtendidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\WGNegociacaoItemFormula.aspx.designer.vb">
+      <DependentUpon>WGNegociacaoItemFormula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WGNegociacaoItemFormula.aspx.vb">
+      <DependentUpon>WGNegociacaoItemFormula.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WGOrdemServico.aspx.designer.vb">
       <DependentUpon>WGOrdemServico.aspx</DependentUpon>
@@ -4060,6 +4078,13 @@
     </Compile>
     <Compile Include="UserControls\WUCNegociacaoItem.ascx.vb">
       <DependentUpon>WUCNegociacaoItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WUCNegociacaoItemFormulaInclusao.ascx.designer.vb">
+      <DependentUpon>WUCNegociacaoItemFormulaInclusao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WUCNegociacaoItemFormulaInclusao.ascx.vb">
+      <DependentUpon>WUCNegociacaoItemFormulaInclusao.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\WUCNegociacaoItem_Dist.ascx.designer.vb">

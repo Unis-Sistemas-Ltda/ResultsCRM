@@ -1,5 +1,4 @@
 ﻿Public Class UCLNegociacaoItem
-
     Private _Empresa As String
     Private _Estabelecimento As String
     Private _CodNegociacao As String

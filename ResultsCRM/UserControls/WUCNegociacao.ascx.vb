@@ -384,11 +384,25 @@
     Private Sub CarregaAgentesVenda(ByVal codAgenteVenda As String)
         Try
             Dim objAgente As New UCLAgenteVendas
+            Dim objFunil As New UCLFunilVenda
             If Session("GlAgenteVendaMaster") = "S" OrElse Session("GlRestricaoAcessoAgenteVenda") = 0 Then
                 objAgente.FillDropDown(DdlAgente, True, "(Todos)", 0, UCLAgenteVendas.TipoRestricaoAcesso.SemRestricao)
             Else
                 objAgente.FillDropDown(DdlAgente, True, "(Todos)", Session("GlCodUsuario"), UCLAgenteVendas.TipoRestricaoAcesso.SomenteOProprioAgenteDeVendasNoCRMeNoResults)
             End If
+            'If Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Vendas Or Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Total Then
+            DdlAgente.SelectedValue = Session("GlCodUsuario")
+            objAgente.Codigo = Session("GlCodUsuario")
+            objAgente.Buscar()
+
+            If Acao = "INCLUIR" Then
+                DdlFunil.SelectedValue = objAgente.CodFunil
+                objFunil.Empresa = Session("GlEmpresa")
+                objFunil.Codigo = objAgente.CodFunil
+                DdlEtapa.SelectedValue = objFunil.BuscaEtapaInicial()
+            End If
+
+            'End If
         Catch ex As Exception
             Throw ex
         End Try

@@ -88,7 +88,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="ImageButton1" runat="server" CommandArgument=' <%# Eval("chave") %> '
+                                    <asp:ImageButton ID="ImageButton1" runat="server" CommandArgument='<%# Eval("chave") %>'
                                         CommandName="ALTERAR" ImageUrl="~/Imagens/BtnEditar.png" ToolTip="Detalhes do registro" />
                                 </ItemTemplate>
                             </asp:TemplateField>

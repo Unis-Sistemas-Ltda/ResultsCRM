@@ -25,7 +25,7 @@
 
 <table>
     <tr>
-        <td>
+        <td colspan="2">
             <table class="TextoCadastro_BGBranco" style="border: thin groove #CCCCCC; width: 800px;">               
                 <tr>
                     <td colspan="6" align="left">
@@ -217,17 +217,24 @@
                             CssClass="CampoCadastro" Width="600px">
                             <asp:ListItem Value="0">-- Selecione --</asp:ListItem>
                             <asp:ListItem Value="1">100 Un</asp:ListItem>
-                            <asp:ListItem Value="2">500 Un</asp:ListItem>                          
-                            <asp:ListItem Value="3">1000 Un</asp:ListItem>  
-                            <asp:ListItem Value="4">1500 Un</asp:ListItem>  
-                            <asp:ListItem Value="5">2000 Un</asp:ListItem>  
-                            <asp:ListItem Value="6">2500 Un</asp:ListItem>  
-                            <asp:ListItem Value="7">3000 Un</asp:ListItem>  
-                            <asp:ListItem Value="8">3500 Un</asp:ListItem>  
-                            <asp:ListItem Value="9">4000 Un</asp:ListItem>  
-                            <asp:ListItem Value="10">4500 Un</asp:ListItem>  
-                            <asp:ListItem Value="11">5000 Un</asp:ListItem>  
-                            <asp:ListItem Value="12">Acima 5000 Un</asp:ListItem>  
+                            <asp:ListItem Value="2">200 Un</asp:ListItem>
+                            <asp:ListItem Value="3">300 Un</asp:ListItem>
+                            <asp:ListItem Value="4">400 Un</asp:ListItem>
+                            <asp:ListItem Value="5">500 Un</asp:ListItem>                          
+                            <asp:ListItem Value="6">600 Un</asp:ListItem>
+                            <asp:ListItem Value="7">700 Un</asp:ListItem>
+                            <asp:ListItem Value="8">800 Un</asp:ListItem>
+                            <asp:ListItem Value="9">900 Un</asp:ListItem>
+                            <asp:ListItem Value="10">1000 Un</asp:ListItem>  
+                            <asp:ListItem Value="11">1500 Un</asp:ListItem>  
+                            <asp:ListItem Value="12">2000 Un</asp:ListItem>  
+                            <asp:ListItem Value="13">2500 Un</asp:ListItem>  
+                            <asp:ListItem Value="14">3000 Un</asp:ListItem>  
+                            <asp:ListItem Value="15">3500 Un</asp:ListItem>  
+                            <asp:ListItem Value="16">4000 Un</asp:ListItem>  
+                            <asp:ListItem Value="17">4500 Un</asp:ListItem>  
+                            <asp:ListItem Value="18">5000 Un</asp:ListItem>  
+                            <asp:ListItem Value="19">Acima 5000 Un</asp:ListItem>  
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -244,7 +251,6 @@
                 </tr>
             </table>
         </td>
-        
     </tr>
 </table>
 
