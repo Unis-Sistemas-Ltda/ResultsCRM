@@ -49,7 +49,13 @@
                             Width="90px" AutoPostBack="True"></asp:TextBox>
                         <asp:ImageButton ID="BtnFiltrarItem" runat="server"
                             ImageUrl="~/Imagens/search.png" ToolTip="Pesquisar"
-                            OnClientClick="ShowEditModal('../Pesquisas/WFPItem.aspx?textbox=TxtCodItem','EditModalPopupClientes','IframeEdit');" />
+                            OnClientClick="ShowEditModal('../Pesquisas/WFPItem.aspx?textbox=TxtCodItem','EditModalPopupClientes','IframeEdit');" style="height: 16px" />
+                        <cc1:ModalPopupExtender ID="ModalPopupExtender2" BackgroundCssClass="ModalPopupBG"
+                            runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone"
+                            TargetControlID="BtnFiltrarItem" PopupControlID="DivEditWindow"
+                            OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+                            BehaviorID="EditModalPopupClientes">
+                        </cc1:ModalPopupExtender>
 
                         <asp:Label ID="LblDescricaoItem" runat="server" Font-Bold="True"
                             Height="17px"></asp:Label>
@@ -148,6 +154,27 @@
                         <asp:TextBox ID="TxtFdProdutoReferencia" runat="server" CssClass="CampoCadastro"  Width="600px"></asp:TextBox>
                     </td>
                 </tr>
+                  <tr>
+                    <td style="text-align: right" class="auto-style1">Código Produto Referência:</td>
+                    <td class="auto-style2" colspan="5">
+                        <asp:TextBox ID="TxtCodItemReferencia" runat="server" CssClass="CampoCadastro"
+                            Width="90px" AutoPostBack="True"></asp:TextBox>
+                        
+                        <asp:ImageButton ID="BtnFiltrarItemReferencia" runat="server"
+                            ImageUrl="~/Imagens/search.png" ToolTip="Pesquisar"
+                            OnClientClick="ShowEditModal('../Pesquisas/WFPItem.aspx?textbox=TxtCodItemReferencia&amp;varmp=SCodItemReferencia&amp','EditModalPopupItemReferencia','IframeEdit');" />
+                        <cc1:ModalPopupExtender ID="ModalPopupExtender3" BackgroundCssClass="ModalPopupBG"
+                            runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone"
+                            TargetControlID="BtnFiltrarItemReferencia" PopupControlID="DivEditWindow"
+                            OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+                            BehaviorID="EditModalPopupItemReferencia">
+                        </cc1:ModalPopupExtender>
+
+
+                        <asp:Label ID="LblDescricaoItemReferencia" runat="server" Font-Bold="True"
+                            Height="17px"></asp:Label>
+                    </td>
+                </tr>
                 <tr>
                     <td style="vertical-align: top; text-align: right;">
                         <asp:Label ID="Label12" runat="server" Text="Volume da Embalagem:"></asp:Label>
@@ -239,6 +266,15 @@
                     </td>
                 </tr>
 
+                 <tr>
+                    <td style="vertical-align: top; text-align: right;">
+                        <asp:Label ID="Label1" runat="server" Text="Observações Desenvolvimento:"></asp:Label>
+                    </td>
+                    <td colspan="5">
+                        <asp:TextBox ID="TxtFdObservacaoDesenvolvimento" runat="server" Height="25px" TextMode="MultiLine" CssClass="CampoCadastro"  Width="600px"></asp:TextBox>
+                    </td>
+                </tr>
+
 
 
                 
@@ -254,13 +290,9 @@
     </tr>
 </table>
 
-<%--este é o html para pesquisa de itens--%>
-<cc1:ModalPopupExtender ID="ModalPopupExtender2" BackgroundCssClass="ModalPopupBG"
-    runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone"
-    TargetControlID="BtnFiltrarItem" PopupControlID="DivEditWindow"
-    OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
-    BehaviorID="EditModalPopupClientes">
-</cc1:ModalPopupExtender>
+
+
+<
 <%--botões padrão que ficam ocultos, são necessários, não remover--%>
 <div class="popup_Buttons" style="display: none">
     <input id="ButtonEditDone" value="Done" type="button" />

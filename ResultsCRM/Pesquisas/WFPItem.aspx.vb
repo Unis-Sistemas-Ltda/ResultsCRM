@@ -2,18 +2,37 @@ Partial Public Class WFPItem
     Inherits System.Web.UI.Page
     Dim Controle As String
     Dim Comando As String
+    Dim VariavelArmazenamentoPesquisa As String
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Controle = Request.QueryString("textbox").ToString
         MultiViewExpanse.ActiveViewIndex = 0
+
+
+
+        If Not String.IsNullOrEmpty(Request.QueryString.Item("varmp")) Then
+            VariavelArmazenamentoPesquisa = Request.QueryString.Item("varmp").ToString()
+        End If
+
     End Sub
 
     Private Sub GridView1_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
-        If e.CommandName = "SELECIONAR" Then
-            Session("SAlterouCodItem") = "S"
-            Session("SCodItemPesquisado") = e.CommandArgument
-            ClientScript.RegisterStartupScript(Me.GetType(), "onload", "onSuccess();", True)
+
+        If String.IsNullOrEmpty(VariavelArmazenamentoPesquisa) Then
+            If e.CommandName = "SELECIONAR" Then
+                Session("SAlterouCodItem") = "S"
+                Session("SCodItemPesquisado") = e.CommandArgument
+                ClientScript.RegisterStartupScript(Me.GetType(), "onload", "onSuccess();", True)
+            End If
+        Else
+            If e.CommandName = "SELECIONAR" Then
+                Session("SAlterouCodItemReferencia") = "S"
+                Session("SCodItemPesquisadoReferencia") = e.CommandArgument
+                ClientScript.RegisterStartupScript(Me.GetType(), "onload", "onSuccess();", True)
+            End If
         End If
+
     End Sub
 
     Protected Sub TxtFornecedor_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtNome.TextChanged

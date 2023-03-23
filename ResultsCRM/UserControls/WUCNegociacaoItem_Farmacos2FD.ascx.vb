@@ -53,7 +53,16 @@
                 End If
             End If
 
+            If Session("SAlterouCodItemReferencia") = "S" Then
+                If TxtCodItemReferencia.Text <> Session("SCodItemPesquisadoReferencia") Then
+                    TxtCodItemReferencia.Text = Session("SCodItemPesquisadoReferencia")
+                    CodItemReferenciaMudou()
+                End If
+                Session("SAlterouCodItemReferencia") = "N"
+            End If
+
             Call CarregaDescricaoItem()
+            Call CarregaDescricaoItemReferencia()
 
         Catch ex As Exception
             LblErro.Text = ex.Message.ToString
@@ -109,9 +118,35 @@
         End Try
     End Sub
 
+    Private Sub CodItemReferenciaMudou()
+        Try
+            Dim objItem As New UCLItem
+
+            'Dim CodUD As String
+            Call CarregaDescricaoItemReferencia()
+
+            'If Not String.IsNullOrEmpty(TxtCodItemReferencia.Text) Then
+            '    Session("SCodItemPesquisado") = TxtCodItemReferencia.Text
+            '    objItem.CodItem = TxtCodItemReferencia.Text
+            '    objItem.Buscar()
+            '    CodUD = objItem.CodUd
+            'End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Protected Sub TxtCodItem_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodItem.TextChanged
         Try
             Call CodItemMudou()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Protected Sub TxtCodItemReferencia_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodItemReferencia.TextChanged
+        Try
+            Call CodItemReferenciaMudou()
         Catch ex As Exception
             Throw ex
         End Try
@@ -124,6 +159,19 @@
                 objItem.CodItem = TxtCodItem.Text
                 objItem.Buscar()
                 LblDescricaoItem.Text = objItem.Descricao
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub CarregaDescricaoItemReferencia()
+        Try
+            Dim objItem As New UCLItem
+            If Not String.IsNullOrEmpty(TxtCodItemReferencia.Text) Then
+                objItem.CodItem = TxtCodItemReferencia.Text
+                objItem.Buscar()
+                LblDescricaoItemReferencia.Text = objItem.Descricao
             End If
         Catch ex As Exception
             Throw ex
@@ -159,6 +207,8 @@
 
         '------
         objNegociacaoItem.FdProdutoReferencia = TxtFdProdutoReferencia.Text
+        objNegociacaoItem.FdObservacaoDesenvolvimento = TxtFdObservacaoDesenvolvimento.Text
+        objNegociacaoItem.FdCodItemReferencia = TxtCodItemReferencia.Text
         objNegociacaoItem.FdVolumeEmbalagem = TxtFdVolumeEmbalagem.Text
         objNegociacaoItem.FdCorEmbalagem = DdlFdCorEmbalagem.SelectedValue
         objNegociacaoItem.FdMpEmbalagem = DdlFdMpEmbalagem.SelectedValue
@@ -236,12 +286,11 @@
         DdlFdTipoEmbalagem.SelectedValue = objNegociacaoItem.FdTipoEmbalagem
         DdlFdQtdProduzir.SelectedValue = objNegociacaoItem.FdQtdProduzir
 
+        TxtFdObservacaoDesenvolvimento.Text = objNegociacaoItem.FdObservacaoDesenvolvimento
+        TxtCodItemReferencia.Text = objNegociacaoItem.FdCodItemReferencia
+
 
     End Sub
-
-
-
-
 
 
 End Class

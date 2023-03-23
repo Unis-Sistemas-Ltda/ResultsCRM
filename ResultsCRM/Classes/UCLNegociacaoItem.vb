@@ -58,6 +58,8 @@
     Private _FdOdorDirecionamento As String
     Private _FdOdorReferencia As String
     Private _FdDescricaoProduto As String
+    Private _FdCodItemReferencia As String
+    Private _FdObservacaoDesenvolvimento As String
     Private objAcessoDados As UCLAcessoDados
     Public Property PercAcrescimoUnitario As String
     Public Property PercDescontoUnitario1 As String
@@ -604,6 +606,24 @@
         End Set
     End Property
 
+    Public Property FdCodItemReferencia() As String
+        Get
+            Return _FdCodItemReferencia
+        End Get
+        Set(ByVal value As String)
+            _FdCodItemReferencia = value
+        End Set
+    End Property
+
+    Public Property FdObservacaoDesenvolvimento() As String
+        Get
+            Return _FdObservacaoDesenvolvimento
+        End Get
+        Set(ByVal value As String)
+            _FdObservacaoDesenvolvimento = value
+        End Set
+    End Property
+
     Private _FdProdutoReferencia As String
     Public Property FdProdutoReferencia() As String
         Get
@@ -792,13 +812,17 @@
             strSql += "        prazo_entrega, "
             strSql += "        tp_prazo_entrga tp_prazo_entrega, "
             strSql += "        isnull(ni.recurso,0) recurso, "
-            strSql += "        isnull(ni.numero_serie,'') numero_serie "
+            strSql += "        isnull(ni.numero_serie,'') numero_serie, "
+            strSql += "        isnull(ni.fd_observacao_desenvolvimento,'') fd_observacao_desenvolvimento, "
+            strSql += "        isnull(ni.fd_cod_item_referencia,'') fd_cod_item_referencia "
             strSql += "   from negociacao_cliente_item ni inner join negociacao_cliente n on n.empresa = ni.empresa and n.estabelecimento = ni.estabelecimento and n.cod_negociacao_cliente = ni.cod_negociacao_cliente "
             strSql += "                                   left outer join parametros_venda par on ni.empresa = par.empresa "
             strSql += "  where ni.empresa = " + Empresa
             strSql += "    and ni.estabelecimento = " + Estabelecimento
             strSql += "    and ni.cod_negociacao_cliente = " + CodNegociacao
             strSql += "    and ni.seq_item = " + SeqItem
+
+
             dt = objAcessoDados.BuscarDados(strSql)
 
             If dt.Rows.Count > 0 Then
@@ -911,6 +935,10 @@
                 Else
                     TpPrazoEntrega = "1"
                 End If
+
+                FdObservacaoDesenvolvimento = dt.Rows.Item(0).Item("fd_observacao_desenvolvimento").ToString
+                FdCodItemReferencia = dt.Rows.Item(0).Item("fd_cod_item_referencia").ToString
+
             Else
                 strSql = " select  par.aux_ng_item1, "
                 strSql += "        par.aux_ng_item2, "
@@ -1036,6 +1064,16 @@
                 FdQtdProduzir = "null"
             End If
 
+            If String.IsNullOrEmpty(FdObservacaoDesenvolvimento) Then
+                FdObservacaoDesenvolvimento = ""
+            End If
+
+            If String.IsNullOrEmpty(FdCodItemReferencia) Then
+                FdCodItemReferencia = ""
+            End If
+
+
+
             '----------
 
 
@@ -1108,8 +1146,10 @@
             strSql += "        fd_cor_embalagem = " + FdCorEmbalagem + ", "
             strSql += "        fd_mp_embalagem = " + FdMpEmbalagem + ", "
             strSql += "        fd_tipo_embalagem = " + FdTipoEmbalagem + ", "
-            strSql += "        fd_qtd_produzir = " + FdQtdProduzir + " "
+            strSql += "        fd_qtd_produzir = " + FdQtdProduzir + ", "
 
+            strSql += "        fd_observacao_desenvolvimento = '" + FdObservacaoDesenvolvimento + "', "
+            strSql += "        fd_cod_item_referencia = '" + FdCodItemReferencia + "' "
 
             strSql += "  where empresa = " + Empresa
             strSql += "    and estabelecimento = " + Estabelecimento
@@ -1192,6 +1232,16 @@
                 FdQtdProduzir = "null"
             End If
 
+            If String.IsNullOrEmpty(FdObservacaoDesenvolvimento) Then
+                FdObservacaoDesenvolvimento = ""
+            End If
+
+            If String.IsNullOrEmpty(FdCodItemReferencia) Then
+                FdCodItemReferencia = ""
+            End If
+
+
+
             '----------
 
 
@@ -1255,6 +1305,9 @@
             strSql += "    fd_mp_embalagem, "
             strSql += "    fd_tipo_embalagem, "
             strSql += "    fd_qtd_produzir, "
+
+            strSql += "    fd_observacao_desenvolvimento, "
+            strSql += "    fd_cod_item_referencia, "
 
             strSql += "    altura, "
             strSql += "    largura, "
@@ -1337,6 +1390,10 @@
             strSql += FdMpEmbalagem + ", "
             strSql += FdTipoEmbalagem + ", "
             strSql += FdQtdProduzir + ", "
+
+            strSql += "'" + FdObservacaoDesenvolvimento + "', "
+            strSql += "'" + FdCodItemReferencia + "', "
+
 
             strSql += ValorNumericoBanco(Altura, 2) + ", "
             strSql += ValorNumericoBanco(Largura, 2) + ", "

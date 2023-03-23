@@ -59,6 +59,15 @@ Partial Public Class WUCNegociacaoItem_Farmacos2FD
     Protected WithEvents BtnFiltrarItem As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
+    '''ModalPopupExtender2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender2 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
     '''LblDescricaoItem control.
     '''</summary>
     '''<remarks>
@@ -230,6 +239,42 @@ Partial Public Class WUCNegociacaoItem_Farmacos2FD
     Protected WithEvents TxtFdProdutoReferencia As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''TxtCodItemReferencia control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtCodItemReferencia As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnFiltrarItemReferencia control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnFiltrarItemReferencia As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''ModalPopupExtender3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender3 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''LblDescricaoItemReferencia control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblDescricaoItemReferencia As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Label12 control.
     '''</summary>
     '''<remarks>
@@ -329,6 +374,24 @@ Partial Public Class WUCNegociacaoItem_Farmacos2FD
     Protected WithEvents DdlFdQtdProduzir As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtFdObservacaoDesenvolvimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtFdObservacaoDesenvolvimento As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''BtnGravar control.
     '''</summary>
     '''<remarks>
@@ -345,13 +408,4 @@ Partial Public Class WUCNegociacaoItem_Farmacos2FD
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''ModalPopupExtender2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender2 As Global.AjaxControlToolkit.ModalPopupExtender
 End Class
