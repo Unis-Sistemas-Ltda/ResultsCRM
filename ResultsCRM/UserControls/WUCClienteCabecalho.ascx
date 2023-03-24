@@ -139,10 +139,14 @@
         </td>
     </tr>
      <tr>
-        <td class="auto-style1">
-            &nbsp;</td>
+        <td  style="text-align: right" class="auto-style1">
+            Tipo de Pessoa(Fisica/Juridica)</td>
         <td style="text-align: left">
-            &nbsp;</td>
+            <asp:DropDownList ID="DdlTpPessoa" runat="server" CssClass="CampoCadastro" Width="150px">
+                <asp:ListItem Value="PF">Pessoa Física</asp:ListItem>
+                <asp:ListItem Value="PJ">Pessoa Juridica</asp:ListItem>
+            </asp:DropDownList>
+         </td>
     </tr>
     <tr>
         <td style="text-align: right" class="auto-style1">

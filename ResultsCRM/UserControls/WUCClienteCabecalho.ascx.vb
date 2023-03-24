@@ -477,7 +477,7 @@
 
     Protected Function CarregaObjeto(ByRef ObjEmitente As UCLEmitente) As UCLEmitente
 
-        'ObjEmitente.TpPessoa = DdlTpPessoa.SelectedValue
+        ObjEmitente.TpPessoa = DdlTpPessoa.SelectedValue
         ObjEmitente.Nome = TxtNome.Text.GetValidInputContent
         ObjEmitente.NomeAbreviado = TxtFantasia.Text.GetValidInputContent
         ObjEmitente.Situacao = DdlSituacao.SelectedValue
@@ -515,9 +515,6 @@
             ObjEmitente.CodPessoaFisica = "null"
         End If
 
-
-
-
         Return ObjEmitente
     End Function
 
@@ -537,7 +534,14 @@
         ObjEmitente.Buscar()
 
         objEnderecoEmitente.CodEmitente = CodEmitente
-        objEnderecoEmitente.CNPJ = CNPJEmitente
+
+
+        If String.IsNullOrEmpty(CNPJEmitente) Then
+            objEnderecoEmitente.CNPJ = ObjEmitente.CNPJPreferencial
+        Else
+            objEnderecoEmitente.CNPJ = CNPJEmitente
+        End If
+
         objEnderecoEmitente.Buscar()
         CNPJEmitente = objEnderecoEmitente.CNPJ
 
@@ -614,7 +618,7 @@
         LblContatoPreferencial.Text = objContato.Nome + " [" + objContato.Email + "]"
 
         LblCodEmitente.Text = CodEmitente
-        'DdlTpPessoa.SelectedValue = ObjEmitente.TpPessoa
+        DdlTpPessoa.SelectedValue = ObjEmitente.TpPessoa
         TxtNome.Text = ObjEmitente.Nome
         TxtFantasia.Text = ObjEmitente.NomeAbreviado
         DdlSituacao.SelectedValue = ObjEmitente.Situacao
@@ -655,7 +659,7 @@
         Call CodigoPessoaFisicaMudou()
         If Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Regional Then
             LblCodEmitente.Enabled = False
-            'DdlTpPessoa.Enabled = False
+            DdlTpPessoa.Enabled = False
             TxtNome.Enabled = False
             TxtFantasia.Enabled = False
             DdlSituacao.Enabled = False

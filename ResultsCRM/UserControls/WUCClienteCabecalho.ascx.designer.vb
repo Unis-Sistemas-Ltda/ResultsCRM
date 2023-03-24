@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WUCClienteCabecalho
-    
+
     '''<summary>
     '''DdlTipo control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlTipo As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblErro control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblErro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCodEmitente control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCodEmitente As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCNPJLbl control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCNPJLbl As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCNPJ control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCNPJ As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtNome control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtNome As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''TxtFantasia control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtFantasia As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''LblTxtEndereco control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtEndereco As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblLogradouro control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblLogradouro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtBairro control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtBairro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblBairro control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblBairro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtCEP control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtCEP As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCEP control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCEP As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtCidadeUF control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtCidadeUF As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCidade control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCidade As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCidadeBarra control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCidadeBarra As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblUF control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblUF As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblUFTraco control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblUFTraco As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblPais control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblPais As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtTelefones control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtTelefones As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTelefones control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTelefones As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtFax control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtFax As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblFax control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFax As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtEmail control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtEmail As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblEmail control.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblEmail As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtContatoPreferencial control.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtContatoPreferencial As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblContatoPreferencial control.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblContatoPreferencial As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblTxtSenha control.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTxtSenha As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblSenha control.
     '''</summary>
@@ -273,7 +273,16 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblSenha As Global.System.Web.UI.WebControls.Label
-    
+
+    '''<summary>
+    '''DdlTpPessoa control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlTpPessoa As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''DdlSituacao control.
     '''</summary>
@@ -282,7 +291,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlSituacao As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''DdlProcedencia control.
     '''</summary>
@@ -291,7 +300,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlProcedencia As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''DdlNatureza control.
     '''</summary>
@@ -300,7 +309,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlNatureza As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblPreferencial control.
     '''</summary>
@@ -309,7 +318,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblPreferencial As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblAssociado control.
     '''</summary>
@@ -318,7 +327,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblAssociado As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -327,7 +336,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtProprietario control.
     '''</summary>
@@ -336,7 +345,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtProprietario As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''BtnFiltrarProprietario control.
     '''</summary>
@@ -345,7 +354,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnFiltrarProprietario As Global.System.Web.UI.WebControls.ImageButton
-    
+
     '''<summary>
     '''ModalPopupExtender1 control.
     '''</summary>
@@ -354,7 +363,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ModalPopupExtender1 As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''LblProprietario control.
     '''</summary>
@@ -363,7 +372,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblProprietario As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label3 control.
     '''</summary>
@@ -372,7 +381,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtPessoaFisica control.
     '''</summary>
@@ -381,7 +390,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtPessoaFisica As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''BtnFiltrarPessoaFisica control.
     '''</summary>
@@ -390,7 +399,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnFiltrarPessoaFisica As Global.System.Web.UI.WebControls.ImageButton
-    
+
     '''<summary>
     '''ModalPopupExtender3 control.
     '''</summary>
@@ -399,7 +408,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ModalPopupExtender3 As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''LblPessoaFisica control.
     '''</summary>
@@ -408,7 +417,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblPessoaFisica As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -417,7 +426,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtFranquia control.
     '''</summary>
@@ -426,7 +435,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtFranquia As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''BtnFiltrarFranquia control.
     '''</summary>
@@ -435,7 +444,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnFiltrarFranquia As Global.System.Web.UI.WebControls.ImageButton
-    
+
     '''<summary>
     '''ModalPopupExtender2 control.
     '''</summary>
@@ -444,7 +453,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ModalPopupExtender2 As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''LblFranquia control.
     '''</summary>
@@ -453,7 +462,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFranquia As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label6 control.
     '''</summary>
@@ -462,7 +471,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtRedeAssociativa control.
     '''</summary>
@@ -471,7 +480,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtRedeAssociativa As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''BtnFiltrarCliente control.
     '''</summary>
@@ -480,7 +489,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnFiltrarCliente As Global.System.Web.UI.WebControls.ImageButton
-    
+
     '''<summary>
     '''ModalPopupExtender4 control.
     '''</summary>
@@ -489,7 +498,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ModalPopupExtender4 As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''lblRedeAssociativa control.
     '''</summary>
@@ -498,7 +507,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblRedeAssociativa As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''CbxConfirma control.
     '''</summary>
@@ -507,7 +516,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents CbxConfirma As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkExigeFotoOS control.
     '''</summary>
@@ -516,7 +525,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkExigeFotoOS As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkFuncionario control.
     '''</summary>
@@ -525,7 +534,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkFuncionario As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkTransportador control.
     '''</summary>
@@ -534,7 +543,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkTransportador As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkRepresentante control.
     '''</summary>
@@ -543,7 +552,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkRepresentante As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkLicenciador control.
     '''</summary>
@@ -552,7 +561,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkLicenciador As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkCliente control.
     '''</summary>
@@ -561,7 +570,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkCliente As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkFornecedor control.
     '''</summary>
@@ -570,7 +579,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkFornecedor As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkOptanteSimples control.
     '''</summary>
@@ -579,7 +588,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkOptanteSimples As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''ChkDistribuidor control.
     '''</summary>
@@ -588,7 +597,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkDistribuidor As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''LblGrupoEmitente control.
     '''</summary>
@@ -597,7 +606,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblGrupoEmitente As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlMercado control.
     '''</summary>
@@ -606,7 +615,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlMercado As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblDataCadastramentoLBL control.
     '''</summary>
@@ -615,7 +624,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDataCadastramentoLBL As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDataCadastro control.
     '''</summary>
@@ -624,7 +633,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDataCadastro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblUsuarioCadastramentoLBL control.
     '''</summary>
@@ -633,7 +642,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblUsuarioCadastramentoLBL As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblUsuarioCadastro control.
     '''</summary>
@@ -642,7 +651,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblUsuarioCadastro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDataAlteracalLBL control.
     '''</summary>
@@ -651,7 +660,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDataAlteracalLBL As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblDataAlteracao control.
     '''</summary>
@@ -660,7 +669,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblDataAlteracao As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblUsuarioAlteracaoLBL control.
     '''</summary>
@@ -669,7 +678,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblUsuarioAlteracaoLBL As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblUsuarioAlteracao control.
     '''</summary>
@@ -678,7 +687,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblUsuarioAlteracao As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblInadimplente control.
     '''</summary>
@@ -687,7 +696,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblInadimplente As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''btnOkay control.
     '''</summary>
@@ -696,7 +705,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnOkay As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''BtnGravar control.
     '''</summary>
@@ -705,7 +714,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnGravar As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''BtnCancelar control.
     '''</summary>
@@ -714,7 +723,7 @@ Partial Public Class WUCClienteCabecalho
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents BtnCancelar As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''BtnProximo control.
     '''</summary>
