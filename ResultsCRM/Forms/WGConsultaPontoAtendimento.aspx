@@ -41,14 +41,21 @@
                         ToolTip="Informe o nome ou parte do nome do cliente." Width="160px" 
                         AutoPostBack="True"></asp:TextBox>
                 </td>
+                <td style="text-align: right">
+                    Equipamento/Patrimônio:</td>
+                <td>
+                    <asp:TextBox ID="TxtEquipamento" runat="server" CssClass="CampoCadastro" 
+                        ToolTip="Informe o nome, parte do nome ou número de patrimônio do equipamento." Width="160px" 
+                        AutoPostBack="True"></asp:TextBox>
+                </td>
             </tr>
             <tr>
-                <td style="background-color: #FFFFE6;" class="Erro" colspan="6">
+                <td style="background-color: #FFFFE6;" class="Erro" colspan="8">
                     <asp:Label ID="LblErro" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td colspan="6">
+                <td colspan="8">
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                         CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" 
                         GridLines="None" Width="100%" AllowSorting="True" AllowPaging="True" 
@@ -108,17 +115,10 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="6">
+                <td colspan="8">
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
                         ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" 
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         SelectCommand="  SELECT e.cod_emitente,
          e.nome,
          ppa.numero_ponto_atendimento,
@@ -133,17 +133,25 @@
    WHERE (:cod_emitente = '' or trim(:cod_emitente2) = trim(convert(varchar(12), e.cod_emitente)))
      AND isnull(e.nome,'') like '%' || trim(:nome_emitente) || '%'
      AND ponto_atend like '%' || :ponto_atend || '%'
+     AND ( (select count(*) from equipamento eq where eq.cod_cliente = ppa.cod_emitente and eq.numero_ponto_atendimento = ppa.numero_ponto_atendimento and (isnull(eq.observacao,'') || isnull(eq.numero_registro,'')) like '%' || trim(:equipamento) || '%' ) > 0
+           or trim(:equipamento2) = trim('') )
+
    ORDER BY e.nome, ppa.numero_ponto_atendimento, ppa.descricao">
                         <SelectParameters>
                             <asp:ControlParameter
                                 ControlID="TxtCodEmitente"
+                                ConvertEmptyStringToNull="False" 
                                 Name=":cod_emitente" 
                                 PropertyName="Text" 
-                                DefaultValue="" 
-                                ConvertEmptyStringToNull="False" 
+                                DefaultValue=""                                
                                 Type="String" />
-                            <asp:ControlParameter ControlID="TxtCodEmitente" 
-                                ConvertEmptyStringToNull="False" Name=":cod_emitente2" PropertyName="Text" />
+                            <asp:ControlParameter 
+                                ControlID="TxtCodEmitente" 
+                                ConvertEmptyStringToNull="False" 
+                                Name=":cod_emitente2" 
+                                PropertyName="Text"
+                                DefaultValue=""                                
+                                Type="String"/>
                             <asp:ControlParameter
                                 ControlID="TxtNomeEmitente" 
                                 ConvertEmptyStringToNull="False"
@@ -154,6 +162,18 @@
                                 ControlID="TxtPontoAtendimento"
                                 ConvertEmptyStringToNull="False" 
                                 Name=":ponto_atend"
+                                PropertyName="Text"
+                                DefaultValue="" />
+                            <asp:ControlParameter
+                                ControlID="TxtEquipamento"
+                                ConvertEmptyStringToNull="False" 
+                                Name=":equipamento"
+                                PropertyName="Text"
+                                DefaultValue="" />
+                            <asp:ControlParameter
+                                ControlID="TxtEquipamento"
+                                ConvertEmptyStringToNull="False" 
+                                Name=":equipamento2"
                                 PropertyName="Text"
                                 DefaultValue="" />
                         </SelectParameters>

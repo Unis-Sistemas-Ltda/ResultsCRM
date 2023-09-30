@@ -202,6 +202,7 @@
     <Content Include="Forms\WFImpressaoOSAtivaSipe.aspx" />
     <Content Include="Forms\WGAssessoriaPainel.aspx" />
     <Content Include="Forms\WGClientesNaoAtendidos.aspx" />
+    <Content Include="Forms\WGConsultaPontoAtendimento.aspx" />
     <Content Include="Forms\WGNegociacaoItemFormula.aspx" />
     <Content Include="Forms\WGOrdemServico.aspx" />
     <Content Include="Forms\WGPedidoVenda.aspx" />
@@ -971,6 +972,13 @@
     <Compile Include="Forms\WGClientesNaoAtendidos.aspx.vb">
       <DependentUpon>WGClientesNaoAtendidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\WGConsultaPontoAtendimento.aspx.designer.vb">
+      <DependentUpon>WGConsultaPontoAtendimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WGConsultaPontoAtendimento.aspx.vb">
+      <DependentUpon>WGConsultaPontoAtendimento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WGNegociacaoItemFormula.aspx.designer.vb">
       <DependentUpon>WGNegociacaoItemFormula.aspx</DependentUpon>
@@ -2685,13 +2693,6 @@
     </Compile>
     <Compile Include="Forms\WGClienteSLAEstadoRegiao.aspx.vb">
       <DependentUpon>WGClienteSLAEstadoRegiao.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Forms\WGConsultaPontoAtendimento.aspx.designer.vb">
-      <DependentUpon>WGConsultaPontoAtendimento.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WGConsultaPontoAtendimento.aspx.vb">
-      <DependentUpon>WGConsultaPontoAtendimento.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WGEfeito.aspx.designer.vb">
@@ -4447,7 +4448,6 @@
     <Content Include="Forms\WGCliente.aspx" />
     <Content Include="Forms\WGClienteCNPJ.aspx" />
     <Content Include="Forms\WGClientePontoAtendimento.aspx" />
-    <Content Include="Forms\WGConsultaPontoAtendimento.aspx" />
     <Content Include="Forms\WGModelo.aspx" />
     <Content Include="Forms\WGNegociacaoEmail.aspx" />
     <Content Include="Forms\WGOSAgenteTecnico.aspx" />

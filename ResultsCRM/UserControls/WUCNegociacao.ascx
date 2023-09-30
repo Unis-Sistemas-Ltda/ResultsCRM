@@ -305,7 +305,7 @@
             </asp:DropDownList>
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right">
-            <asp:Label ID="Label8" runat="server" Height="16px" Text="Origem:" style="text-align: right"
+            <asp:Label ID="Label8" runat="server" Height="16px" Text="Origem do Lead:" style="text-align: right"
                 Width="65px"></asp:Label>
             </td>
         <td class="CelulaCampoCadastro">

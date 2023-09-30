@@ -127,6 +127,7 @@
             End If
 
             Session("GlCodUsuario") = Codusuario
+            Session("GlAgenteVendas") = Codusuario
             Session("GlUsuario") = Usuario
             Session("GlCodEmitenteExterno") = CodEmitenteExterno
             Session("GlCodGrupoExterno") = codGrupoExterno

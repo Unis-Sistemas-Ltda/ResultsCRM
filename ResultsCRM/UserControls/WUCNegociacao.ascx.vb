@@ -1,4 +1,6 @@
-﻿Partial Public Class WUCNegociacao
+﻿Imports iTextSharp.text.pdf
+
+Partial Public Class WUCNegociacao
     Inherits System.Web.UI.UserControl
 
     Private _CodNegociacao As String
@@ -636,21 +638,74 @@
 
             LblErro.Text = ""
 
+            If String.IsNullOrWhiteSpace(DdlEstabelecimento.SelectedValue) Or DdlEstabelecimento.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Estabelecimento<br/>"
+            End If
+
+            If String.IsNullOrEmpty(DdlContato.SelectedValue) Or DdlContato.SelectedValue = "0" Then
+                LblErro.Text += "Preencha o campo Contato<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlRepresentante.SelectedValue) Or DdlRepresentante.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Vendedor/Representante.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlAgente.SelectedValue) Or DdlAgente.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Agente de vendas.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlCanalVenda.SelectedValue) Or DdlCanalVenda.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Canal de Venda.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlCarteira.SelectedValue) Or DdlCarteira.SelectedValue = 0 And Session("GlClienteUnis") = 1 Then
+                LblErro.Text += "Preencha o campo Carteira.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlMoeda.SelectedValue) Or DdlMoeda.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Moeda.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlFormaPagto.SelectedValue) Or DdlFormaPagto.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Forma de Pagamento.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlCondicaoPagto.SelectedValue) Or DdlCondicaoPagto.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Condição de Pagamento.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlNatureza.SelectedValue) Or DdlNatureza.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Natureza da Operação.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlFrete.SelectedValue) Or DdlFrete.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Tipo de Frete.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlFunil.SelectedValue) Or DdlFunil.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Funil de Vendas<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlEtapa.SelectedValue) Or DdlEtapa.SelectedValue = 0 Then
+                LblErro.Text += "Preencha o campo Etapa da Venda.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlStatus.SelectedValue) Or DdlStatus.SelectedValue = 0 And Session("GlClienteUnis") = 1 Then
+                LblErro.Text += "Preencha o campo Status da Venda.<br/>"
+            End If
+
+            If String.IsNullOrWhiteSpace(DdlFonteOrigem.SelectedValue) Or DdlFonteOrigem.SelectedValue = 0 And Session("GlClienteUnis") = 1 Then
+                LblErro.Text += "Preencha o campo Origem do Lead.<br/>"
+            End If
+
+
             If String.IsNullOrEmpty(TxtCliente.Text) Then
                 LblErro.Text += "Preencha o campo Cliente.<br/>"
             End If
 
-            If DdlEtapa.SelectedValue = 0 Then
-                LblErro.Text += "Preencha o campo Etapa.<br/>"
-            End If
 
-            If DdlCanalVenda.SelectedValue = 0 Then
-                LblErro.Text += "Preencha o campo Canal de Venda.<br/>"
-            End If
 
-            If DdlAgente.SelectedValue = 0 Then
-                LblErro.Text += "Preencha o campo Agente de vendas.<br/>"
-            End If
+
 
             objEtapa.Empresa = Session("GlEmpresa")
             objEtapa.Codigo = DdlEtapa.SelectedValue
@@ -729,7 +784,7 @@
                 objNegociacao.CodContato = DdlContato.SelectedValue
             End If
 
-            If String.IsNullOrWhiteSpace(DdlCarteira.SelectedValue) OrElse DdlCarteira.SelectedValue = 0 Then
+            If (String.IsNullOrWhiteSpace(DdlCarteira.SelectedValue) OrElse DdlCarteira.SelectedValue = 0) Then
                 objNegociacao.CodCarteira = "null"
             Else
                 objNegociacao.CodCarteira = DdlCarteira.SelectedValue
@@ -764,7 +819,8 @@
                     objNegociacao.CodChamado = Session("SCodAtendimento")
                 End If
                 If DdlEstabelecimento.SelectedValue = "-1" OrElse DdlEstabelecimento.SelectedValue = "0" Then
-                    objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
+                    Throw New Exception("O campo estabelecimentno é um campo obrigatório. Por favor selecione o estabelecimento!")
+                    'objNegociacao.Estabelecimento = Session("SEstabelecimentoNegociacao")
                 Else
                     'objNegociacao.Estabelecimento = Session("GlEstabelecimento")
                     objNegociacao.Estabelecimento = DdlEstabelecimento.SelectedValue
@@ -772,19 +828,22 @@
             End If
 
             If String.IsNullOrWhiteSpace(DdlAgente.SelectedValue) OrElse DdlAgente.SelectedValue = 0 Then
-                objNegociacao.CodAgenteVenda = "null"
+                Throw New Exception("O Agente de vendas é um campo obrigatório. Por favor preencher o campo agente de vendas!")
+                'objNegociacao.CodAgenteVenda = "null"
             Else
                 objNegociacao.CodAgenteVenda = DdlAgente.SelectedValue
             End If
 
             If String.IsNullOrWhiteSpace(DdlCanalVenda.SelectedValue) OrElse DdlCanalVenda.SelectedValue = "0" Then
-                objNegociacao.CodCanalVendas = "null"
+                Throw New Exception("O canal de venda é um campo obrigatório. Por favor preencher o campo canal de venda!")
+                'objNegociacao.CodCanalVendas = "null"
             Else
                 objNegociacao.CodCanalVendas = DdlCanalVenda.SelectedValue
             End If
 
             If String.IsNullOrWhiteSpace(DdlNatureza.SelectedValue) OrElse DdlNatureza.SelectedValue = "0" Then
-                objNegociacao.CodNaturOper = "null"
+                Throw New Exception("O natureza de operação é um campo obrigatório. Por favor preencher o campo natureza de operação!")
+                'objNegociacao.CodNaturOper = "null"
             Else
                 objNegociacao.CodNaturOper = DdlNatureza.SelectedValue
             End If
@@ -798,7 +857,14 @@
             objNegociacao.GerarPedido = ChkGerarPedido.Checked.ToString.Replace("False", "N").Replace("True", "S")
 
             objNegociacao.ManterInformado = TxtManterInformado.Text.GetValidInputContent
-            objNegociacao.CodEtapaNegociacao = DdlEtapa.SelectedValue
+
+            If String.IsNullOrWhiteSpace(DdlEtapa.SelectedValue) OrElse DdlEtapa.SelectedValue = "0" Then
+                Throw New Exception("O campo etapa da negociação é um campo obrigatório. Por favor preencher o campo etapa da negociação!")
+                'objNegociacao.CodNaturOper = "null"
+            Else
+                objNegociacao.CodEtapaNegociacao = DdlEtapa.SelectedValue
+            End If
+
 
             If isValidDate(TxtDataRecontato.Text) Then
                 dataHoraRecontato = TxtDataRecontato.Text
@@ -848,13 +914,15 @@
             objNegociacao.Receptividade = ddlReceptividade.SelectedValue
 
             If String.IsNullOrWhiteSpace(DdlFormaPagto.SelectedValue) OrElse DdlFormaPagto.SelectedValue = 0 Then
+                Throw New Exception("A forma de pagamento é um campo obrigatório. Por favor preencher o campo forma de pagamento!")
                 objNegociacao.CodFormaPagto = "null"
             Else
                 objNegociacao.CodFormaPagto = DdlFormaPagto.SelectedValue
             End If
 
             If String.IsNullOrWhiteSpace(DdlCondicaoPagto.SelectedValue) OrElse DdlCondicaoPagto.SelectedValue = 0 Then
-                objNegociacao.CodCondPagto = "null"
+                Throw New Exception("A condição de pagamento é um campo obrigatório. Por favor preencher o campo condição de pagamento!")
+                'objNegociacao.CodCondPagto = "null"
             Else
                 objNegociacao.CodCondPagto = DdlCondicaoPagto.SelectedValue
             End If
@@ -871,9 +939,23 @@
                 objNegociacao.CodStatus = DdlStatus.SelectedValue
             End If
 
-            objNegociacao.Moeda = DdlMoeda.SelectedValue
+            If String.IsNullOrWhiteSpace(DdlMoeda.SelectedValue) OrElse DdlMoeda.SelectedValue = 0 Then
+                Throw New Exception("A moeda é um campo obrigatório. Por favor preencher o campo moeda!")
+                'objNegociacao.CodFonteOrigemNegociacao = "null"
+            Else
+                objNegociacao.Moeda = DdlMoeda.SelectedValue
+            End If
 
-            objNegociacao.CodRepresentante = DdlRepresentante.SelectedValue
+
+            'If String.IsNullOrEmpty(DdlRepresentante.SelectedValue) Then
+
+            If String.IsNullOrWhiteSpace(DdlRepresentante.SelectedValue) OrElse DdlRepresentante.SelectedValue = 0 Then
+                Throw New Exception("O Vendedor/Representante é um campo obrigatório. Por favor preencher o campo Vendedor/Representante!")
+                'objNegociacao.CodRepresentante = "null"
+            Else
+                objNegociacao.CodRepresentante = DdlRepresentante.SelectedValue
+            End If
+
 
             objNegociacao.CodTipoObra = DdlTipoObra.SelectedValue
             objNegociacao.CodEstagioObra = DdlEstagioObra.SelectedValue
@@ -881,12 +963,18 @@
             objNegociacao.TamanhoObra = TxtTamanhoObra.Text
 
             If String.IsNullOrWhiteSpace(DdlFrete.SelectedValue) OrElse DdlFrete.SelectedValue = 0 Then
-                objNegociacao.tipo_frete = "2"
+                Throw New Exception("O tipo de frete é um campo obrigatório. Por favor preencher o campo tipo de frete!")
+                'objNegociacao.tipo_frete = "2"
             Else
                 objNegociacao.tipo_frete = DdlFrete.SelectedValue
             End If
 
-            objNegociacao.CodFunil = DdlFunil.SelectedValue
+            If String.IsNullOrWhiteSpace(DdlFunil.SelectedValue) OrElse DdlFunil.SelectedValue = 0 Then
+                Throw New Exception("O funil de vendas é um campo obrigatório. Por favor preencher o campo funil de vendas!")
+                'objNegociacao.tipo_frete = "2"
+            Else
+                objNegociacao.CodFunil = DdlFunil.SelectedValue
+            End If
 
             Return objNegociacao
         Catch ex As Exception

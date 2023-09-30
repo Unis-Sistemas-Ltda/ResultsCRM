@@ -14,6 +14,7 @@
             Dim objFonte As New UCLFonteOrigem
             Dim objMarca As New UCLMarca
 
+
             TxtDataCadastramentoI.Attributes.Add("OnKeyPress", "formatacampo(this,'##/##/####');")
             TxtDataCadastramentoF.Attributes.Add("OnKeyPress", "formatacampo(this,'##/##/####');")
             TxtDataRecontatoI.Attributes.Add("OnKeyPress", "formatacampo(this,'##/##/####');")
@@ -108,7 +109,7 @@
                     DdlEtapa.SelectedValue = Session("S_PNG_DdlEtapa")
                     DdlTop.SelectedValue = 200
                     If Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Vendas Or Session("GlTipoAcesso") = UCLUsuario.TipoAcesso.Total Then
-                        ddlAgente.SelectedValue = Session("GlCodUsuario")
+                        ddlAgente.SelectedValue = Session("GlAgenteVendas")
                     End If
 
                 Next
@@ -123,6 +124,7 @@
 
     Protected Sub BtnAplicarFiltro_Click(sender As Object, e As EventArgs) Handles BtnAplicarFiltro.Click
         Try
+            Session("GlAgenteVendas") = ddlAgente.SelectedValue
             Call AplicaFiltro(True)
             Session("SCodAtendimento") = ""
         Catch ex As Exception
@@ -172,4 +174,5 @@
             Throw ex
         End Try
     End Sub
+
 End Class

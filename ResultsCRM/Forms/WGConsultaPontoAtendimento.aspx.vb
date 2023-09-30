@@ -2,6 +2,9 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            Call AplicaFiltro(False)
+        End If
 
     End Sub
 
@@ -25,22 +28,32 @@
         End Try
     End Sub
 
-    Protected Sub AplicaFiltro()
-        SqlDataSource1.Select(DataSourceSelectArguments.Empty)
-        SqlDataSource1.DataBind()
-        GridView1.DataBind()
+    Protected Sub AplicaFiltro(ByVal postback As Boolean)
+        If postback Then
+            SqlDataSource1.Select(DataSourceSelectArguments.Empty)
+            SqlDataSource1.DataBind()
+            GridView1.DataBind()
+        Else
+            SqlDataSource1.Select(DataSourceSelectArguments.Empty)
+            SqlDataSource1.DataBind()
+            GridView1.DataBind()
+        End If
+
     End Sub
 
     Protected Sub TxtCodEmitente_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtCodEmitente.TextChanged
-        Call AplicaFiltro()
+        Call AplicaFiltro(True)
     End Sub
 
     Protected Sub TxtNomeEmitente_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtNomeEmitente.TextChanged
-        Call AplicaFiltro()
+        Call AplicaFiltro(True)
     End Sub
 
     Protected Sub TxtNumeroPontoAtendimento_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles TxtPontoAtendimento.TextChanged
-        Call AplicaFiltro()
+        Call AplicaFiltro(True)
     End Sub
 
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
