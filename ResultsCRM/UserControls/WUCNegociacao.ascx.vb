@@ -39,6 +39,7 @@ Partial Public Class WUCNegociacao
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             Dim CodClientePesquisado As String
+            Dim CNPJClientePesquisado As String
             Dim CodContatoRetornado As String
             Dim recarregaContatos As Long
             Dim alterouCodCliente As Long
@@ -113,6 +114,7 @@ Partial Public Class WUCNegociacao
 
             CodClientePesquisado = Session("SCodClientePesquisado")
 
+
             If Not String.IsNullOrEmpty(CodClientePesquisado) Then
                 If alterouCodCliente > 0 Then
                     If TxtCliente.Text <> CodClientePesquisado Then
@@ -120,6 +122,17 @@ Partial Public Class WUCNegociacao
                         Call CodigoClienteMudou()
                     End If
                     Session("SAlterouCodCliente") = alterouCodCliente - 1
+                End If
+            End If
+
+            CNPJClientePesquisado = Session("SCNPJClientePesquisado")
+
+            If Not String.IsNullOrEmpty(CNPJClientePesquisado) Then
+                If alterouCodCliente > 0 Then
+                    If DdlCNPJ.Text <> CNPJClientePesquisado Then
+                        DdlCNPJ.Text = CNPJClientePesquisado
+                    End If
+
                 End If
             End If
 

@@ -21,7 +21,6 @@
     }
 </style>
 
-
 <body class="TextoCadastro_BGBranco">
 
 <asp:ScriptManager ID="ScriptManager1" runat="server" 
@@ -103,7 +102,7 @@
                 Width="43px" MaxLength="6" AutoPostBack="True" Height="18px"></asp:TextBox>
             <asp:ImageButton ID="BtnFiltrarCliente" runat="server" 
                 ImageUrl="~/Imagens/search.png" ToolTip="Pesquisar" 
-                onclientclick="ShowEditModal('../Pesquisas/WFPCliente.aspx?textbox=TxtCliente&amp;varmp=SCodClientePesquisado&amp;varma=SAlterouCodCliente','EditModalPopupClientes','IframeEdit');" 
+                onclientclick="ShowEditModal('../Pesquisas/WFPClienteCNPJ.aspx?textbox=TxtCliente&amp;varmp=SCodClientePesquisado&amp;varmpc=SCNPJClientePesquisado&amp;varma=SAlterouCodCliente','EditModalPopupClientes','IframeEdit');"                 
                 Height="16px" Width="16px" />
                 <cc1:ModalPopupExtender ID="ModalPopupExtender2" BackgroundCssClass="ModalPopupBG"
         runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
