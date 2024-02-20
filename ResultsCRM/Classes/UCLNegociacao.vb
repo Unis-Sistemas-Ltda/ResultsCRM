@@ -36,6 +36,7 @@
     Private _Rodape As String
     Private _CodStatus As String
     Private _GerarPedido As String
+    Private _GerarChamado As String
     Private _AuxLabel1 As String
     Private _AuxLabel2 As String
     Private _AuxLabel3 As String
@@ -242,6 +243,19 @@
         End Get
         Set(ByVal value)
             _GerarPedido = value
+        End Set
+    End Property
+
+
+    Public Property GerarChamado()
+        Get
+            If String.IsNullOrEmpty(_GerarChamado) Then
+                _GerarChamado = "N"
+            End If
+            Return _GerarChamado
+        End Get
+        Set(ByVal value)
+            _GerarChamado = value
         End Set
     End Property
 
@@ -651,6 +665,47 @@
         End Set
     End Property
 
+    Private _CodEmitenteAtendimento As String
+    Public Property CodEmitenteAtendimento() As String
+        Get
+            Return _CodEmitenteAtendimento
+        End Get
+        Set(ByVal value As String)
+            _CodEmitenteAtendimento = value
+        End Set
+    End Property
+
+    Private _CnpjAtendimento As String
+    Public Property CnpjAtendimento() As String
+        Get
+            Return _CnpjAtendimento
+        End Get
+        Set(ByVal value As String)
+            _CnpjAtendimento = value
+        End Set
+    End Property
+
+    Private _CodContatoAtendimento As String
+    Public Property CodContatoAtendimento() As String
+        Get
+            Return _CodContatoAtendimento
+        End Get
+        Set(ByVal value As String)
+            _CodContatoAtendimento = value
+        End Set
+    End Property
+
+    Private _NumeroPontoAtendimento As String
+    Public Property NumeroPontoAtendimento() As String
+        Get
+            Return _NumeroPontoAtendimento
+        End Get
+        Set(ByVal value As String)
+            _NumeroPontoAtendimento = value
+        End Set
+    End Property
+
+
     Public Sub New(ByVal StrConn As String)
         objAcessoDados = New UCLAcessoDados(StrConn)
     End Sub
@@ -741,7 +796,12 @@
         StrSql += "       detalhes_embalagem, "
         StrSql += "       detalhes_rotulos, "
         StrSql += "       detalhes_prazo_entrega, "
-        StrSql += "       detalhes_pagamento "
+        StrSql += "       detalhes_pagamento, "
+        StrSql += "       cod_emitente_atendimento, "
+        StrSql += "       cnpj_atendimento, "
+        StrSql += "       cod_contato_atendimento, "
+        StrSql += "       numero_ponto_atendimento, "
+        StrSql += "       gerar_chamado "
         StrSql += "  from negociacao_cliente"
         StrSql += " where empresa = " + Empresa
         StrSql += "   and estabelecimento = " + Estabelecimento
@@ -817,6 +877,7 @@
             DetalhesPrazoEntrega = dt.Rows.Item(0).Item("detalhes_prazo_entrega").ToString
             DetalhesPagamento = dt.Rows.Item(0).Item("detalhes_pagamento").ToString
             GerarPedido = dt.Rows.Item(0).Item("gerar_pedido").ToString
+            GerarChamado = dt.Rows.Item(0).Item("gerar_chamado").ToString
             Aux1 = dt.Rows.Item(0).Item("aux_1").ToString
             Aux2 = dt.Rows.Item(0).Item("aux_2").ToString
             Aux3 = dt.Rows.Item(0).Item("aux_3").ToString
@@ -834,6 +895,12 @@
             tipo_frete = dt.Rows.Item(0).Item("tipo_frete").ToString
             CodTipoCobrancaOs = dt.Rows(0).Item("cod_tipo_cobranca_os").ToString
             CodMotivo = dt.Rows(0).Item("cod_motivo").ToString
+
+            CodEmitenteAtendimento = dt.Rows.Item(0).Item("cod_emitente_atendimento").ToString
+            CnpjAtendimento = dt.Rows.Item(0).Item("cnpj_atendimento").ToString
+            CodContatoAtendimento = dt.Rows.Item(0).Item("cod_contato_atendimento").ToString
+            NumeroPontoAtendimento = dt.Rows.Item(0).Item("numero_ponto_atendimento").ToString
+
 
         End If
 
@@ -1001,10 +1068,42 @@
             End If
 
             If String.IsNullOrEmpty(CodTipoCobrancaOs) OrElse CodTipoCobrancaOs = "0" Then
-                StrSql += "        cod_tipo_cobranca_os = null "
+                StrSql += "        cod_tipo_cobranca_os = null ,"
             Else
-                StrSql += "        cod_tipo_cobranca_os = " + CodTipoCobrancaOs
+                StrSql += "        cod_tipo_cobranca_os = " + CodTipoCobrancaOs + ", "
             End If
+
+
+            StrSql += "        cod_emitente_atendimento = " + IIf(String.IsNullOrEmpty(CodEmitenteAtendimento), "null", CodEmitenteAtendimento) + ", "
+            StrSql += "        cnpj_atendimento         = " + IIf(String.IsNullOrEmpty(CnpjAtendimento), "null", "'" + CnpjAtendimento + "'") + ", "
+            StrSql += "        cod_contato_atendimento  = " + IIf(String.IsNullOrEmpty(CodContatoAtendimento), "null", CodContatoAtendimento) + ", "
+            StrSql += "        numero_ponto_atendimento = " + IIf(String.IsNullOrEmpty(NumeroPontoAtendimento), "null", "'" + NumeroPontoAtendimento + "' ")
+
+
+            'If String.IsNullOrEmpty(CodEmitenteAtendimento) OrElse CodEmitenteAtendimento = "0" Then
+            '    StrSql += "        cod_emitente_atendimento = null ,"
+            'Else
+            '    StrSql += "        cod_emitente_atendimento = " + CodEmitenteAtendimento + ", "
+            'End If
+
+
+            'If String.IsNullOrEmpty(CnpjAtendimento) OrElse CnpjAtendimento = "0" Then
+            '    StrSql += "        cnpj_atendimento = null ,"
+            'Else
+            '    StrSql += "        cnpj_atendimento = '" + CnpjAtendimento + "', "
+            'End If
+
+            'If String.IsNullOrEmpty(CodContatoAtendimento) OrElse CodContatoAtendimento = "0" Then
+            '    StrSql += "        cod_contato_atendimento = null ,"
+            'Else
+            '    StrSql += "        cod_contato_atendimento = " + CodContatoAtendimento + ", "
+            'End If
+
+            'If String.IsNullOrEmpty(NumeroPontoAtendimento) OrElse NumeroPontoAtendimento = "0" Then
+            '    StrSql += "        numero_ponto_atendimento = null "
+            'Else
+            '    StrSql += "        numero_ponto_atendimento = '" + NumeroPontoAtendimento + "'"
+            'End If
 
             StrSql += "  where cod_negociacao_cliente = " + CodNegociacao
             StrSql += "    and empresa = " + Empresa
@@ -1014,6 +1113,7 @@
             
             StrSql = " update negociacao_cliente "
             StrSql += "   set gerou_pedido = '" + GerarPedido + "', "
+            StrSql += "       gerar_chamado = '" + GerarChamado + "', "
             If GerarPedido = "S" Then
                 StrSql += "   situacao = 3 "
             ElseIf GerarPedido = "N" Then
@@ -1088,13 +1188,15 @@
                 End If
             End If
 
+
             strSql += " insert into negociacao_cliente( empresa, estabelecimento, cod_negociacao_cliente, cod_emitente, cnpj, cod_agente_venda, cod_indicador, "
             strSql += "    cod_funil, cod_etapa, cod_representante, cod_cond_pagto, data_cadastramento, tipo_frete, total_mercadoria, cenario, total_mercadoria_orig, "
             strSql += "    total_icms, total_ipi, total_desconto, total_pedido, cod_forma_pagamento, cod_contato, cod_fonte, cod_chamado, total_icms_substituicao, cod_status, "
             strSql += "    cabecalho_proposta, rodape_proposta, cod_canal_venda, cod_natur_oper, cod_modelo, gerou_pedido, Observacao, aux_2, aux_3, "
             strSql += "    cod_tipo_obra, cod_modalidade_obra, cod_estagio_obra, tamanho_obra, numero_serie, anexo_proposta, data_emissao_contrato, data_vencimento_contrato, dia_vencimento_contrato, "
             strSql += "    detalhes_formulacao, detalhes_embalagem, detalhes_rotulos, detalhes_prazo_entrega, detalhes_pagamento, "
-            strSql += "    data_recontato, data_validade, data_previsao_fechamento, manter_informado, probabilidade_sucesso, prioridade, receptividade, cod_carteira, cod_gestor_conta, cod_tipo_cobranca_os, cod_motivo ) values ("
+            strSql += "    data_recontato, data_validade, data_previsao_fechamento, manter_informado, probabilidade_sucesso, prioridade, receptividade, cod_carteira, cod_gestor_conta, cod_tipo_cobranca_os, cod_motivo, "
+            strSql += "    cod_emitente_atendimento, numero_ponto_atendimento, cod_contato_atendimento, gerar_chamado  ) values ("
             strSql += Empresa + ", "
             strSql += Estabelecimento + ", "
             strSql += CodNegociacao + ", "
@@ -1198,8 +1300,14 @@
             strSql += "'" + Receptividade + "', "
             strSql += CodCarteira + ", "
             strSql += CodGestorConta + ", "
+            strSql += CodTipoCobrancaOs + ", "
             strSql += CodMotivo + ", "
-            strSql += CodTipoCobrancaOs + ")"
+
+            strSql += IIf(String.IsNullOrEmpty(CodEmitenteAtendimento), "null", CodEmitenteAtendimento) + ", "
+            strSql += IIf(String.IsNullOrEmpty(NumeroPontoAtendimento), "null", "'" + NumeroPontoAtendimento + "'") + ", "
+            strSql += IIf(String.IsNullOrEmpty(CodContatoAtendimento), "null", CodContatoAtendimento) + ", "
+            strSql += IIf(String.IsNullOrEmpty(GerarChamado), "null", "'" + GerarChamado + "'") + ")"
+
 
             objAcessoDados.ExecutarSql("call sp_sysvar();" & strSql)
 
@@ -1549,5 +1657,7 @@
             Throw ex
         End Try
     End Sub
+
+
 
 End Class

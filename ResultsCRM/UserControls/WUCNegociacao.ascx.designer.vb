@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class WUCNegociacao
-    
+
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-    
+
     '''<summary>
     '''LblErro control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblErro As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblInadimplente control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblInadimplente As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblNrNegociacao control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblNrNegociacao As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''Label13 control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblCodChamado control.
     '''</summary>
@@ -66,268 +66,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCodChamado As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''LabelObra01 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelObra01 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlTipoObra control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlTipoObra As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''LblDataCadastramento control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblDataCadastramento As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''LabelObra02 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelObra02 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlModalidadeObra control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlModalidadeObra As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Label4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlEstabelecimento control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlEstabelecimento As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Label5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''TxtCliente control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TxtCliente As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''BtnFiltrarCliente control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnFiltrarCliente As Global.System.Web.UI.WebControls.ImageButton
-    
-    '''<summary>
-    '''ModalPopupExtender2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender2 As Global.AjaxControlToolkit.ModalPopupExtender
-    
-    '''<summary>
-    '''BtnIncluirCliente control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnIncluirCliente As Global.System.Web.UI.WebControls.ImageButton
-    
-    '''<summary>
-    '''ModalPopupExtender1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender1 As Global.AjaxControlToolkit.ModalPopupExtender
-    
-    '''<summary>
-    '''BtnAlterarCliente control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnAlterarCliente As Global.System.Web.UI.WebControls.ImageButton
-    
-    '''<summary>
-    '''ModalPopupExtender5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender5 As Global.AjaxControlToolkit.ModalPopupExtender
-    
-    '''<summary>
-    '''Label3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlCNPJ control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlCNPJ As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''LabelObra03 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelObra03 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlEstagioObra control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlEstagioObra As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''LblNomeCliente control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblNomeCliente As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''LabelObra04 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelObra04 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''TxtTamanhoObra control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents TxtTamanhoObra As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''LabelObra05 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LabelObra05 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''LblEndereco control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblEndereco As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlContato control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlContato As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''BtnIncluirContato control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnIncluirContato As Global.System.Web.UI.WebControls.ImageButton
-    
-    '''<summary>
-    '''ModalPopupExtender3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender3 As Global.AjaxControlToolkit.ModalPopupExtender
-    
-    '''<summary>
-    '''BtnAlterarContato control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents BtnAlterarContato As Global.System.Web.UI.WebControls.ImageButton
-    
-    '''<summary>
-    '''ModalPopupExtender4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ModalPopupExtender4 As Global.AjaxControlToolkit.ModalPopupExtender
-    
+
     '''<summary>
     '''DdlFunil control.
     '''</summary>
@@ -336,34 +75,16 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlFunil As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
-    '''Label12 control.
+    '''LblDataCadastramento control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''LblTelefone control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblTelefone As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''LblCelular control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblCelular As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents LblDataCadastramento As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
     '''DdlEtapa control.
     '''</summary>
@@ -372,16 +93,25 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlEtapa As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
-    '''LblEmail control.
+    '''Label4 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LblEmail As Global.System.Web.UI.WebControls.Label
-    
+    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlEstabelecimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlEstabelecimento As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''DdlStatus control.
     '''</summary>
@@ -390,7 +120,439 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlStatus As Global.System.Web.UI.WebControls.DropDownList
-    
+
+    '''<summary>
+    '''Label5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtCliente control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtCliente As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnFiltrarCliente control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnFiltrarCliente As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''ModalPopupExtender2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender2 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnIncluirCliente control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirCliente As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''ModalPopupExtender1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender1 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnAlterarCliente control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarCliente As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''ModalPopupExtender5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender5 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Label3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlCNPJ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlCNPJ As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''TxtClienteAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtClienteAtendimento As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnFiltrarClienteAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnFiltrarClienteAtendimento As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnIncluirClienteAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirClienteAtendimento As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnIncluirClienteAtendimento_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirClienteAtendimento_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnFiltrarClienteAtendimento_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnFiltrarClienteAtendimento_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnAlterarClienteAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarClienteAtendimento As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnAlterarClienteAtendimento_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarClienteAtendimento_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Label14 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtNrPontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtNrPontoAtendimento As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''BtnFiltrarPontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnFiltrarPontoAtendimento As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnFiltrarPontoAtendimento_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnFiltrarPontoAtendimento_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnIncluirPontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirPontoAtendimento As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnIncluirPontoAtendimento_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirPontoAtendimento_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnAlterarPontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarPontoAtendimento As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnAlterarPontoAtendimento_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarPontoAtendimento_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''LblInscEstadual control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblInscEstadual As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblRazaoSocialPontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblRazaoSocialPontoAtendimento As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblNomeCliente control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblNomeCliente As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblNomePontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblNomePontoAtendimento As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblObsPontoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblObsPontoAtendimento As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblEndereco control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblEndereco As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblEnderecoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblEnderecoAtendimento As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlContato control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlContato As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''BtnIncluirContato control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirContato As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''ModalPopupExtender3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender3 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnAlterarContato control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarContato As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''ModalPopupExtender4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalPopupExtender4 As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''DdlContatoAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlContatoAtendimento As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''BtnIncluirContato0 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirContato0 As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnIncluirContato0_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnIncluirContato0_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''BtnAlterarContato0 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarContato0 As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''BtnAlterarContato0_ModalPopupExtender control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents BtnAlterarContato0_ModalPopupExtender As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Label12 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblTelefone control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblTelefone As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblCelular control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblCelular As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblTelefoneAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblTelefoneAtendimento As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblEmail control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblEmail As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblEmailAtendimento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblEmailAtendimento As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
     '''TxtManterInformado control.
     '''</summary>
@@ -399,7 +561,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtManterInformado As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''Label11 control.
     '''</summary>
@@ -408,7 +570,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label11 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''TxtProbabilidadeSucesso control.
     '''</summary>
@@ -417,7 +579,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtProbabilidadeSucesso As Global.ResultsCRM.TextBoxNumerico
-    
+
     '''<summary>
     '''LblTipoCobranca control.
     '''</summary>
@@ -426,7 +588,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblTipoCobranca As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlTipoCobranca control.
     '''</summary>
@@ -435,7 +597,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlTipoCobranca As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''DdlMotivoFechamento control.
     '''</summary>
@@ -444,7 +606,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlMotivoFechamento As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''Label9 control.
     '''</summary>
@@ -453,7 +615,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label9 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlGestor control.
     '''</summary>
@@ -462,7 +624,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlGestor As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''Label8 control.
     '''</summary>
@@ -471,7 +633,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlFonteOrigem control.
     '''</summary>
@@ -480,7 +642,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlFonteOrigem As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblRepresentante control.
     '''</summary>
@@ -489,7 +651,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblRepresentante As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlRepresentante control.
     '''</summary>
@@ -498,7 +660,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlRepresentante As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''Lbl1 control.
     '''</summary>
@@ -507,7 +669,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Lbl1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlModelo control.
     '''</summary>
@@ -516,7 +678,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlModelo As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''DdlAgente control.
     '''</summary>
@@ -525,7 +687,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlAgente As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''TxtDataValidadeProposta control.
     '''</summary>
@@ -534,7 +696,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtDataValidadeProposta As Global.ResultsCRM.TextBoxData
-    
+
     '''<summary>
     '''LblCanalVenda control.
     '''</summary>
@@ -543,7 +705,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCanalVenda As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlCanalVenda control.
     '''</summary>
@@ -552,7 +714,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlCanalVenda As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''TxtDataRecontato control.
     '''</summary>
@@ -561,7 +723,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtDataRecontato As Global.ResultsCRM.TextBoxData
-    
+
     '''<summary>
     '''TxtHoraRecontato control.
     '''</summary>
@@ -570,7 +732,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtHoraRecontato As Global.ResultsCRM.TextBoxHora
-    
+
     '''<summary>
     '''LblCarteira control.
     '''</summary>
@@ -579,7 +741,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblCarteira As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlCarteira control.
     '''</summary>
@@ -588,7 +750,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlCarteira As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''TxtPrevisaoFechamento control.
     '''</summary>
@@ -597,7 +759,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents TxtPrevisaoFechamento As Global.ResultsCRM.TextBoxData
-    
+
     '''<summary>
     '''Label2 control.
     '''</summary>
@@ -606,7 +768,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''ddlPrioridade control.
     '''</summary>
@@ -615,7 +777,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlPrioridade As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblMoeda control.
     '''</summary>
@@ -624,7 +786,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblMoeda As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlMoeda control.
     '''</summary>
@@ -633,7 +795,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlMoeda As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -642,7 +804,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''ddlReceptividade control.
     '''</summary>
@@ -651,7 +813,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlReceptividade As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblFormaPagto control.
     '''</summary>
@@ -660,7 +822,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFormaPagto As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlFormaPagto control.
     '''</summary>
@@ -669,25 +831,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlFormaPagto As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''LblCondicaoPagto control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents LblCondicaoPagto As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''DdlCondicaoPagto control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DdlCondicaoPagto As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''LblEquipamento control.
     '''</summary>
@@ -696,7 +840,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblEquipamento As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlEquipamento control.
     '''</summary>
@@ -705,7 +849,43 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlEquipamento As Global.System.Web.UI.WebControls.DropDownList
-    
+
+    '''<summary>
+    '''LblCondicaoPagto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblCondicaoPagto As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlCondicaoPagto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlCondicaoPagto As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''LabelObra01 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelObra01 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlTipoObra control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlTipoObra As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''LblNatureza control.
     '''</summary>
@@ -714,7 +894,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblNatureza As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlNatureza control.
     '''</summary>
@@ -723,7 +903,25 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlNatureza As Global.System.Web.UI.WebControls.DropDownList
-    
+
+    '''<summary>
+    '''LabelObra02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelObra02 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlModalidadeObra control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlModalidadeObra As Global.System.Web.UI.WebControls.DropDownList
+
     '''<summary>
     '''LblFrete control.
     '''</summary>
@@ -732,7 +930,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblFrete As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''DdlFrete control.
     '''</summary>
@@ -741,7 +939,79 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents DdlFrete As Global.System.Web.UI.WebControls.DropDownList
-    
+
+    '''<summary>
+    '''LabelObra03 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelObra03 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''DdlEstagioObra control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DdlEstagioObra As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''LabelObra04 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelObra04 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtTamanhoObra control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtTamanhoObra As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''LabelObra05 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LabelObra05 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ChkGerarChamado control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ChkGerarChamado As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''LblChamadoLbl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblChamadoLbl As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''LblChamado control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LblChamado As Global.System.Web.UI.WebControls.Label
+
     '''<summary>
     '''ChkGerarPedido control.
     '''</summary>
@@ -750,7 +1020,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ChkGerarPedido As Global.System.Web.UI.WebControls.CheckBox
-    
+
     '''<summary>
     '''LblNrPedidoLbl control.
     '''</summary>
@@ -759,7 +1029,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblNrPedidoLbl As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''LblNrPedido control.
     '''</summary>
@@ -768,7 +1038,7 @@ Partial Public Class WUCNegociacao
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents LblNrPedido As Global.System.Web.UI.WebControls.Label
-    
+
     '''<summary>
     '''BtnGravar control.
     '''</summary>

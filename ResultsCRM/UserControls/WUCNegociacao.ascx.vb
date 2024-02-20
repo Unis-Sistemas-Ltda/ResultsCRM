@@ -181,9 +181,14 @@ Partial Public Class WUCNegociacao
                     End If
                     Session("SRecarregaDdlContatos") = recarregaContatos - 1
                 End If
+                Call ChecaPesquisaClienteAtendimento()
+                Call ChecaPesquisaPontoAtendimento()
+                Call ChecaEdicaoContatoAtendimento()
+
             End If
 
             Call MostraNomeCliente()
+            Call MostraNomeClienteAtendimento()
             Call MostraNrPedido(False)
             Call CarregaInfoContato()
 
@@ -544,6 +549,19 @@ Partial Public Class WUCNegociacao
     Protected Sub DdlContato_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles DdlContato.SelectedIndexChanged
         Try
             Call ContatoSelecionadoMudou()
+        Catch ex As Exception
+            LblErro.Text = ex.Message
+        End Try
+    End Sub
+
+    Protected Sub ContatoAtendimentoSelecionadoMudou()
+        Session("SCodContatoAtendimentoNegociacao") = DdlContatoAtendimento.SelectedValue
+        Call CarregaInfoContatoAtendimento()
+    End Sub
+
+    Protected Sub DdlContatoAtendimento_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles DdlContatoAtendimento.SelectedIndexChanged
+        Try
+            Call ContatoAtendimentoSelecionadoMudou()
         Catch ex As Exception
             LblErro.Text = ex.Message
         End Try
@@ -989,6 +1007,11 @@ Partial Public Class WUCNegociacao
                 objNegociacao.CodFunil = DdlFunil.SelectedValue
             End If
 
+            objNegociacao.CodEmitenteAtendimento = TxtClienteAtendimento.Text
+            objNegociacao.NumeroPontoAtendimento = TxtNrPontoAtendimento.Text
+            objNegociacao.CodContatoAtendimento = DdlContatoAtendimento.SelectedValue
+            objNegociacao.GerarChamado = ChkGerarChamado.Checked.ToString.Replace("False", "N").Replace("True", "S")
+
             Return objNegociacao
         Catch ex As Exception
             Throw ex
@@ -1025,6 +1048,14 @@ Partial Public Class WUCNegociacao
                     LblTelefone.Text = ObjEnderecoEmitente.Fone1
                     If Not String.IsNullOrWhiteSpace(ObjEnderecoEmitente.Fone2) Then
                         LblTelefone.Text += " / " + ObjEnderecoEmitente.Fone2
+                    End If
+
+                    LblInscEstadual.Text = ObjEnderecoEmitente.IE
+
+                    If LblInscEstadual.Text = "ISENTO" Or LblInscEstadual.Text = "isento" Then
+                        LblInscEstadual.ForeColor = Drawing.Color.Red
+                    Else
+                        LblInscEstadual.ForeColor = Drawing.Color.Empty
                     End If
 
                     LblEndereco.Text = ObjEnderecoEmitente.Logradouro
@@ -1085,6 +1116,7 @@ Partial Public Class WUCNegociacao
             '----------------------------------------------
 
             ChkGerarPedido.Checked = objNegociacao.GerarPedido.ToString.Replace("S", "True").Replace("N", "False")
+            ChkGerarChamado.Checked = objNegociacao.GerarChamado.ToString.Replace("S", "True").Replace("N", "False")
 
             Call CarregaDropDowns(objNegociacao.CodFunil, objNegociacao.CodEtapaNegociacao)
 
@@ -1146,6 +1178,24 @@ Partial Public Class WUCNegociacao
             LblCodChamado.Text = objNegociacao.CodChamado
             DdlTipoCobranca.SelectedValue = objNegociacao.CodTipoCobrancaOs
             DdlMotivoFechamento.SelectedValue = objNegociacao.CodMotivo
+
+            TxtClienteAtendimento.Text = objNegociacao.CodEmitenteAtendimento
+            Call CodigoClienteAtendimentoMudou()
+
+            TxtNrPontoAtendimento.Text = objNegociacao.NumeroPontoAtendimento
+            Call NrPontoAtendimentoMudou()
+
+            'Necessário para que a alteração de emitente funcione via tela do chamado, não retirar
+            '----------------------------------------------
+            Session("SPontoAtendimento") = TxtNrPontoAtendimento.Text
+            '----------------------------------------------
+
+            Call CarregaContatoAtendimento()
+            If Not String.IsNullOrEmpty(objNegociacao.CodContatoAtendimento) Then
+                DdlContatoAtendimento.SelectedValue = objNegociacao.CodContatoAtendimento
+                Call ContatoSelecionadoAtendimentoMudou()
+            End If
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -1241,6 +1291,229 @@ Partial Public Class WUCNegociacao
         Try
             Dim objMotivo As New UCLMotivoFechamento
             objMotivo.FillDropDown(DdlMotivoFechamento, True, "")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub ChecaPesquisaClienteAtendimento()
+        Try
+            Dim CodClientePesquisado As String
+            Dim cnpjPesquisado As String
+            Dim alterouCliente As Long
+
+            If Not String.IsNullOrEmpty(Session("SAlterouCodClienteAt")) Then
+                alterouCliente = Session("SAlterouCodClienteAt")
+            Else
+                alterouCliente = 0
+            End If
+
+            CodClientePesquisado = Session("SCodClienteAtPesquisado")
+            cnpjPesquisado = Session("SCNPJAtPesquisado")
+
+            If Not String.IsNullOrEmpty(CodClientePesquisado) Then
+                If alterouCliente > 0 Then
+                    If TxtClienteAtendimento.Text <> CodClientePesquisado Then
+                        TxtClienteAtendimento.Text = CodClientePesquisado
+                        Call CodigoClienteAtendimentoMudou()
+                    End If
+                    'If DdlCNPJAtendimento.SelectedValue <> cnpjPesquisado Then
+                    '    DdlCNPJAtendimento.SelectedValue = cnpjPesquisado
+                    '    Call CNPJAtendimentoMudou()
+                    'End If
+                    Session("SAlterouCodClienteAt") = alterouCliente - 2
+                End If
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub ChecaEdicaoContatoAtendimento()
+        Try
+            Dim CodContatoRetornado As String
+            Dim recarregaContatos As Long
+
+            If Not String.IsNullOrEmpty(Session("SRecarregaDdlContatosAt")) Then
+                recarregaContatos = Session("SRecarregaDdlContatosAt")
+            Else
+                recarregaContatos = 0
+            End If
+
+            If recarregaContatos > 0 Then
+                CodContatoRetornado = Session("SCodContatoNegociacaoAt")
+                Call CarregaContatoAtendimento()
+                If Not String.IsNullOrEmpty(CodContatoRetornado) Then
+                    DdlContatoAtendimento.SelectedValue = CodContatoRetornado
+                    Call ContatoSelecionadoAtendimentoMudou()
+                End If
+                Session("SRecarregaDdlContatosAt") = recarregaContatos - 1
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub CarregaContatoAtendimento()
+        Try
+            Dim objContato As New UCLContato
+            If Not String.IsNullOrEmpty(TxtClienteAtendimento.Text) Then
+                objContato.CodEmitente = TxtClienteAtendimento.Text
+                objContato.NumeroPontoAtendimento = TxtNrPontoAtendimento.Text
+                objContato.FillDropDown(DdlContatoAtendimento, True, "", "-1")
+                DdlContatoAtendimento.DataBind()
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Protected Sub CodigoClienteAtendimentoMudou()
+        Try
+            Dim objEmitente As New UCLEmitente(StrConexaoUsuario(Session("GlUsuario")))
+            Session("SCodEmitenteAtNegociacao") = TxtClienteAtendimento.Text
+            Session("SCodClienteAtPesquisado") = TxtClienteAtendimento.Text
+            Call NrPontoAtendimentoMudou()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub NrPontoAtendimentoMudou()
+        Try
+            'Dim objEndereco As New UCLEnderecoEmitente
+            Dim objPontoAtendimento As New UCLPontoAtendimento(StrConexaoUsuario(Session("GlUsuario")))
+            Dim objEstado As New UCLEstado
+            Dim objCidade As New UCLCidade
+
+            'Necessário para que a alteração de emitente funcione via tela da negociação, não retirar
+            Session("SPontoAtendimento") = TxtNrPontoAtendimento.Text
+            Session("SPontoPesquisado") = TxtNrPontoAtendimento.Text
+
+            If Not String.IsNullOrEmpty(TxtClienteAtendimento.Text) AndAlso Not String.IsNullOrEmpty(TxtNrPontoAtendimento.Text) Then
+                objPontoAtendimento.CodEmitente = TxtClienteAtendimento.Text
+                objPontoAtendimento.NumeroPontoAtendimento = TxtNrPontoAtendimento.Text
+                objPontoAtendimento.Buscar()
+                If Not String.IsNullOrEmpty(objPontoAtendimento.CodEstado) AndAlso Not String.IsNullOrEmpty(objPontoAtendimento.CodCidade) Then
+                    objEstado.CodPais = objPontoAtendimento.CodPais
+                    objEstado.CodEstado = objPontoAtendimento.CodEstado
+                    objEstado.Buscar()
+
+                    objCidade.CodPais = objPontoAtendimento.CodPais
+                    objCidade.CodEstado = objPontoAtendimento.CodEstado
+                    objCidade.CodCidade = objPontoAtendimento.CodCidade
+                    objCidade.Buscar()
+
+                    LblEnderecoAtendimento.Text = objPontoAtendimento.Logradouro
+                    If Not String.IsNullOrEmpty(objPontoAtendimento.Numero) AndAlso objPontoAtendimento.Numero <> 0 Then
+                        LblEnderecoAtendimento.Text += ", " + objPontoAtendimento.Numero
+                    End If
+                    LblEnderecoAtendimento.Text += " - " + objCidade.NomeCidade
+                    LblEnderecoAtendimento.Text += "/" + objEstado.Sigla
+                Else
+                    LblEnderecoAtendimento.Text = "(não informado)"
+                End If
+
+                LblTelefoneAtendimento.Text = objPontoAtendimento.Fone1
+                If Not String.IsNullOrEmpty(objPontoAtendimento.Fone2) Then
+                    LblTelefoneAtendimento.Text += " / " + objPontoAtendimento.Fone2
+                End If
+
+                Call MostraNomeClienteAtendimento()
+
+                Call CarregaContatoAtendimento()
+
+                DdlContatoAtendimento.SelectedValue = -1
+                Call ContatoSelecionadoAtendimentoMudou()
+
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+    Protected Sub ContatoSelecionadoAtendimentoMudou()
+        Try
+            Session("SCodContatoNegociacaoAt") = DdlContatoAtendimento.SelectedValue
+            Call CarregaInfoContatoAtendimento()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub CarregaInfoContatoAtendimento()
+        Try
+            Dim objContato As New UCLContato
+            If Not String.IsNullOrEmpty(TxtClienteAtendimento.Text) And Not String.IsNullOrEmpty(DdlContatoAtendimento.SelectedValue) Then
+                objContato.CodEmitente = TxtClienteAtendimento.Text
+                objContato.Codigo = DdlContatoAtendimento.SelectedValue
+                objContato.Buscar()
+                LblEmailAtendimento.Text = objContato.Email
+            Else
+                LblEmailAtendimento.Text = ""
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub MostraNomeClienteAtendimento()
+        Try
+            Dim objPontoAtendimento As New UCLPontoAtendimento(StrConexaoUsuario(Session("GlUsuario")))
+            Dim objEmitente As New UCLEmitente(StrConexaoUsuario(Session("GlUsuario")))
+            Dim objTipoPontoAtendimento As New UCLTipoPontoAtendimento
+            If Not String.IsNullOrEmpty(TxtClienteAtendimento.Text) Then
+                objPontoAtendimento.CodEmitente = TxtClienteAtendimento.Text
+                objPontoAtendimento.NumeroPontoAtendimento = TxtNrPontoAtendimento.Text
+
+                If Not String.IsNullOrEmpty(objPontoAtendimento.CodEmitente) Then
+                    objEmitente.CodEmitente = objPontoAtendimento.CodEmitente
+                    objEmitente.Buscar()
+                    LblRazaoSocialPontoAtendimento.Text = objEmitente.Nome
+                End If
+
+                If Not String.IsNullOrEmpty(objPontoAtendimento.CodEmitente) AndAlso Not String.IsNullOrEmpty(objPontoAtendimento.NumeroPontoAtendimento) Then
+                    objPontoAtendimento.Buscar()
+
+                    objTipoPontoAtendimento.CodTipoPontoAtendimento = objPontoAtendimento.CodTipoPontoAtendimento
+                    If Not String.IsNullOrEmpty(objTipoPontoAtendimento.CodTipoPontoAtendimento) Then
+                        objTipoPontoAtendimento.Buscar()
+                    End If
+
+                    LblNomePontoAtendimento.Text = objTipoPontoAtendimento.Descricao + "  " + objPontoAtendimento.NumeroPontoAtendimento + " ─ " + objPontoAtendimento.Descricao
+                    LblObsPontoAtendimento.Text = objPontoAtendimento.Observacao
+                End If
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub ChecaPesquisaPontoAtendimento()
+        Try
+            Dim PontoPesquisado As String
+            Dim alterouPontoAtendimento As Long
+
+            If Not String.IsNullOrEmpty(Session("SAlterouNumeroPontoAtendimento")) Then
+                alterouPontoAtendimento = Session("SAlterouNumeroPontoAtendimento")
+            Else
+                alterouPontoAtendimento = 0
+            End If
+
+            PontoPesquisado = Session("SPontoPesquisado")
+
+            If Not String.IsNullOrEmpty(PontoPesquisado) Then
+                If alterouPontoAtendimento > 0 Then
+                    If TxtNrPontoAtendimento.Text <> PontoPesquisado Then
+                        TxtNrPontoAtendimento.Text = PontoPesquisado
+                        Call NrPontoAtendimentoMudou()
+                    End If
+                    Session("SAlterouNumeroPontoAtendimento") = alterouPontoAtendimento - 2
+                End If
+            End If
         Catch ex As Exception
             Throw ex
         End Try

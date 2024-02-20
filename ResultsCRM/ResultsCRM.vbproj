@@ -186,6 +186,7 @@
     <Content Include="bin\DataWindowInterop.dll" />
     <Content Include="bin\HtmlSanitizationLibrary.dll" />
     <Content Include="bin\WebDataWindow.dll" />
+    <Content Include="Forms\WebForm3.aspx" />
     <Content Include="Forms\WFClienteDados.aspx" />
     <Content Include="Forms\WFNegociacaoCabecalhoAnfarmag.aspx" />
     <Content Include="Forms\WFNegociacaoItemFormula.aspx" />
@@ -859,6 +860,13 @@
     </Compile>
     <Compile Include="ContatoSite\Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\WebForm3.aspx.designer.vb">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebForm3.aspx.vb">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\WFClienteDados.aspx.designer.vb">

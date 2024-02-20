@@ -7,6 +7,9 @@
 
     Public Function Buscar(ByVal pEmpresa As String, ByVal pEstabelecimento As String) As Boolean
         Try
+            If String.IsNullOrEmpty(pEstabelecimento) Then
+                pEstabelecimento = 1
+            End If
             Me.SetConteudo("empresa", pEmpresa)
             Me.SetConteudo("estabelecimento", pEstabelecimento)
             Return ObjTabelaGenerica.Buscar()

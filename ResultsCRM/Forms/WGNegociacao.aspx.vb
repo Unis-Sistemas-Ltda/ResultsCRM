@@ -29,9 +29,8 @@ Partial Public Class WGNegociacao
             LblCor = CType(e.Row.FindControl("LblCor"), Label)
             LblColorida = CType(e.Row.FindControl("LblColorida"), Label)
             LblCodNegociacao = CType(e.Row.FindControl("LblCodNegociacao"), Label)
-
             BtnImprimir = CType(e.Row.FindControl("BtnImprimir"), ImageButton)
-            BtnImprimir.Attributes.Add("OnClick", "window.open('WFImpressaoPropostaPDF.aspx?eid=" + Session("GlEmpresa") + "&sid=" + Session("GlEstabelecimento") + "&nid=" + LblCodNegociacao.Text + "&ucid=" + Session("GlClienteUnis") + "&li=../Imagens/logo_proposta.jpg');")
+            BtnImprimir.Attributes.Add("OnClick", "window.open('WFImpressaoPropostaPDF.aspx?eid=" + Session("GlEmpresa") + "&sid=" + Session("SEstabelecimentoNegociacao") + "&nid=" + LblCodNegociacao.Text + "&ucid=" + Session("GlClienteUnis") + "&li=../Imagens/logo_proposta.jpg');")
             If Not String.IsNullOrEmpty(LblDataRecontato.Text.Trim) Then
                 dataRecontato = LblDataRecontato.Text.Substring(0, 8)
             Else
@@ -52,8 +51,8 @@ Partial Public Class WGNegociacao
     End Sub
 
     Private Sub GridView1_RowCommand(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewCommandEventArgs) Handles GridView1.RowCommand
+        Dim chave As String()
         If e.CommandName = "ALTERAR" Then
-            Dim chave As String()
             chave = e.CommandArgument.ToString.Split(";")
             Session("SEstabelecimentoNegociacao") = chave(0)
             Session("SCodNegociacao") = chave(1)
@@ -63,7 +62,6 @@ Partial Public Class WGNegociacao
             Page.ClientScript.RegisterStartupScript(Me.GetType, "cmd", "b = parent.document.getElementById('BtnRedirect'); b.click()", True)
             'Response.Redirect("WFNegociacaoDetalhes.aspx")
         ElseIf e.CommandName = "COPIAR" Then
-            Dim chave As String()
             chave = e.CommandArgument.ToString.Split(";")
             Session("SEstabelecimentoNegociacao") = chave(0)
             Session("SCodNegociacao") = chave(1)
@@ -71,6 +69,10 @@ Partial Public Class WGNegociacao
             Session("SRedir") = "WFCopiaNegociacao.aspx?b=WFNegociacaoFiltro.aspx"
             Page.ClientScript.RegisterStartupScript(Me.GetType, "cmd", "b = parent.document.getElementById('BtnRedirect'); b.click()", True)
             'Response.Redirect("WFCopiaNegociacao.aspx")
+        ElseIf e.CommandName = "IMPRIMIR" Then
+            chave = e.CommandArgument.ToString.Split(";")
+            Session("SEstabelecimentoNegociacao") = chave(0)
+            Session("SCodNegociacao") = chave(1)
         End If
     End Sub
 

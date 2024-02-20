@@ -205,8 +205,8 @@
 
             GridView1.DataSource = newDt
             GridView1.DataBind()
-
-            GridView2.DataSource = objPedidoVendaItem.dtGridItens(Empresa, Estabelecimento, CodPedidoVenda, 9)
+            'Comentado em 24/01/2024 a pedido da Semiramis para nunca imprimir os serviços realizados na OS
+            GridView2.DataSource = objPedidoVendaItem.dtGridItensAtiva(Empresa, Estabelecimento, CodPedidoVenda, 9)
             GridView2.DataBind()
 
         Catch ex As Exception

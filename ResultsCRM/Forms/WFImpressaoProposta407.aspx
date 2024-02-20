@@ -13,7 +13,7 @@
             <td colspan="6">
                 <div style="width: 30mm; position: relative; top: 0px; left: 0px">
                     <asp:Image ID="ImgLogo" runat="server" AlternateText="Proposta Comercial" 
-                        Width="31mm" />
+                        Width="31mm" ImageUrl="../Imagens/logo_proposta_ativa.jpg" />
                 </div>
                 <div style="position: absolute; top: 17px; left: 34mm; width: 450px;">
                 <span style="font-size:11pt"><asp:Label ID="LblRazaoSocialEmpresa" runat="server"></asp:Label></span>

@@ -19,6 +19,30 @@
         font-family: verdana;
         height: 15px;
     }
+    .auto-style2 {
+        height: 21px;
+        width: 195px;
+    }
+    .auto-style3 {
+        text-align: left;
+        height: 21px;
+    }
+    .auto-style4 {
+        height: 28px;
+        width: 195px;
+    }
+    .auto-style5 {
+        text-align: left;
+        height: 28px;
+    }
+    .auto-style6 {
+        text-align: left;
+        width: 155px;
+        height: 28px;
+    }
+    .auto-style7 {
+        width: 195px;
+    }
 </style>
 
 <body class="TextoCadastro_BGBranco">
@@ -36,7 +60,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right; width: 195px;">
+        <td style="text-align: right; " class="auto-style7">
             Nº Negociação:</td>
         <td class="CelulaCampoCadastro" style="vertical-align: middle" width="300px;">
             <asp:Label ID="LblNrNegociacao" runat="server" Font-Bold="False" 
@@ -45,20 +69,15 @@
             <asp:Label ID="LblCodChamado" runat="server"></asp:Label>
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right;">
-            <asp:Label ID="LabelObra01" runat="server" Text="Tipo da Obra:"></asp:Label>
-        </td>
+            Funil:</td>
         <td class="CelulaCampoCadastro" style="vertical-align: middle">
-            <asp:DropDownList ID="DdlTipoObra" runat="server" CssClass="CampoCadastro" 
-                Width="190px">
-                <asp:ListItem Value="1">Casa</asp:ListItem>
-                <asp:ListItem Value="2">Prédio</asp:ListItem>
-                <asp:ListItem Value="3">Galpão</asp:ListItem>
-                <asp:ListItem Value="4">Loja/Sala Comercial</asp:ListItem>
+            <asp:DropDownList ID="DdlFunil" runat="server" CssClass="CampoCadastro" 
+                Width="190px" AutoPostBack="True">
             </asp:DropDownList>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right">
+        <td style="text-align: right" class="auto-style7">
             Data Cadastramento:</td>
         <td class="CelulaCampoCadastro" 
             style="">
@@ -67,20 +86,16 @@
         </td>
         <td class="CelulaCampoCadastro" 
             style="text-align: right;">
-            <asp:Label ID="LabelObra02" runat="server"
-                Text="Modalidade:" ></asp:Label>
-        </td>
+            Etapa:</td>
         <td class="CelulaCampoCadastro" 
             style="">
-            <asp:DropDownList ID="DdlModalidadeObra" runat="server" CssClass="CampoCadastro" 
-                Width="190px">
-                <asp:ListItem Value="1">Nova</asp:ListItem>
-                <asp:ListItem Value="2">Reforma</asp:ListItem>
+            <asp:DropDownList ID="DdlEtapa" runat="server" CssClass="CampoCadastro" 
+                Width="190px" AutoPostBack="True">
             </asp:DropDownList>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             <asp:Label ID="Label4" runat="server" Text="Estabelecimento:" ></asp:Label>
         </td>
         <td class="CelulaCampoCadastro">
@@ -88,16 +103,20 @@
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right">
            
-        </td>
+            Status:</td>
         <td class="CelulaCampoCadastro">
+          
+            <asp:DropDownList ID="DdlStatus" runat="server" CssClass="CampoCadastro" 
+                Width="190px">
+            </asp:DropDownList>
           
         </td>
     </tr>
     <tr>
-        <td style="text-align: right; background-color: #FBFBF9;">
+        <td style="text-align: right; " class="auto-style4">
             <asp:Label ID="Label5" runat="server" Text="Cliente:"></asp:Label>
             </td>
-        <td class="CelulaCampoCadastro" style="background-color: #FBFBF9;">
+        <td class="auto-style5">
             <asp:TextBox ID="TxtCliente" runat="server" CssClass="CampoCadastro" style="text-align:center"
                 Width="43px" MaxLength="6" AutoPostBack="True" Height="18px"></asp:TextBox>
             <asp:ImageButton ID="BtnFiltrarCliente" runat="server" 
@@ -134,63 +153,144 @@
             <asp:DropDownList ID="DdlCNPJ" runat="server" CssClass="CampoCadastro" 
                 Width="140px" AutoPostBack="True"/>
         </td>
-        <td class="CelulaCampoCadastro" style="text-align: right; width: 155px">
-            <asp:Label ID="LabelObra03" runat="server" Text="Estágio:" 
-                style="text-align: right"></asp:Label>
-        </td>
-        <td class="CelulaCampoCadastro">
-            <asp:DropDownList ID="DdlEstagioObra" runat="server" CssClass="CampoCadastro" 
-                Width="190px">
-                <asp:ListItem Value="1">Fundação</asp:ListItem>
-                <asp:ListItem Value="2">Andamento</asp:ListItem>
-                <asp:ListItem Value="3">Telhado</asp:ListItem>
-                <asp:ListItem Value="4">Acabamento</asp:ListItem>
-            </asp:DropDownList>
+        <td class="auto-style6" style="text-align: right; ">
+            Cliente PA:</td>
+        <td class="auto-style5">
+            <asp:TextBox ID="TxtClienteAtendimento" runat="server" CssClass="CampoCadastro" 
+                Width="50px" MaxLength="6" AutoPostBack="True" Height="18px"></asp:TextBox>
+            <asp:ImageButton ID="BtnFiltrarClienteAtendimento" runat="server" 
+                ImageUrl="~/Imagens/search.png" ToolTip="Pesquisar" 
+                onclientclick="ShowEditModal('../Pesquisas/WFPCliente.aspx?textbox=TxtCliente&amp;varmp=SCodClienteAtPesquisado&amp;varma=SAlterouCodClienteAt','EditModalPopupClienteAtendimento','IframeEdit');" 
+                Height="15px" Width="16px" />
+            <span class="TextoCadastro">
+                <asp:ImageButton ID="BtnIncluirClienteAtendimento" runat="server" ImageUrl="~/Imagens/BtnIncluir.png" 
+                    AlternateText="Novo Cliente" Height="16px" ToolTip="Novo cliente" 
+                    
+                
+                
+                
+                
+                onclientclick="ShowEditModal('../Forms/WFClienteEmbeeded.aspx?a=I1&amp;vcodemi=SCodEmitenteAtNegociacao&amp;vcodemp=SCodClienteAtPesquisado&amp;valtecc=SAlterouCodClienteAt&amp;vrecdc=SRecarregaDdlContatosAt&amp;ccodcon=SCodContatoNegociacaoAt&amp;cnpjemi=SCNPJEmitenteAtendimento&amp;vcodemin=SCodEmitenteAtNegociacao','EditModalPopupIncluirCliente','IframeEdit');" />
+    <cc1:ModalPopupExtender ID="BtnIncluirClienteAtendimento_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnIncluirClienteAtendimento" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupIncluirClienteAtendimento">
+    </cc1:ModalPopupExtender>
+            </span>
+    <cc1:ModalPopupExtender ID="BtnFiltrarClienteAtendimento_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnFiltrarClienteAtendimento" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupClienteAtendimento">
+    </cc1:ModalPopupExtender>
+            <span class="TextoCadastro">
+                <asp:ImageButton ID="BtnAlterarClienteAtendimento" runat="server" ImageUrl="~/Imagens/BtnEditar.png" 
+                    AlternateText="Alterar cliente" Height="16px" ToolTip="Alterar informações do cliente" 
+                    
+                
+                
+                
+                
+                
+                
+                onclientclick="ShowEditModal('../Forms/WFClienteEmbeeded.aspx?a=A1&amp;vcodemi=SCodEmitenteAtNegociacao&amp;vcodemp=SCodClienteAtPesquisado&amp;valtecc=SAlterouCodClienteAt&amp;vrecdc=SRecarregaDdlContatosAt&amp;ccodcon=SCodContatoNegociacaoAt&amp;cnpjemi=SCNPJEmitenteAtendimento&amp;vcodemin=SCodEmitenteAtNegociacao','EditModalPopupIncluirCliente','IframeEdit');" />
+    <cc1:ModalPopupExtender ID="BtnAlterarClienteAtendimento_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnAlterarClienteAtendimento" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupAlterarClienteAtendimento">
+    </cc1:ModalPopupExtender>
+            <asp:Label ID="Label14" runat="server" Height="17px" Text="Nº Ponto Atend.:" 
+                style="width: 105px"></asp:Label>
+            <asp:TextBox ID="TxtNrPontoAtendimento" runat="server" CssClass="CampoCadastro" 
+                Width="100px" MaxLength="25" AutoPostBack="True" Height="18px"></asp:TextBox>
+            <asp:ImageButton ID="BtnFiltrarPontoAtendimento" runat="server" 
+                ImageUrl="~/Imagens/search.png" ToolTip="Pesquisar" 
+                onclientclick="ShowEditModal('../Pesquisas/WFPClienteFantasia.aspx?textbox=TxtCliente&amp;varmp=SCodClienteAtPesquisado&amp;varma=SAlterouNumeroPontoAtendimento&amp;varmpc=SPontoPesquisado','EditModalPopupClientes','IframeEdit');" 
+                Height="15px" Width="16px" />
+    <cc1:ModalPopupExtender ID="BtnFiltrarPontoAtendimento_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnFiltrarPontoAtendimento" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupPontoAtendimento">
+    </cc1:ModalPopupExtender>
+            <asp:ImageButton ID="BtnIncluirPontoAtendimento" runat="server" ImageUrl="~/Imagens/BtnIncluir.png" 
+                    AlternateText="Novo Cliente" Height="16px" ToolTip="Novo Ponto de Atendimento" 
+                
+                onclientclick="ShowEditModal('../Forms/WFPontoAtendimentoEmbeeded.aspx?a=I&amp;vcodemi=SCodEmitenteAtNegociacao&amp;vcodemp=SCodClienteAtPesquisado&amp;valtecc=SAlterouNumeroPontoAtendimento&amp;vrecdc=SRecarregaDdlContatosAt&amp;ccodcon=SCodContatoNegociacaoAt&amp;ptat=SPontoPesquisado&amp;vcodemin=SCodEmitenteAtNegociacao','EditModalPopupIncluirPontoAtendimento','IframeEdit');" />
+    <cc1:ModalPopupExtender ID="BtnIncluirPontoAtendimento_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnIncluirPontoAtendimento" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupIncluirPontoAtendimento">
+    </cc1:ModalPopupExtender>
+                <asp:ImageButton ID="BtnAlterarPontoAtendimento" runat="server" ImageUrl="~/Imagens/BtnEditar.png" 
+                    AlternateText="Alterar cliente" Height="16px" ToolTip="Alterar informações do ponto de atendimento" 
+                
+                onclientclick="ShowEditModal('../Forms/WFPontoAtendimentoEmbeeded.aspx?a=A&amp;vcodemi=SCodEmitenteAtNegociacao&amp;vcodemp=SCodClienteAtPesquisado&amp;valtecc=SAlterouNumeroPontoAtendimento&amp;vrecdc=SRecarregaDdlContatosAt&amp;ccodcon=SCodContatoNegociacaoAt&amp;ptat=SPontoPesquisado&amp;vcodemin=SCodEmitenteAtNegociacao','EditModalPopupIncluirPontoAtendimento','IframeEdit');" />
+    <cc1:ModalPopupExtender ID="BtnAlterarPontoAtendimento_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnAlterarPontoAtendimento" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupAlterarPontoAtendimento">
+    </cc1:ModalPopupExtender>
+            </span>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right; background-color: #FBFBF9;" valign="top">
-            Nome:</td>
-        <td class="CelulaCampoCadastro" 
-            style="background-color: #FBFBF9;" valign="top">
-            <asp:Label ID="LblNomeCliente" runat="server" Font-Bold="False"></asp:Label>
+        <td style="text-align: right; " valign="top" class="auto-style7">
+            Inscrição Estadual:</td>
+        <td class="CelulaCampoCadastro" valign="top">
+            <asp:Label ID="LblInscEstadual" runat="server" ForeColor="Red"></asp:Label>
         </td>
         <td class="CelulaCampoCadastro" 
             style="text-align: right;">
-            <asp:Label ID="LabelObra04" runat="server" Height="16px" Text="&nbsp;Tamanho:" style="text-align: right"
-                Width="65px"></asp:Label>
-        </td>
+            Nome Cliente PA:</td>
         <td class="CelulaCampoCadastro" 
             style="">
-            <asp:TextBox ID="TxtTamanhoObra" runat="server" CssClass="CampoCadastro" 
-                Width="40px"></asp:TextBox>
-            <asp:Label ID="LabelObra05" runat="server" Height="16px" Text="&nbsp;m²&nbsp;"></asp:Label>
         &nbsp;
+            <asp:Label ID="LblRazaoSocialPontoAtendimento" runat="server" Font-Bold="True"></asp:Label>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right; background-color: #FBFBF9;" valign="top" >
-            Endereço:</td>
-        <td class="CelulaCampoCadastro" 
-            style="background-color: #FBFBF9;">
-            <asp:Label ID="LblEndereco" runat="server"></asp:Label>
+        <td style="text-align: right; " valign="top" class="auto-style7" >
+            Nome:</td>
+        <td class="CelulaCampoCadastro">
+            <asp:Label ID="LblNomeCliente" runat="server" Font-Bold="False"></asp:Label>
         </td>
         <td class="CelulaCampoCadastro" 
             style="text-align: right">
-            &nbsp;</td>
+            Nome PA:</td>
         <td class="CelulaCampoCadastro" 
             style="">
-            &nbsp;</td>
+            <asp:Label ID="LblNomePontoAtendimento" runat="server" Font-Bold="True"></asp:Label>
+        &nbsp;/
+            <asp:Label ID="LblObsPontoAtendimento" runat="server" Font-Bold="True"></asp:Label>
+        </td>
     </tr>
     <tr>
-        <td class="style1" style="text-align: right; background-color: #FBFBF9;" >
+        <td class="auto-style7" style="text-align: right; " >
+            Endereço:</td>
+        <td class="CelulaCampoCadastro" style="">
+            <span>
+            &nbsp;&nbsp;</span><asp:Label ID="LblEndereco" runat="server"></asp:Label>
+        </td>
+        <td class="CelulaCampoCadastro" style="text-align: right">
+            Endereço PA:</td>
+        <td class="CelulaCampoCadastro">
+            <asp:Label ID="LblEnderecoAtendimento" runat="server"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td class="auto-style7" style="text-align: right; " >
             <span style="text-align: right">Contato:</span></td>
-        <td class="CelulaCampoCadastro" style="background-color: #FBFBF9;">
+        <td class="CelulaCampoCadastro">
             <asp:DropDownList ID="DdlContato" runat="server" CssClass="CampoCadastro" 
                 Width="240px" AutoPostBack="True">
             </asp:DropDownList>
             <span>
-            &nbsp;<asp:ImageButton ID="BtnIncluirContato" runat="server" 
+            <asp:ImageButton ID="BtnIncluirContato" runat="server" 
                 AlternateText="Novo Contato" Height="16px" ToolTip="Novo contato" 
                 ImageUrl="~/Imagens/BtnIncluir.png" 
                 
@@ -203,7 +303,7 @@
         OnCancelScript="EditCancelScript('IframeEdit2');" OnOkScript="EditOkayScript('IframeEdit2');"
         BehaviorID="EditModalPopupIncluirContato">
     </cc1:ModalPopupExtender>
-            &nbsp;<asp:ImageButton ID="BtnAlterarContato" runat="server" 
+            <asp:ImageButton ID="BtnAlterarContato" runat="server" 
                 AlternateText="Alterar contato" Height="16px" 
                 ToolTip="Alterar informações do contato" 
                 ImageUrl="~/Imagens/BtnEditar.png" 
@@ -220,50 +320,76 @@
             </span>
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right">
-            Funil:</td>
+            Contato PA:</td>
         <td class="CelulaCampoCadastro">
-            <asp:DropDownList ID="DdlFunil" runat="server" CssClass="CampoCadastro" 
-                Width="190px" AutoPostBack="True">
+            <asp:DropDownList ID="DdlContatoAtendimento" runat="server" CssClass="CampoCadastro" 
+                Width="225px" AutoPostBack="True">
             </asp:DropDownList>
+            <span class="TextoCadastro">
+            <asp:ImageButton ID="BtnIncluirContato0" runat="server" 
+                AlternateText="Novo Contato" Height="16px" ToolTip="Novo contato" 
+                ImageUrl="~/Imagens/BtnIncluir.png" 
+                
+                
+                
+                
+                onclientclick="ShowEditModal('../Forms/WFContato.aspx?a=I&amp;vrecc=SRecarregaDdlContatosAt&amp;vcodc=SCodContatoNegociacaoAt&amp;vcode=SCodEmitenteAtNegociacao&amp;ptat=SPontoAtendimento','EditModalPopupIncluirContatoAtendimento','IframeEdit');" />
+     <cc1:ModalPopupExtender ID="BtnIncluirContato0_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnIncluirContato0" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupIncluirContatoAtendimento">
+    </cc1:ModalPopupExtender>
+            <asp:ImageButton ID="BtnAlterarContato0" runat="server" 
+                AlternateText="Alterar contato" Height="16px" 
+                ToolTip="Alterar informações do contato" 
+                ImageUrl="~/Imagens/BtnEditar.png" 
+                
+                
+                
+                
+                onclientclick="ShowEditModal('../Forms/WFContato.aspx?a=A&amp;vrecc=SRecarregaDdlContatosAt&amp;vcodc=SCodContatoNegociacaoAt&amp;vcode=SCodEmitenteAtNegociacao&amp;ptat=SPontoAtendimento','EditModalPopupAlterarContatoAtendimento','IframeEdit');" />
+     <cc1:ModalPopupExtender ID="BtnAlterarContato0_ModalPopupExtender" BackgroundCssClass="ModalPopupBG"
+        runat="server" CancelControlID="ButtonEditCancel" OkControlID="ButtonEditDone" 
+        TargetControlID="BtnAlterarContato0" PopupControlID="DivEditWindow" 
+        OnCancelScript="EditCancelScript('IframeEdit');" OnOkScript="EditOkayScript('IframeEdit');"
+        BehaviorID="EditModalPopupAlterarContatoAtendimento">
+    </cc1:ModalPopupExtender>
+            </span>
         </td>
     </tr>
     <tr>
-        <td class="style1" style="text-align: right; background-color: #FBFBF9;" >
+        <td style="text-align: right; " class="auto-style7">
             <asp:Label ID="Label12" runat="server" Text="Telefone(s):"></asp:Label>
             </td>
-        <td class="CelulaCampoCadastro" style="background-color: #FBFBF9;">
-            <asp:Label ID="LblTelefone" runat="server"></asp:Label> - 
-            <asp:Label ID="LblCelular" runat="server"></asp:Label>
-        </td>
-        <td class="CelulaCampoCadastro" style="text-align: right">
-            Etapa:</td>
         <td class="CelulaCampoCadastro">
-            <asp:DropDownList ID="DdlEtapa" runat="server" CssClass="CampoCadastro" 
-                Width="190px" AutoPostBack="True">
-            </asp:DropDownList>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: right; background-color: #FBFBF9;">
-            E-mail:</td>
-        <td class="CelulaCampoCadastro" 
-            style="background-color: #FBFBF9;">
-            <asp:Label ID="LblEmail" runat="server"></asp:Label>
+            <asp:Label ID="LblTelefone" runat="server"></asp:Label> &nbsp;- 
+            <asp:Label ID="LblCelular" runat="server"></asp:Label>
         </td>
         <td class="CelulaCampoCadastro" 
             style="text-align: right">
-            Status:</td>
+            Telefone PA:</td>
         <td class="CelulaCampoCadastro" 
             style="">
-            <asp:DropDownList ID="DdlStatus" runat="server" CssClass="CampoCadastro" 
-                Width="190px">
-            </asp:DropDownList>
+            <asp:Label ID="LblTelefoneAtendimento" runat="server" Font-Bold="True"></asp:Label>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right; background-color: #FBFBF9;" >
+        <td style="text-align: right; " class="auto-style7" >
+            E-mail:</td>
+        <td class="CelulaCampoCadastro">
+            <asp:Label ID="LblEmail" runat="server"></asp:Label>
+        </td>
+        <td class="CelulaCampoCadastro" style="text-align: right">
+            E-Mail PA:</td>
+        <td class="CelulaCampoCadastro">
+            <asp:Label ID="LblEmailAtendimento" runat="server" Height="16px"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right" class="auto-style7" >
             Manter informado (e-mail):</td>
-        <td class="CelulaCampoCadastro" style="background-color: #FBFBF9;">
+        <td class="CelulaCampoCadastro">
             <asp:TextBox ID="TxtManterInformado" runat="server" CssClass="CampoCadastro" 
                 Width="240px" MaxLength="200"
                 
@@ -280,21 +406,20 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style2" >
             <asp:Label ID="LblTipoCobranca" runat="server" Text="Tipo Cobrança:" Visible="False"></asp:Label>
-        </td>
-        <td class="CelulaCampoCadastro">
+            </td>
+        <td class="auto-style3">
             <asp:DropDownList ID="DdlTipoCobranca" runat="server" CssClass="CampoCadastro" Width="240px" Visible="False" AutoPostBack="True"></asp:DropDownList>
         </td>
-        <td class="CelulaCampoCadastro" style="text-align: right">
+        <td class="auto-style3" style="text-align: right">
             Motivo Fechamento:
-        </td>
-        <td class="CelulaCampoCadastro">
+               <td class="auto-style3">
             <asp:DropDownList ID="DdlMotivoFechamento" runat="server" CssClass="CampoCadastro" Width="190px"  AutoPostBack="True"></asp:DropDownList>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             <asp:Label ID="Label9" runat="server" Text="&nbsp;Gestor:" style="text-align: right"
                 Width="65px"></asp:Label>
             </td>
@@ -304,9 +429,9 @@
             </asp:DropDownList>
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right">
-            <asp:Label ID="Label8" runat="server" Height="16px" Text="Origem do Lead:" style="text-align: right"
-                Width="65px"></asp:Label>
-            </td>
+            <asp:Label ID="Label8" runat="server" Height="16px" Text="Origem do Lead:" style="text-align: right; margin-left: 0px;"
+                Width="100px"></asp:Label>
+        </td>
         <td class="CelulaCampoCadastro">
             <asp:DropDownList ID="DdlFonteOrigem" runat="server" CssClass="CampoCadastro" 
                 Width="190px">
@@ -314,7 +439,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
              <asp:Label ID="LblRepresentante" runat="server" Height="16px" style="text-align: right"
                 Text="Vendedor/Representante:"></asp:Label>
             </td>
@@ -334,7 +459,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             Agente de Vendas:</td>
         <td class="CelulaCampoCadastro">
             <asp:DropDownList ID="DdlAgente" runat="server" CssClass="CampoCadastro" 
@@ -348,7 +473,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
              <asp:Label ID="LblCanalVenda" runat="server" Height="16px" style="text-align: right"
                 Text="Canal de Venda:"></asp:Label>
             </td>
@@ -365,7 +490,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             <asp:Label ID="LblCarteira" runat="server" Height="16px" style="text-align: right"
                 Text="Carteira:"></asp:Label>
             </td>
@@ -381,7 +506,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             &nbsp;</td>
         <td class="CelulaCampoCadastro">
             &nbsp;</td>
@@ -398,7 +523,7 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             <asp:Label ID="LblMoeda" runat="server" Text="Moeda:" Height="16px" style="text-align:right"
                 Width="65px"></asp:Label>
             </td>
@@ -420,27 +545,12 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             <asp:Label ID="LblFormaPagto" runat="server" Text="Forma de Pagamento:" 
                 style="text-align:right"></asp:Label>
             </td>
         <td class="CelulaCampoCadastro">
             <asp:DropDownList ID="DdlFormaPagto" runat="server" CssClass="CampoCadastro" 
-                Width="240px">
-            </asp:DropDownList>
-        </td>
-        <td class="CelulaCampoCadastro" style="text-align: right">
-            &nbsp;</td>
-        <td class="CelulaCampoCadastro">
-            &nbsp;</td>
-    </tr>
-    <tr>
-        <td style="text-align: right" >
-             <asp:Label ID="LblCondicaoPagto" runat="server" Text="Condição de Pagamento:" Height="16px" style="text-align:right"
-                ></asp:Label>
-            </td>
-        <td class="CelulaCampoCadastro">
-            <asp:DropDownList ID="DdlCondicaoPagto" runat="server" CssClass="CampoCadastro" 
                 Width="240px">
             </asp:DropDownList>
         </td>
@@ -455,7 +565,30 @@
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style2" >
+             <asp:Label ID="LblCondicaoPagto" runat="server" Text="Condição de Pagamento:" Height="16px" style="text-align:right"
+                ></asp:Label>
+            </td>
+        <td class="auto-style3">
+            <asp:DropDownList ID="DdlCondicaoPagto" runat="server" CssClass="CampoCadastro" 
+                Width="240px">
+            </asp:DropDownList>
+        </td>
+        <td class="auto-style3" style="text-align: right">
+            <asp:Label ID="LabelObra01" runat="server" Text="Tipo da Obra:"></asp:Label>
+        </td>
+        <td class="auto-style3">
+            <asp:DropDownList ID="DdlTipoObra" runat="server" CssClass="CampoCadastro" 
+                Width="190px">
+                <asp:ListItem Value="1">Casa</asp:ListItem>
+                <asp:ListItem Value="2">Prédio</asp:ListItem>
+                <asp:ListItem Value="3">Galpão</asp:ListItem>
+                <asp:ListItem Value="4">Loja/Sala Comercial</asp:ListItem>
+            </asp:DropDownList>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right" class="auto-style7" >
               <asp:Label ID="LblNatureza" runat="server" Height="16px" Text="Natureza de Operação:" 
                 style="text-align: right"></asp:Label>
             </td>
@@ -465,12 +598,19 @@
             </asp:DropDownList>
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right">
-            &nbsp;</td>
+            <asp:Label ID="LabelObra02" runat="server"
+                Text="Modalidade:" ></asp:Label>
+        </td>
         <td class="CelulaCampoCadastro">
-            &nbsp;</td>
+            <asp:DropDownList ID="DdlModalidadeObra" runat="server" CssClass="CampoCadastro" 
+                Width="190px">
+                <asp:ListItem Value="1">Nova</asp:ListItem>
+                <asp:ListItem Value="2">Reforma</asp:ListItem>
+            </asp:DropDownList>
+        </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             <asp:Label ID="LblFrete" runat="server" Height="16px" Text="Frete:" 
                 style="text-align: right"></asp:Label>
             </td>
@@ -482,21 +622,67 @@
             </asp:DropDownList>
         </td>
         <td class="CelulaCampoCadastro" style="text-align: right">
+            <asp:Label ID="LabelObra03" runat="server" Text="Estágio:" 
+                style="text-align: right"></asp:Label>
+        </td>
+        <td class="CelulaCampoCadastro">
+            <asp:DropDownList ID="DdlEstagioObra" runat="server" CssClass="CampoCadastro" 
+                Width="190px">
+                <asp:ListItem Value="1">Fundação</asp:ListItem>
+                <asp:ListItem Value="2">Andamento</asp:ListItem>
+                <asp:ListItem Value="3">Telhado</asp:ListItem>
+                <asp:ListItem Value="4">Acabamento</asp:ListItem>
+            </asp:DropDownList>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right" class="auto-style7" >
+            &nbsp;</td>
+        <td class="CelulaCampoCadastro">
+            &nbsp;</td>
+        <td class="CelulaCampoCadastro" style="text-align: right">
+            <asp:Label ID="LabelObra04" runat="server" Height="16px" Text="&nbsp;Tamanho:" style="text-align: right"
+                Width="65px"></asp:Label>
+        </td>
+        <td class="CelulaCampoCadastro">
+            <asp:TextBox ID="TxtTamanhoObra" runat="server" CssClass="CampoCadastro" 
+                Width="40px"></asp:TextBox>
+            <asp:Label ID="LabelObra05" runat="server" Height="16px" Text="&nbsp;m²&nbsp;"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right" class="auto-style7" >
+            Gerar Chamado:</td>
+        <td class="CelulaCampoCadastro">
+            <asp:CheckBox ID="ChkGerarChamado" runat="server" />
+            <asp:Label ID="LblChamadoLbl" runat="server" Text="Chamado nº:" Visible="False"></asp:Label>
+            <asp:Label ID="LblChamado" runat="server" Font-Bold="False"></asp:Label></td>
+        <td class="CelulaCampoCadastro" style="text-align: right">
             Gerar Pedido:</td>
         <td class="CelulaCampoCadastro">
             <asp:CheckBox ID="ChkGerarPedido" runat="server" />
             <asp:Label ID="LblNrPedidoLbl" runat="server" Text="Pedido nº:" Visible="False"></asp:Label>
-            &nbsp;<asp:Label ID="LblNrPedido" runat="server" Font-Bold="False"></asp:Label>
+            <asp:Label ID="LblNrPedido" runat="server" Font-Bold="False"></asp:Label>
         </td>
     </tr>
     <tr>
-        <td style="text-align: right" >
+        <td style="text-align: right" class="auto-style7" >
             &nbsp;</td>
         <td class="CelulaCampoCadastro">
             &nbsp;</td>
-        <td class="CelulaCampoCadastro">
+        <td class="CelulaCampoCadastro" style="text-align: right">
             <asp:Button ID="BtnGravar" runat="server" Text="Gravar" CssClass="Botao" />
         </td>
+        <td class="CelulaCampoCadastro">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td style="text-align: right" class="auto-style7" >
+            &nbsp;</td>
+        <td class="CelulaCampoCadastro">
+            &nbsp;</td>
+        <td class="CelulaCampoCadastro">
+            &nbsp;</td>
         <td class="CelulaCampoCadastro">
             &nbsp;</td>
     </tr>

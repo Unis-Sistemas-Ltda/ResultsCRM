@@ -323,6 +323,8 @@
         End Set
     End Property
 
+
+
     Public Sub New(ByVal StrConn As String)
         objAcessoDados = New UCLAcessoDados(StrConn)
     End Sub
@@ -345,7 +347,7 @@
 
             StrSql += " select isnull(email_xml_nfe,'') email_xml_nfe, isnull(email_boleto,'') email_boleto, isnull(nome,'') nome, isnull(nome_abreviado,'') nome_abreviado, isnull(ativo,'S') ativo, isnull(cobranca,'N') cobranca, isnull(preferencial,'N') preferencial, isnull(endereco,'') endereco, cod_emitente_sped, senha, "
             StrSql += "        isnull(numero,'') numero, isnull(cep,'') cep, isnull(telefone,'') telefone, isnull(telefone2,'') telefone2, isnull(fax,'') fax, cod_pais, cod_estado, cod_cidade, isnull(bairro,'') bairro, isnull(insc_estadual,'') insc_estadual, isnull(insc_municipal,'') insc_municipal, isnull(email,'') email, "
-            StrSql += "        isnull(ponto_atendimento,'N') ponto_atendimento, isnull(cod_tipo_ponto_atendimento,0) cod_tipo_ponto_atendimento, isnull(numero_ponto_atendimento,'') numero_ponto_atendimento, isnull(numero_uniorg,'') numero_uniorg, isnull(referencia,'') referencia, situacao"
+            StrSql += "        isnull(ponto_atendimento,'N') ponto_atendimento, isnull(cod_tipo_ponto_atendimento,0) cod_tipo_ponto_atendimento, isnull(numero_ponto_atendimento,'') numero_ponto_atendimento, isnull(numero_uniorg,'') numero_uniorg, isnull(referencia,'') referencia, situacao "
             StrSql += "   from endereco_emitente "
             StrSql += "  where cod_emitente = " + CodEmitente
             StrSql += "    and cnpj = '" + CNPJ + "'"

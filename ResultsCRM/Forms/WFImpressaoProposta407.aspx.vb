@@ -53,7 +53,7 @@
         If dt.Rows.Count > 0 Then
             objNegociacao.Buscar()
 
-            ImgLogo.ImageUrl = "http://187.49.238.34/webdeskunis/imagens/logo_ativa.jpg"
+            'ImgLogo.ImageUrl = "http://187.49.238.34/webdeskunis/imagens/logo_ativa.jpg"
 
             LblCodNegociacaoCliente.Text = CodNegociacao.ToString
             LblDataNegociacao.Text = objNegociacao.DataCadastramento
@@ -110,6 +110,7 @@
                                 LblUniorg.Text = objPontoAtendimento.NumeroUniorg
                             End If
                         End If
+
                         objContato.CodEmitente = objChamado.CodEmitenteAtendimento
                         objContato.Codigo = objChamado.CodContatoAtendimento
                         If Not String.IsNullOrEmpty(objContato.CodEmitente) AndAlso Not String.IsNullOrEmpty(objContato.Codigo) Then
@@ -140,7 +141,52 @@
                         LblNecessariaIntervencaoConjuntaEmpresa.Text = objChamado.IntervencaoConjuntaNarrativa
                     End If
                 End If
+            Else
+                If Not String.IsNullOrEmpty(objNegociacao.CodEmitenteAtendimento) Then
+                    objEmitente.CodEmitente = objNegociacao.CodEmitenteAtendimento
+                    objEmitente.Buscar()
+                    LblRazaoSocialClienteAtendimento.Text = objEmitente.Nome
+                    LblNumeroPontoAtendimento.Text = objNegociacao.NumeroPontoAtendimento
+
+                    If Not String.IsNullOrEmpty(objNegociacao.NumeroPontoAtendimento) Then
+                        objPontoAtendimento.CodEmitente = objNegociacao.CodEmitenteAtendimento
+                        objPontoAtendimento.NumeroPontoAtendimento = objNegociacao.NumeroPontoAtendimento
+                        If objPontoAtendimento.Buscar() Then
+                            LblNomePontoAtendimento.Text = objPontoAtendimento.Descricao
+                            LblEnderecoPontoAtendimento.Text = objPontoAtendimento.Logradouro
+                            If objPontoAtendimento.Numero <> "" Then
+                                LblEnderecoPontoAtendimento.Text += ", " + objPontoAtendimento.Numero
+                            End If
+                            LblEnderecoPontoAtendimento.Text += " " + objPontoAtendimento.Bairro
+
+                            objCidade.CodPais = objPontoAtendimento.CodPais
+                            objCidade.CodEstado = objPontoAtendimento.CodEstado
+                            objCidade.CodCidade = objPontoAtendimento.CodCidade
+                            If Not String.IsNullOrEmpty(objCidade.CodPais) AndAlso Not String.IsNullOrEmpty(objCidade.CodCidade) AndAlso Not String.IsNullOrEmpty(objCidade.CodEstado) Then
+                                objCidade.Buscar()
+                                LblCidadePontoAtendimento.Text = objCidade.NomeCidade
+
+                                objEstado.CodPais = objPontoAtendimento.CodPais
+                                objEstado.CodEstado = objPontoAtendimento.CodEstado
+                                objEstado.Buscar()
+                                LblCidadePontoAtendimento.Text += " / " + objEstado.Sigla
+                            End If
+                            LblUniorg.Text = objPontoAtendimento.NumeroUniorg
+                        End If
+                    End If
+
+                    objContato.CodEmitente = objNegociacao.CodEmitenteAtendimento
+                    objContato.Codigo = objNegociacao.CodContatoAtendimento
+                    If Not String.IsNullOrEmpty(objContato.CodEmitente) AndAlso Not String.IsNullOrEmpty(objContato.Codigo) Then
+                        If objContato.Buscar() Then
+                            LblContatoPontoAtendimento.Text = objContato.Nome
+                            LblMatriculaContatoPontoAtendimento.Text = objContato.Matricula
+                        End If
+                    End If
+
+                End If
             End If
+
 
             LblCabecalho.Text = ImprimeTexto(dt.Rows.Item(0).Item("cabecalho_proposta").ToString)
             LblRodape.Text = ImprimeTexto(dt.Rows.Item(0).Item("rodape_proposta").ToString)

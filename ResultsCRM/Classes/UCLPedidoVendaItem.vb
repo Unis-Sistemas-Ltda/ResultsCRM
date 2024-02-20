@@ -1711,6 +1711,30 @@
         End Try
     End Function
 
+    Public Function dtGridItensAtiva(ByVal empresa As String, ByVal estabelecimento As String, ByVal codPedidoVenda As String, ByVal nrLinhas As Long) As DataTable
+        Try
+            Dim strSql As String = ""
+            Dim dt As DataTable
+            'Não vai trazer registros apenas para instanciar o dt
+            strSql += " select pi.seq_item, pi.seq_solicitacao, pi.cod_item, i.descricao item_descricao, isnull(pi.narrativa,'') narrativa, pi.qtd_pedida, pi.preco_unitario, pi.valor_mercadoria"
+            strSql += "   from pedido_venda_item pi inner join item i on pi.cod_item = i.cod_item"
+            strSql += "  where pi.empresa          = 999" + empresa
+            strSql += "    and pi.estabelecimento  = " + estabelecimento
+            strSql += "    and pi.cod_pedido_venda = " + codPedidoVenda
+            strSql += "  order by pi.seq_solicitacao, pi.seq_item "
+            dt = ObjAcessoDados.BuscarDados(strSql)
+
+            For i As Long = dt.Rows.Count + 1 To nrLinhas
+                dt.Rows.Add(dt.NewRow)
+            Next
+
+            Return dt
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function PedidoEncerrado() As Boolean
         Try
             Dim objPedido As New UCLPedidoVenda(StrConexaoUsuario(Session("GlUsuario")))
